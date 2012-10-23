@@ -1,0 +1,52 @@
+{
+    "name": "rithis/bec-russia.com",
+    "homepage": "https://github.com/rithis/bec-russia.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vyacheslav Slinko",
+            "email": "vyacheslav.slinko@rithis.com",
+            "role": "Founder"
+        }
+    ],
+    "support": {
+        "email": "support@rithis.com",
+        "issues": "https://github.com/rithis/bec-russia.com/issues",
+        "wiki": "https://github.com/rithis/bec-russia.com/wiki",
+        "source": "https://github.com/rithis/bec-russia.com"
+    },
+    "require": {
+        "twig/twig": "@stable",
+        "doctrine/common": "@stable",
+        "monolog/monolog": "@stable",
+        "doctrine/dbal": "@stable",
+        "doctrine/orm": "@stable",
+
+        "symfony/symfony": "2.1.*@stable",
+        "symfony/monolog-bundle": "2.1.*@stable",
+        "doctrine/doctrine-bundle": "1.0.*@stable",
+        "doctrine/doctrine-fixtures-bundle": "@dev",
+        "doctrine/doctrine-migrations-bundle": "@dev",
+        "sensio/framework-extra-bundle": "2.1.*@stable",
+        "stof/doctrine-extensions-bundle": "@dev",
+        "sonata-project/doctrine-orm-admin-bundle": "@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rithis": "src"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "touch app/config/parameters.yml",
+            "php app/console cache:clear",
+            "php app/console assets:install"
+        ],
+        "post-update-cmd": [
+            "touch app/config/parameters.yml",
+            "php app/console cache:clear",
+            "php app/console assets:install"
+        ]
+    },
+    "minimum-stability": "dev"
+}

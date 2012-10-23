@@ -1,0 +1,10 @@
+parameters:
+    secret: ThisTokenIsNotSoSecretChangeIt
+
+    database_driver: pdo_pgsql
+    database_host: 192.168.33.10
+    database_port: ~
+    database_name: bec-russia
+    database_user: postgres
+    database_password: ~
+    database_path: ~
