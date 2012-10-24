@@ -1,0 +1,42 @@
+services:
+   rithis.becrussia.admin.town:
+      class: Rithis\BECRussiaBundle\Admin\TownAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\Town, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Towns, label: Town }
+
+   rithis.becrussia.admin.education_course:
+      class: Rithis\BECRussiaBundle\Admin\EducationCourseAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\EducationCourse, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Courses, label: Education Course }
+
+   rithis.becrussia.admin.school:
+      class: Rithis\BECRussiaBundle\Admin\SchoolAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\School, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Schools, label: School }
+
+   rithis.becrussia.admin.phone:
+      class: Rithis\BECRussiaBundle\Admin\PhoneAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\Phone, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Schools, label: Phone }
+
+   rithis.becrussia.admin.teacher:
+      class: Rithis\BECRussiaBundle\Admin\TeacherAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\Teacher, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Schools, label: Teacher }
+
+   rithis.becrussia.admin.news:
+      class: Rithis\BECRussiaBundle\Admin\NewsAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\News, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: News, label: News }
+
+   rithis.becrussia.admin.vacancy:
+      class: Rithis\BECRussiaBundle\Admin\VacancyAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\Vacancy, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Vacancies, label: Vacancy }

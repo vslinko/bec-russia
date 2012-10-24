@@ -36,3 +36,12 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+sonata_admin:
+    dashboard:
+        groups:
+            Towns: { items: [rithis.becrussia.admin.town] }
+            Courses: { items: [rithis.becrussia.admin.education_course] }
+            Schools: { items: [rithis.becrussia.admin.school, rithis.becrussia.admin.teacher] }
+            News: { items: [rithis.becrussia.admin.news] }
+            Vacancies: { items: [rithis.becrussia.admin.vacancy] }
