@@ -2,8 +2,6 @@
 
 namespace Rithis\BECRussiaBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Method,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
@@ -14,7 +12,7 @@ use Rithis\BECRussiaBundle\Entity\News;
 /**
  * @Route("/news")
  */
-class NewsController extends Controller
+class NewsController extends BaseController
 {
     /**
      * @Route("/")
@@ -24,7 +22,7 @@ class NewsController extends Controller
      */
     public function allAction()
     {
-        $query = $this->getNewsRepository()->createSortedQueryBuilder($this->getRequest()->getSession()->get('town'));
+        $query = $this->getRepository('News')->createSortedQueryBuilder($this->getSelectedTown());
 
         $pagination = $this->get('knp_paginator')->paginate(
             $query,
@@ -52,7 +50,7 @@ class NewsController extends Controller
     public function centreNewsBlockAction()
     {
         return array(
-            'news' => $this->getNewsRepository()->findForCentreNewsBlock(),
+            'news' => $this->getRepository('News')->findForCentreNewsBlock(),
         );
     }
 
@@ -63,12 +61,7 @@ class NewsController extends Controller
     public function schoolsNewsBlockAction()
     {
         return array(
-            'news' => $this->getNewsRepository()->findForSchoolsNewsBlock($this->getRequest()->getSession()->get('town')),
+            'news' => $this->getRepository('News')->findForSchoolsNewsBlock($this->getSelectedTown()),
         );
-    }
-
-    private function getNewsRepository()
-    {
-        return $this->getDoctrine()->getManager()->getRepository('RithisBECRussiaBundle:News');
     }
 }

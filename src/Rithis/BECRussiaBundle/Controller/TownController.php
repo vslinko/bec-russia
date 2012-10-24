@@ -2,14 +2,11 @@
 
 namespace Rithis\BECRussiaBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Method,
-    Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
-    Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
+    Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class TownController extends Controller
+class TownController extends BaseController
 {
     /**
      * @Route("/select_town")
@@ -23,7 +20,7 @@ class TownController extends Controller
 
         $townId = $request->request->get('town');
         if ($townId) {
-            $town = $this->getTownRepository()->find($townId);
+            $town = $this->getRepository('Town')->find($townId);
         }
 
         $request->getSession()->set('town', $town);
@@ -37,13 +34,8 @@ class TownController extends Controller
     public function townSelectBlockAction()
     {
         return array(
-            'selected_town' => $this->getRequest()->getSession()->get('town'),
-            'towns' => $this->getTownRepository()->findForTownSelectBlock(),
+            'selected_town' => $this->getSelectedTown(),
+            'towns' => $this->getRepository('Town')->findForTownSelectBlock(),
         );
-    }
-
-    private function getTownRepository()
-    {
-        return $this->getDoctrine()->getManager()->getRepository('RithisBECRussiaBundle:Town');
     }
 }
