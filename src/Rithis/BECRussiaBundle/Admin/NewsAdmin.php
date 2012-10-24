@@ -18,7 +18,7 @@ class NewsAdmin extends Admin
     {
         $mapper->add('title');
         $mapper->add('annotation');
-        $mapper->add('description');
+        $mapper->add('description', null, array('attr' => array('class' => 'tinymce')));
         $mapper->add('school', null, array('required' => false));
     }
 }

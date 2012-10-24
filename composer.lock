@@ -1,5 +1,5 @@
 {
-    "hash": "66e3f1639c1fa19d3c63ab5ad5a23bd5",
+    "hash": "48a2af846d2c6b15217f0ec8edc82a52",
     "packages": [
         {
             "name": "doctrine/common",
@@ -1192,6 +1192,59 @@
             "time": "1346283282"
         },
         {
+            "name": "stfalcon/tinymce-bundle",
+            "version": "dev-master",
+            "target-dir": "Stfalcon/Bundle/TinymceBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stfalcon/TinymceBundle",
+                "reference": "c983ec823f31fca6821107c81b0f2abab4cd0ffa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/stfalcon/TinymceBundle/zipball/c983ec823f31fca6821107c81b0f2abab4cd0ffa",
+                "reference": "c983ec823f31fca6821107c81b0f2abab4cd0ffa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/symfony": ">=2.1"
+            },
+            "time": "1348832215",
+            "type": "symfony-bundle",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Stfalcon\\Bundle\\TinymceBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stepan Tanasiychuk",
+                    "email": "ceo@stfalcon.com",
+                    "homepage": "http://blog.stfalcon.com"
+                },
+                {
+                    "name": "Igor Negrutsa",
+                    "email": "progi2007@gmail.com",
+                    "homepage": "http://igor-negrutsa.info"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/stfalcon/TinymceBundle/contributors"
+                }
+            ],
+            "description": "This Bundle integrates TinyMCE WYSIWYG editor into a Symfony2 project.",
+            "keywords": [
+                "wysiwyg",
+                "tinymce",
+                "editor"
+            ]
+        },
+        {
             "name": "stof/doctrine-extensions-bundle",
             "version": "dev-master",
             "target-dir": "Stof/DoctrineExtensionsBundle",
@@ -1469,9 +1522,10 @@
         "doctrine/doctrine-migrations-bundle": 20,
         "sensio/framework-extra-bundle": 0,
         "stof/doctrine-extensions-bundle": 20,
+        "knplabs/knp-paginator-bundle": 0,
         "sonata-project/doctrine-orm-admin-bundle": 20,
         "rithis/bootstrap-bundle": 20,
         "rithis/image-placeholder-bundle": 20,
-        "knplabs/knp-paginator-bundle": 0
+        "stfalcon/tinymce-bundle": 20
     }
 }
