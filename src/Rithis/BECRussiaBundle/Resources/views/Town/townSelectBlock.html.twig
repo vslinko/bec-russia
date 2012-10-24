@@ -1,9 +1,9 @@
 <form action="{{ path("rithis_becrussia_town_select") }}" method="post" class="form-inline">
     <select name="town">
-        <option value="">Выберите город</option>
+        <option value="">Select town</option>
         {% for town in towns %}
             <option value="{{ town.id }}"{% if selected_town.id == town.id %} selected{% endif %}>{{ town.name }}</option>
         {% endfor %}
     </select>
-    <button class="btn">Изменить</button>
+    <button class="btn">Change</button>
 </form>

@@ -31,6 +31,12 @@ class Teacher
     protected $name;
 
     /**
+     * @ORM\OneToOne(targetEntity="Media")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
+     */
+    protected $image;
+
+    /**
      * @ORM\Column(type="text")
      */
     protected $description;
@@ -69,6 +75,16 @@ class Teacher
     public function getName()
     {
         return $this->name;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 
     public function setDescription($description)

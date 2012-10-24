@@ -1,0 +1,11 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+{% block content %}
+    <ul class="nav nav-pills">
+        <li><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">About School "{{ school.title }}"</a></li>
+        <li><a href="{{ path("rithis_becrussia_school_teachers", {slug: school.slug}) }}">Teachers</a></li>
+        <li><a href="{{ path("rithis_becrussia_school_discounts", {slug: school.slug}) }}">Discounts</a></li>
+        <li><a href="{{ path("rithis_becrussia_school_contacts", {slug: school.slug}) }}">Contacts</a></li>
+    </ul>
+    {% block school_content "" %}
+{% endblock %}

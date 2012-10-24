@@ -8,7 +8,7 @@ use Gedmo\Mapping\Annotation as Gedmo,
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Rithis\BECRussiaBundle\Entity\SchoolRepository")
  * @ORM\Table("schools")
  */
 class School
@@ -36,6 +36,22 @@ class School
      * @ORM\Column
      */
     protected $address;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    protected $about;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    protected $discounts;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Media")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
+     */
+    protected $image;
 
     /**
      * @ORM\ManyToOne(targetEntity="Town", inversedBy="schools")
@@ -103,6 +119,36 @@ class School
     public function getAddress()
     {
         return $this->address;
+    }
+
+    public function setAbout($about)
+    {
+        $this->about = $about;
+    }
+
+    public function getAbout()
+    {
+        return $this->about;
+    }
+
+    public function setDiscounts($discounts)
+    {
+        $this->discounts = $discounts;
+    }
+
+    public function getDiscounts()
+    {
+        return $this->discounts;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 
     public function setTown($town)

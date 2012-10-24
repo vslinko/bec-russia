@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="span4">
-            <img src="/_placeholder/370,80?text=British Educational Centre" alt="">
+            <a href="{{ path("rithis_becrussia_index_get") }}"><img src="/_placeholder/370,80?text=British Educational Centre" alt=""></a>
         </div>
         <div class="span5">
             {% render "RithisBECRussiaBundle:Town:townSelectBlock" %}
@@ -17,18 +17,27 @@
     <div class="row">
         <div class="span3">
             <ul class="nav nav-tabs nav-stacked">
-                <li><a href="{{ path("rithis_becrussia_index_get") }}">Главная</a></li>
+                <li><a href="{{ path("rithis_becrussia_index_get") }}">Index</a></li>
+                <li><a href="{{ path("rithis_becrussia_school_all") }}">Schools</a></li>
             </ul>
         </div>
         <div class="span9">
-            {% block content "" %}
+            <div class="row">
+                <div class="span6">
+                    {% block content "" %}
+                </div>
+                <div class="span3">
+                    {% render "RithisBECRussiaBundle:News:schoolsNewsBlock" %}
+                </div>
+            </div>
         </div>
     </div>
     <hr>
     <div class="row">
         <div class="span10 offset1">
             <ul class="nav nav-pills">
-                <li><a href="{{ path("rithis_becrussia_index_get") }}">Главная</a></li>
+                <li><a href="{{ path("rithis_becrussia_index_get") }}">Index</a></li>
+                <li><a href="{{ path("rithis_becrussia_school_all") }}">Schools</a></li>
             </ul>
         </div>
     </div>

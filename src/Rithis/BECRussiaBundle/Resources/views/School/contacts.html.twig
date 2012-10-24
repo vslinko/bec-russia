@@ -1,0 +1,39 @@
+{% extends "RithisBECRussiaBundle::school.html.twig" %}
+
+{% block school_content %}
+    <h1>School "{{ school.title }}"</h1>
+
+    {% if school.phones|length > 0 %}
+    <p>Phones: {{ school.phones|join(', ') }}</p>
+    {% endif %}
+
+    <p>Address: {{ school.address }}</p>
+
+    <div id="map" style="height: 400px;"></div>
+
+    <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"></script>
+    <script type="text/javascript">
+        (function () {
+            var mapElement = document.getElementById('map');
+
+            ymaps.ready(function () {
+                var search = ymaps.geocode("{{ school.town }} {{ school.address }}");
+
+                search.then(function (result) {
+                    if (result.geoObjects.getLength() > 0) {
+                        var coordinates = result.geoObjects.get(0).geometry.getCoordinates();
+
+                        var map = new ymaps.Map(mapElement, {
+                            center: coordinates,
+                            zoom: 15
+                        });
+
+                        map.geoObjects.add(new ymaps.Placemark(coordinates));
+                    }
+                });
+            }, function () {
+                mapElement.style.display = 'none';
+            });
+        })();
+    </script>
+{% endblock %}

@@ -1,12 +1,5 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
 {% block content %}
-    <div class="row">
-        <div class="span6">
-            {% render "RithisBECRussiaBundle:News:centreNewsBlock" %}
-        </div>
-        <div class="span3">
-            {% render "RithisBECRussiaBundle:News:schoolsNewsBlock" %}
-        </div>
-    </div>
+    {% render "RithisBECRussiaBundle:News:centreNewsBlock" %}
 {% endblock %}

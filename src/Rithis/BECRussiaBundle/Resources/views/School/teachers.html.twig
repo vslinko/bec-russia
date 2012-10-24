@@ -1,0 +1,14 @@
+{% extends "RithisBECRussiaBundle::school.html.twig" %}
+
+{% block school_content %}
+    <h1>Teachers in "{{ school.title }}"</h1>
+
+    {% for teacher in school.teachers %}
+        <div class="clearfix">
+            {% thumbnail teacher.image, "small" with {class: "pull-left"} %}
+
+            <h2>{{ teacher.name }}</h2>
+            <p>{{ teacher.description }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "RithisBECRussiaBundle::school.html.twig" %}
+
+{% block school_content %}
+    <div class="clearfix">
+        <h1>About School "{{ school.title }}"</h1>
+
+        {% thumbnail school.image, "big" with {class: "pull-left"} %}
+
+        <div>{{ school.about|raw }}</div>
+    </div>
+{% endblock %}

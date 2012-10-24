@@ -16,12 +16,20 @@ class SchoolAdmin extends Admin
 
     protected function configureFormFields(FormMapper $mapper)
     {
+        $mapper->with('Main');
         $mapper->add('title');
         $mapper->add('address');
-        $mapper->add('town');
+        $mapper->add('image', 'sonata_type_model', array(), array('link_parameters' => array('context' => 'school')));
+        $mapper->add('town', 'sonata_type_model');
         $mapper->add('phones', 'sonata_type_collection', array('by_reference' => false), array(
             'edit' => 'inline',
             'inline' => 'table'
         ));
+
+        $mapper->with('About Page', array('collapsed' => true));
+        $mapper->add('about', null, array('attr' => array('class' => 'tinymce')));
+
+        $mapper->with('Discounts Page', array('collapsed' => true));
+        $mapper->add('discounts', null, array('attr' => array('class' => 'tinymce')));
     }
 }
