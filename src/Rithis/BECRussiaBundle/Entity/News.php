@@ -6,7 +6,7 @@ use Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Rithis\BECRussiaBundle\Entity\NewsRepository")
  * @ORM\Table("news")
  */
 class News
@@ -39,6 +39,12 @@ class News
      * @ORM\Column(type="text")
      */
     protected $description;
+
+    /**
+     * @ORM\Column("created_at", type="datetime")
+     * @Gedmo\Timestampable(on="create")
+     */
+    protected $createdAt;
 
     /**
      * @ORM\ManyToOne(targetEntity="School", inversedBy="news")
@@ -94,6 +100,16 @@ class News
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 
     public function setSchool(School $school)

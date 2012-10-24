@@ -1,0 +1,9 @@
+rithis_becrussia_index_get:
+    pattern: /
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: "RithisBECRussiaBundle:Index:get.html.twig"
+
+_rithis_becrussia:
+    resource: "@RithisBECRussiaBundle/Controller"
+    type: annotation

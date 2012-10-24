@@ -1,5 +1,5 @@
 {
-    "hash": "94b729b304542890ef93ebc713201b63",
+    "hash": "66e3f1639c1fa19d3c63ab5ad5a23bd5",
     "packages": [
         {
             "name": "doctrine/common",
@@ -534,6 +534,54 @@
             ]
         },
         {
+            "name": "knplabs/knp-components",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/knp-components",
+                "reference": "99ea408dc2a7c3616e688ffe67e3248ece69ff0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/KnpLabs/knp-components/zipball/99ea408dc2a7c3616e688ffe67e3248ece69ff0e",
+                "reference": "99ea408dc2a7c3616e688ffe67e3248ece69ff0e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "1339767068",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Component": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/knp-components/contributors"
+                }
+            ],
+            "description": "Knplabs component library",
+            "homepage": "http://github.com/KnpLabs/knp-components",
+            "keywords": [
+                "pager",
+                "components",
+                "knp",
+                "knplabs",
+                "paginator"
+            ]
+        },
+        {
             "name": "knplabs/knp-menu",
             "version": "1.1.x-dev",
             "source": {
@@ -647,6 +695,59 @@
             ]
         },
         {
+            "name": "knplabs/knp-paginator-bundle",
+            "version": "v2.2",
+            "target-dir": "Knp/Bundle/PaginatorBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpPaginatorBundle",
+                "reference": "v2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/KnpLabs/KnpPaginatorBundle/zipball/v2.2",
+                "reference": "v2.2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "2.*,<2.2",
+                "knplabs/knp-components": ">=1.1"
+            },
+            "time": "2012-03-23 10:44:24",
+            "type": "symfony-bundle",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Bundle\\PaginatorBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony2 Community",
+                    "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle/contributors"
+                }
+            ],
+            "description": "Paginator bundle for Symfony2 to automate pagination and simplify sorting and other features",
+            "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle",
+            "keywords": [
+                "Symfony2",
+                "pager",
+                "knp",
+                "knplabs",
+                "paginator",
+                "pagination",
+                "bundle"
+            ]
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.2.1",
             "source": {
@@ -701,6 +802,83 @@
                 "log",
                 "logging"
             ]
+        },
+        {
+            "name": "rithis/bootstrap-bundle",
+            "version": "dev-master",
+            "target-dir": "Rithis/BootstrapBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rithis/BootstrapBundle",
+                "reference": "ec402e18d14de94bb21c8d67677478a893cb7610"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/rithis/BootstrapBundle/zipball/ec402e18d14de94bb21c8d67677478a893cb7610",
+                "reference": "ec402e18d14de94bb21c8d67677478a893cb7610",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": "2.1.*"
+            },
+            "time": "1347872426",
+            "type": "symfony-bundle",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Rithis\\BootstrapBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vyacheslav Slinko",
+                    "email": "vyacheslav.slinko@rithis.com",
+                    "role": "Founder"
+                }
+            ],
+            "homepage": "https://github.com/rithis/BootstrapBundle"
+        },
+        {
+            "name": "rithis/image-placeholder-bundle",
+            "version": "dev-master",
+            "target-dir": "Rithis/ImagePlaceholderBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rithis/ImagePlaceholderBundle",
+                "reference": "6a0503d0ddd26fb8679c9156642b94fc61d89d34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/rithis/ImagePlaceholderBundle/zipball/6a0503d0ddd26fb8679c9156642b94fc61d89d34",
+                "reference": "6a0503d0ddd26fb8679c9156642b94fc61d89d34",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "symfony/framework-bundle": "2.1.*"
+            },
+            "time": "1349706083",
+            "type": "symfony-bundle",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Rithis\\ImagePlaceholderBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vyacheslav Slinko",
+                    "email": "vyacheslav.slinko@rithis.com",
+                    "role": "Founder"
+                }
+            ],
+            "homepage": "https://github.com/rithis/ImagePlaceholderBundle"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -1291,6 +1469,9 @@
         "doctrine/doctrine-migrations-bundle": 20,
         "sensio/framework-extra-bundle": 0,
         "stof/doctrine-extensions-bundle": 20,
-        "sonata-project/doctrine-orm-admin-bundle": 20
+        "sonata-project/doctrine-orm-admin-bundle": 20,
+        "rithis/bootstrap-bundle": 20,
+        "rithis/image-placeholder-bundle": 20,
+        "knplabs/knp-paginator-bundle": 0
     }
 }

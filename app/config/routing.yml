@@ -6,3 +6,10 @@ _resources_sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /admin
+
+_rithis_imageplaceholder:
+    resource: "@RithisImagePlaceholderBundle/Resources/config/routing.yml"
+    prefix: /_placeholder
+
+_rithis_becrussia:
+    resource: "@RithisBECRussiaBundle/Resources/config/routing.yml"

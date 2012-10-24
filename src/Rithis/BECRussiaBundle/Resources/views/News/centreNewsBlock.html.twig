@@ -1,0 +1,16 @@
+<h2>Centre News</h2>
+
+{% for news in news %}
+    <div class="clearfix">
+        <img src="/_placeholder/160" alt=""  class="pull-left">
+
+        <h3><a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}">{{ news.title }}</a>
+            <small>{{ news.createdAt|date('d.m.Y') }}</small></h3>
+
+        <p>{{ news.annotation }}</p>
+    </div>
+
+    {% if not loop.last %}<hr>{% endif %}
+{% endfor %}
+
+<p><a href="{{ path("rithis_becrussia_news_all") }}">Read all news</a></p>
