@@ -31,6 +31,7 @@
         "stof/doctrine-extensions-bundle": "@dev",
         "knplabs/knp-paginator-bundle": "@stable",
         "stfalcon/tinymce-bundle": "@dev",
+        "sonata-project/media-bundle": "@dev",
         "sonata-project/doctrine-orm-admin-bundle": "@dev",
         "rithis/bootstrap-bundle": "@dev",
         "rithis/image-placeholder-bundle": "@dev"

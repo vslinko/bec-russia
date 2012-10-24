@@ -2,7 +2,7 @@
 
 {% for news in news %}
     <div class="clearfix">
-        <img src="/_placeholder/80" alt="" class="pull-left">
+        {% thumbnail news.image, "small" with {class: "pull-left"} %}
         <p>{{ news.createdAt|date('d.m.Y') }}</p>
         <p>{{ news.school }}</p>
         <p>School: {{ news.school.address }}</p>

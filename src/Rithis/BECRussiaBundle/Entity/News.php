@@ -47,6 +47,12 @@ class News
     protected $createdAt;
 
     /**
+     * @ORM\OneToOne(targetEntity="Media")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
+     */
+    protected $image;
+
+    /**
      * @ORM\ManyToOne(targetEntity="School", inversedBy="news")
      * @ORM\JoinColumn(name="school_id", referencedColumnName="id")
      */
@@ -110,6 +116,16 @@ class News
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 
     public function setSchool(School $school)

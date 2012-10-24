@@ -19,6 +19,7 @@ class NewsAdmin extends Admin
         $mapper->add('title');
         $mapper->add('annotation');
         $mapper->add('description', null, array('attr' => array('class' => 'tinymce')));
+        $mapper->add('image', 'sonata_type_model', array(), array('link_parameters' => array('context' => 'news')));
         $mapper->add('school', null, array('required' => false));
     }
 }

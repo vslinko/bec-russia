@@ -5,7 +5,7 @@
 
     {% for news in pagination %}
         <div class="clearfix">
-            <img src="/_placeholder/160" alt="" class="pull-left">
+            {% thumbnail news.image, "medium" with {class: "pull-left"} %}
 
             <h3><a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}">{{ news.title }}</a>
                 <small>{{ news.createdAt|date('d.m.Y') }}</small></h3>

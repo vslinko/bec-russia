@@ -4,7 +4,7 @@
     <div class="clearfix">
         <h1>{{ news.title }} <small>{{ news.createdAt|date('d.m.Y') }}</small></h1>
         <hr>
-        <img src="/_placeholder/220" alt="" class="pull-left">
+        {% thumbnail news.image, "big" with {class: "pull-left"} %}
         <div>{{ news.description|raw }}</div>
     </div>
 {% endblock %}
