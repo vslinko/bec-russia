@@ -5,6 +5,7 @@ namespace Rithis\BECRussiaBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template,
+    Sensio\Bundle\FrameworkExtraBundle\Configuration\Method,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
@@ -17,12 +18,13 @@ class NewsController extends Controller
 {
     /**
      * @Route("/")
+     * @Method("GET")
      * @Template
      * @Cache(expires="+1 Hour")
      */
     public function allAction()
     {
-        $query = $this->getNewsRepository()->createSortedQueryBuilder();
+        $query = $this->getNewsRepository()->createSortedQueryBuilder($this->getRequest()->getSession()->get('town'));
 
         $pagination = $this->get('knp_paginator')->paginate(
             $query,
@@ -35,6 +37,7 @@ class NewsController extends Controller
 
     /**
      * @Route("/{slug}")
+     * @Method("GET")
      * @Template
      * @Cache(expires="+1 Week")
      */
@@ -60,7 +63,7 @@ class NewsController extends Controller
     public function schoolsNewsBlockAction()
     {
         return array(
-            'news' => $this->getNewsRepository()->findForSchoolsNewsBlock(),
+            'news' => $this->getNewsRepository()->findForSchoolsNewsBlock($this->getRequest()->getSession()->get('town')),
         );
     }
 

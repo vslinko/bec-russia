@@ -9,24 +9,31 @@ class NewsRepository extends EntityRepository
     public function findForCentreNewsBlock()
     {
         return $this->createSortedQueryBuilder()
-            ->where('n.school is null')
+            ->where('n.school IS NULL')
             ->setMaxResults(5)
             ->getQuery()
             ->getResult();
     }
 
-    public function findForSchoolsNewsBlock()
+    public function findForSchoolsNewsBlock($town)
     {
-        return $this->createSortedQueryBuilder()
-            ->where('n.school is not null')
-            ->setMaxResults(5)
-            ->getQuery()
-            ->getResult();
+        $qb = $this->createSortedQueryBuilder($town)
+            ->setMaxResults(5);
+
+        return $qb->getQuery()->getResult();
     }
 
-    public function createSortedQueryBuilder()
+    public function createSortedQueryBuilder($town = null)
     {
-        return $this->createQueryBuilder('n')
-            ->orderBy('n.createdAt', 'desc');
+        $qb = $this->createQueryBuilder('n')
+            ->orderBy('n.createdAt', 'DESC');
+
+        if ($town instanceof Town) {
+            $qb->join('n.school', 's');
+            $qb->andWhere('s.town = :town');
+            $qb->setParameter('town', $town->getId());
+        }
+
+        return $qb;
     }
 }

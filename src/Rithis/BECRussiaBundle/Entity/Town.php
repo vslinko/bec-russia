@@ -8,7 +8,7 @@ use Gedmo\Mapping\Annotation as Gedmo,
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Rithis\BECRussiaBundle\Entity\TownRepository")
  * @ORM\Table("towns")
  */
 class Town
