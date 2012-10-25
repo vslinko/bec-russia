@@ -58,6 +58,7 @@ sonata_media:
             providers:
                 - sonata.media.provider.image
             formats:
+                small: { width: 80, height: 80, quality: 70 }
                 medium: { width: 160, height: 160, quality: 70 }
                 big: { width: 220, height: 220, quality: 70 }
         teacher:

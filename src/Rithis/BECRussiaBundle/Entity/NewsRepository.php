@@ -23,6 +23,13 @@ class NewsRepository extends EntityRepository
         return $qb->getQuery()->getResult();
     }
 
+    public function createSchoolNewsQueryBuilder(School $school)
+    {
+        return $this->createSortedQueryBuilder()
+            ->where('n.school = :school')
+            ->setParameter('school', $school->getId());
+    }
+
     public function createSortedQueryBuilder($town = null)
     {
         $qb = $this->createQueryBuilder('n')

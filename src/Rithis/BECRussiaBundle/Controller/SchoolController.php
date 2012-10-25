@@ -60,4 +60,22 @@ class SchoolController extends BaseController
     public function contactsAction(School $school)
     {
     }
+
+    /**
+     * @Route("/{slug}/news/")
+     * @Template
+     * @Cache(expires="+1 Week")
+     */
+    public function newsAction(School $school)
+    {
+        $query = $this->getRepository('News')->createSchoolNewsQueryBuilder($school);
+
+        $pagination = $this->get('knp_paginator')->paginate(
+            $query,
+            $this->getRequest()->query->get('page', 1),
+            10
+        );
+
+        return array('pagination' => $pagination);
+    }
 }

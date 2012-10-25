@@ -1,0 +1,21 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+{% block content %}
+    <h1>News</h1>
+
+    {% for news in pagination %}
+        <div class="clearfix">
+            {% thumbnail news.image, "medium" with {class: "pull-left"} %}
+
+            <h3><a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}">{{ news.title }}</a>
+                <small>{{ news.createdAt|date('d.m.Y') }}</small></h3>
+
+            <p>{{ news.annotation }}</p>
+        </div>
+
+        {% if not loop.last %}<hr>{% endif %}
+    {% endfor %}
+
+    {{ pagination.render("RithisBootstrapBundle::pagination.html.twig")|raw }}
+{% endblock %}
+
