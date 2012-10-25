@@ -1,0 +1,16 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+{% block content %}
+    <h1>Vacancies</h1>
+
+    {% for vacancy in vacancies %}
+        <div>
+            <h3><a href="{{ path("rithis_becrussia_vacancy_get", {slug: vacancy.slug}) }}">{{ vacancy.title }}</a></h3>
+
+            <p>{{ vacancy.annotation }}</p>
+        </div>
+
+        {% if not loop.last %}<hr>{% endif %}
+    {% endfor %}
+{% endblock %}
+

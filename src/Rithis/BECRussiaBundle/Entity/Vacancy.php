@@ -6,7 +6,7 @@ use Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Rithis\BECRussiaBundle\Entity\VacancyRepository")
  * @ORM\Table("vacancies")
  */
 class Vacancy

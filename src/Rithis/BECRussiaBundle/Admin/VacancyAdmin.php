@@ -18,7 +18,7 @@ class VacancyAdmin extends Admin
     {
         $mapper->add('title');
         $mapper->add('annotation');
-        $mapper->add('description');
-        $mapper->add('school', null, array('required' => false));
+        $mapper->add('description', null, array('attr' => array('class' => 'tinymce')));
+        $mapper->add('school', 'sonata_type_model', array('required' => false));
     }
 }
