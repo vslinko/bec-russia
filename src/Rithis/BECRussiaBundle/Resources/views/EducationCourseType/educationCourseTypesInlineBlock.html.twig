@@ -1,0 +1,13 @@
+{% if types|length > 0 %}
+    <section class="education-course-types education-course-types-inline">
+        <ul class="education-course-types-menu">
+            {% for type in types %}
+                <li data-element="education-course-types-menu-item">
+                    <a href="{{ path("rithis_becrussia_educationcoursetype_get", {slug: type.slug}) }}">{{ type.title }}
+                        <small>{{ type.note }}</small>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endif %}

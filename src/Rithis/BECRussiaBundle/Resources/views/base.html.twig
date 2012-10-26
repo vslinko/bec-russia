@@ -40,7 +40,9 @@
     {% render "RithisBECRussiaBundle:Town:townPhonesBlock" %}
 </header>
 
-{% block education_course_types "" %}
+{% block education_course_types %}
+    {% render "RithisBECRussiaBundle:EducationCourseType:educationCourseTypesInlineBlock" %}
+{% endblock %}
 
 <aside class="left">
     {% include "RithisBECRussiaBundle::nav.html.twig" %}

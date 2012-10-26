@@ -36,4 +36,14 @@ class EducationCourseTypeController extends BaseController
             'types' => $this->getRepository('EducationCourseType')->findForEducationCourseTypesBlock(),
         );
     }
+
+    /**
+     * @Template
+     */
+    public function educationCourseTypesInlineBlockAction()
+    {
+        return array(
+            'types' => $this->getRepository('EducationCourseType')->findForEducationCourseTypesBlock(),
+        );
+    }
 }
