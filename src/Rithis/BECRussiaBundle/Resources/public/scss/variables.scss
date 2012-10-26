@@ -1,0 +1,13 @@
+$width: 1060px;
+$logo-width: 410px;
+$phones-width: 340px;
+$town-width: $width - $logo-width - $phones-width;
+$course-figure-width: 800px;
+$course-figure-height: 400px;
+$left-aside-width: $width - $course-figure-width;
+$right-aside-width: 260px;
+$content-width: $width - $left-aside-width - $right-aside-width;
+
+$red: #ab1118;
+$pink: #e6b8ba;
+$gray: #8e8e8e;

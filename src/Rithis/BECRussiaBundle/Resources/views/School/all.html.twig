@@ -1,19 +1,36 @@
 {% extends "RithisBECRussiaBundle::school.html.twig" %}
 
 {% block content %}
-    <h1>Schools</h1>
+    <section class="article list-with-figure list">
+        <header>
+            <h1>Школы</h1>
+        </header>
 
-    {% for school in schools %}
-        <div class="clearfix">
-            {% thumbnail school.image, "medium" with {class: "pull-left"} %}
+        {% for school in schools %}
+            <article>
+                <figure>
+                    {% thumbnail school.image, "medium" %}
+                </figure>
 
-            <h3><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">{{ school.title }}</a></h3>
+                <header>
+                    <h2><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">{{ school.title }}</a>
+                    </h2>
+                </header>
 
-            <p>{{ school.address }}</p>
+                <blockquote>
+                    <p>Адрес: {{ school.address }}</p>
 
-            <p>{{ school.phones|join(', ') }}</p>
-        </div>
+                    <p>Телефоны:</p>
 
-        {% if not loop.last %}<hr>{% endif %}
-    {% endfor %}
+                    {% if school.phones|length > 0 %}
+                        <ul>
+                            {% for phone in school.phones %}
+                                <li>{{ phone.number }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </blockquote>
+            </article>
+        {% endfor %}
+    </section>
 {% endblock %}

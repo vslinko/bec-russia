@@ -5,6 +5,12 @@ services:
       tags:
         - { name: sonata.admin, manager_type: orm, group: Towns, label: Town }
 
+   rithis.becrussia.admin.education_course_type:
+      class: Rithis\BECRussiaBundle\Admin\EducationCourseTypeAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\EducationCourseType, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Courses, label: Education Course Type }
+
    rithis.becrussia.admin.education_course:
       class: Rithis\BECRussiaBundle\Admin\EducationCourseAdmin
       arguments: [null, Rithis\BECRussiaBundle\Entity\EducationCourse, SonataAdminBundle:CRUD]

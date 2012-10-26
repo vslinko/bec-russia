@@ -1,10 +1,19 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
 {% block content %}
-    <div class="clearfix">
-        <h1>{{ news.title }} <small>{{ news.createdAt|date('d.m.Y') }}</small></h1>
-        <hr>
-        {% thumbnail news.image, "big" with {class: "pull-left"} %}
-        <div>{{ news.description|raw }}</div>
-    </div>
+    <section class="article news-item">
+        <header>
+            <p class="news-item-created-at">{{ news.createdAt|date('d.m.Y') }}</p>
+
+            <h1>{{ news.title }}</h1>
+        </header>
+
+        <article>
+            <figure>
+                {% thumbnail news.image, "big" with {class: "pull-left"} %}
+            </figure>
+
+            {{ news.description|raw }}
+        </article>
+    </section>
 {% endblock %}

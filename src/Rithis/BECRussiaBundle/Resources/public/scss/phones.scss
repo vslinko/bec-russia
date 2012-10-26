@@ -1,0 +1,33 @@
+@import "mixins";
+@import "variables";
+
+.phones {
+  @include times;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      float: left;
+      width: $phones-width/2;
+      padding: 5px 0 0 5px;
+      font-size: 20px;
+
+      &:after {
+        content: ",";
+      }
+
+      &:first-child {
+        float: none;
+        width: $phones-width;
+        font-size: 42px;
+      }
+
+      &:first-child:after, &:last-child:after {
+        content: "";
+      }
+    }
+  }
+}

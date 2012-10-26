@@ -1,12 +1,21 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
 {% block content %}
-    <ul class="nav nav-pills">
-        <li><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">About School "{{ school.title }}"</a></li>
-        <li><a href="{{ path("rithis_becrussia_school_teachers", {slug: school.slug}) }}">Teachers</a></li>
-        <li><a href="{{ path("rithis_becrussia_school_news", {slug: school.slug}) }}">News</a></li>
-        <li><a href="{{ path("rithis_becrussia_school_discounts", {slug: school.slug}) }}">Discounts</a></li>
-        <li><a href="{{ path("rithis_becrussia_school_contacts", {slug: school.slug}) }}">Contacts</a></li>
-    </ul>
+<section class="article">
+    <header>
+        <h2>Школа "{{ school.title }}"</h2>
+    </header>
+
+    <nav class="pills">
+        <ul>
+            <li><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">О школе</a></li>
+            <li><a href="{{ path("rithis_becrussia_school_teachers", {slug: school.slug}) }}">Преподаватели</a></li>
+            <li><a href="{{ path("rithis_becrussia_school_news", {slug: school.slug}) }}">Новости школы</a></li>
+            <li><a href="{{ path("rithis_becrussia_school_discounts", {slug: school.slug}) }}">Скидки</a></li>
+            <li><a href="{{ path("rithis_becrussia_school_contacts", {slug: school.slug}) }}">Контакты</a></li>
+        </ul>
+    </nav>
+
     {% block school_content "" %}
+</section>
 {% endblock %}

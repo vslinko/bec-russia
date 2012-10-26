@@ -38,4 +38,22 @@ class TownController extends BaseController
             'towns' => $this->getRepository('Town')->findForTownSelectBlock(),
         );
     }
+
+    /**
+     * @Template
+     */
+    public function townPhonesBlockAction()
+    {
+        $town = $this->getSelectedTown();
+
+        if ($town) {
+            $phones = $this->getRepository('Phone')->findVisibleInTown($town);
+        } else {
+            $phones = array();
+        }
+
+        return array(
+            'phones' => $phones,
+        );
+    }
 }

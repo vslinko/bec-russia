@@ -1,14 +1,23 @@
 {% extends "RithisBECRussiaBundle::school.html.twig" %}
 
 {% block school_content %}
-    <h1>Teachers in "{{ school.title }}"</h1>
+    <section class="article list list-with-figure">
+        <header>
+            <h2>Преподаватели</h2>
+        </header>
 
-    {% for teacher in school.teachers %}
-        <div class="clearfix">
-            {% thumbnail teacher.image, "small" with {class: "pull-left"} %}
+        {% for teacher in school.teachers %}
+            <article>
+                <figure>
+                    {% thumbnail teacher.image, "medium" %}
+                </figure>
 
-            <h2>{{ teacher.name }}</h2>
-            <p>{{ teacher.description }}</p>
-        </div>
-    {% endfor %}
+                <header>
+                    <h2>{{ teacher.name }}</h2>
+                </header>
+
+                <p>{{ teacher.description }}</p>
+            </article>
+        {% endfor %}
+    </section>
 {% endblock %}

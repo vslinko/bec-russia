@@ -1,0 +1,58 @@
+@import "mixins";
+@import "variables";
+
+.education-course-types {
+  .education-course-types-menu {
+    float: left;
+    width: $left-aside-width;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li a {
+      display: block;
+      height: $course-figure-height/4;
+      padding: 30px 0 0 100px;
+      font-size: 23px;
+      font-weight: bold;
+      text-decoration: none;
+      border: 1px solid white;
+      border-bottom-color: $gray;
+      color: $gray;
+
+      @include times;
+
+      &:hover {
+        border: 1px solid white;
+        border-bottom-width: 3px;
+        background: $red url("/bundles/rithisbecrussia/images/education-cource-types-menu-item-hover-background.gif") no-repeat;
+        color: white;
+      }
+
+      small {
+        display: block;
+        font-size: 15px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .education-course-types-images {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: none;
+
+      img {
+        width: 800px;
+        height: 400px;
+      }
+
+      &:first-child {
+        display: block;
+      }
+    }
+  }
+}

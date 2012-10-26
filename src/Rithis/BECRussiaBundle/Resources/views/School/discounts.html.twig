@@ -1,9 +1,11 @@
 {% extends "RithisBECRussiaBundle::school.html.twig" %}
 
 {% block school_content %}
-    <div class="clearfix">
-        <h1>Discounts in School "{{ school.title }}"</h1>
+    <section class="article">
+        <header>
+            <h2>Скидки</h2>
+        </header>
 
-        <div>{{ school.discounts|raw }}</div>
-    </div>
+        <article>{{ school.discounts|raw }}</article>
+    </section>
 {% endblock %}

@@ -1,0 +1,17 @@
+@import "mixins";
+@import "variables";
+
+.news-item {
+  header {
+    @include clearfix;
+
+    .news-item-created-at {
+      float: right;
+      margin: 0;
+      line-height: 2em;
+      color: $red;
+
+      @include times;
+    }
+  }
+}

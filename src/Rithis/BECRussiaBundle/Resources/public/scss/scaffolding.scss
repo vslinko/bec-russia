@@ -1,0 +1,35 @@
+@import "mixins";
+@import "variables";
+
+* {
+  @include box-sizing(border-box);
+}
+
+html {
+  min-height: 100%;
+  background-image: url("/bundles/rithisbecrussia/images/background.gif");
+}
+
+body {
+  width: $width;
+  min-height: 100%;
+  margin: 0 auto;
+  font: 13px Arial, sans-serif;
+  background: white;
+  color: #555555;
+
+  @include box-shadow(0 0 30px black);
+}
+
+a {
+  color: $red;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include times;
+}
+
+figure {
+  float: left;
+  margin: 0 10px 10px 0;
+}

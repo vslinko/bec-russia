@@ -1,9 +1,14 @@
-<form action="{{ path("rithis_becrussia_town_select") }}" method="post" class="form-inline">
-    <select name="town">
-        <option value="">Select town</option>
-        {% for town in towns %}
-            <option value="{{ town.id }}"{% if selected_town.id == town.id %} selected{% endif %}>{{ town.name }}</option>
-        {% endfor %}
-    </select>
-    <button class="btn">Change</button>
-</form>
+<div class="town">
+    <form action="{{ path("rithis_becrussia_town_select") }}" method="post">
+        <label>
+            Ваш город:
+            <select name="town">
+                <option value="">не выбран</option>
+                {% for town in towns %}
+                    <option value="{{ town.id }}"{% if selected_town.id == town.id %} selected{% endif %}>{{ town.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <button type="submit">Изменить</button>
+    </form>
+</div>

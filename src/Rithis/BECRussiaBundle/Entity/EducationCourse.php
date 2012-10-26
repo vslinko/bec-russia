@@ -33,6 +33,12 @@ class EducationCourse
     protected $title;
 
     /**
+     * @ORM\ManyToOne(targetEntity="EducationCourseType", inversedBy="educationCourses")
+     * @ORM\JoinColumn(name="type_id", referencedColumnName="id", nullable=false)
+     */
+    protected $type;
+
+    /**
      * @ORM\Column(type="text")
      */
     protected $annotation;
@@ -89,6 +95,16 @@ class EducationCourse
     public function getTitle()
     {
         return $this->title;
+    }
+
+    public function setType(EducationCourseType $type)
+    {
+        $this->type = $type;
+    }
+
+    public function getType()
+    {
+        return $this->type;
     }
 
     public function setAnnotation($annotation)

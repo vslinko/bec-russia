@@ -1,0 +1,14 @@
+@import "mixins";
+@import "variables";
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+  background: $red;
+  color: white;
+
+  @include times;
+  @include border-radius(7px);
+  @include background(linear-gradient(top left, $red, shade($red, 25%)));
+}

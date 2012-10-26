@@ -25,6 +25,10 @@ doctrine:
     orm:
         auto_mapping: true
 
+assetic:
+    filters:
+        compass: ~
+
 stof_doctrine_extensions:
     default_locale: ru_RU
     orm:
@@ -65,7 +69,12 @@ sonata_media:
             providers:
                 - sonata.media.provider.image
             formats:
-                small: { width: 80, height: 80, quality: 70 }
+                medium: { width: 80, height: 80, quality: 70 }
+        education_course:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                big: { width: 800, height: 400, quality: 70 }
     cdn:
         server:
             path: /uploads/media
@@ -73,9 +82,6 @@ sonata_media:
         local:
             directory: %kernel.root_dir%/../web/uploads/media
             create: true
-    providers:
-        image:
-            resizer: sonata.media.resizer.square
     class:
         media: Rithis\BECRussiaBundle\Entity\Media
         gallery: Rithis\BECRussiaBundle\Entity\Gallery

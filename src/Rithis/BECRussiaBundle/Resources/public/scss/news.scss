@@ -1,0 +1,77 @@
+@import "mixins";
+@import "variables";
+
+.list-with-figure {
+  article {
+    @include clearfix;
+
+    figure {
+      .content & {
+        width: 160px;
+        height: 160px;
+      }
+
+      aside.right & {
+        width: 80px;
+        height: 80px;
+        margin: 0 5px 5px 0;
+      }
+    }
+
+    header {
+      .news-created-at {
+        font-style: italic;
+
+        aside.right & {
+          padding-top: 10px;
+        }
+      }
+
+      aside.right & h3 {
+        clear: both;
+      }
+    }
+
+    blockquote {
+      .content & {
+        float: right;
+        width: $content-width - 190px;
+      }
+    }
+  }
+
+  footer {
+    clear: both;
+    margin-top: 25px;
+    border-top: 2px solid $red;
+
+    @include box-shadow(0 -5px 5px -5px rgba(0, 0, 0, .5));
+
+    .button {
+      float: right;
+      position: relative;
+      top: -15px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.list {
+  article {
+    padding-bottom: 20px;
+
+    header {
+      h1, h2, h3, h4, h5, h6 {
+        margin: 0 0 5px 0;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    blockquote {
+      margin: 0;
+    }
+  }
+}

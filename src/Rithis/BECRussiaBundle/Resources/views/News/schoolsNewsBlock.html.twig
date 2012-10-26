@@ -1,19 +1,31 @@
-<h2>Schools News</h2>
+{% if news|length > 0 %}
+    <section class="article list-with-figure list">
+        <header>
+            <h2>Новости филиалов</h2>
+        </header>
 
-{% for news in news %}
-    <div class="clearfix">
-        {% thumbnail news.image, "small" with {class: "pull-left"} %}
-        <p>{{ news.createdAt|date('d.m.Y') }}</p>
-        <p>{{ news.school }}</p>
-        <p>School: {{ news.school.address }}</p>
-    </div>
+        {% for news in news %}
+            <article>
+                <header>
+                    <figure>
+                        {% thumbnail news.image, "small" %}
+                    </figure>
 
-    <div class="clearfix">
-        <h3><a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}">{{ news.title }}</a></h3>
-        <p>{{ news.annotation }}</p>
-    </div>
+                    <p class="news-created-at">{{ news.createdAt|date('d.m.Y') }}</p>
 
-    {% if not loop.last %}<hr>{% endif %}
-{% endfor %}
+                    <p>
+                        <a href="{{ path("rithis_becrussia_school_get", {slug: news.school.slug}) }}">{{ news.school }}</a>
+                    </p>
+                    <address>{{ news.school.address }}</address>
+                    <h3><a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}">{{ news.title }}</a></h3>
+                </header>
 
-<p><a href="{{ path("rithis_becrussia_news_all") }}">Read all news</a></p>
+                <blockquote>{{ news.annotation }}</blockquote>
+            </article>
+        {% endfor %}
+
+        <footer>
+            <a href="{{ path("rithis_becrussia_news_all") }}" class="button">Читать все новости</a>
+        </footer>
+    </section>
+{% endif %}

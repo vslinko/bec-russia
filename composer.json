@@ -24,6 +24,7 @@
 
         "symfony/symfony": "2.1.*@stable",
         "symfony/monolog-bundle": "2.1.*@stable",
+        "symfony/assetic-bundle": "2.1.*@stable",
         "doctrine/doctrine-bundle": "1.0.*@stable",
         "doctrine/doctrine-fixtures-bundle": "@dev",
         "doctrine/doctrine-migrations-bundle": "@dev",
@@ -31,6 +32,7 @@
         "stof/doctrine-extensions-bundle": "@dev",
         "knplabs/knp-paginator-bundle": "@stable",
         "stfalcon/tinymce-bundle": "@dev",
+        "leafo/scssphp-compass": "@dev",
         "sonata-project/media-bundle": "@dev",
         "sonata-project/doctrine-orm-admin-bundle": "@dev",
         "rithis/bootstrap-bundle": "@dev",
@@ -45,12 +47,14 @@
         "post-install-cmd": [
             "touch app/config/parameters.yml",
             "php app/console cache:clear",
-            "php app/console assets:install"
+            "php app/console assets:install",
+            "php app/console assetic:dump"
         ],
         "post-update-cmd": [
             "touch app/config/parameters.yml",
             "php app/console cache:clear",
-            "php app/console assets:install"
+            "php app/console assets:install",
+            "php app/console assetic:dump"
         ]
     },
     "minimum-stability": "dev"

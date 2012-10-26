@@ -6,21 +6,17 @@ use Sonata\AdminBundle\Datagrid\ListMapper,
     Sonata\AdminBundle\Form\FormMapper,
     Sonata\AdminBundle\Admin\Admin;
 
-class EducationCourseAdmin extends Admin
+class EducationCourseTypeAdmin extends Admin
 {
     protected function configureListFields(ListMapper $mapper)
     {
         $mapper->addIdentifier('title');
-        $mapper->add('towns');
     }
 
     protected function configureFormFields(FormMapper $mapper)
     {
         $mapper->add('title');
-        $mapper->add('type', 'sonata_type_model');
-        $mapper->add('annotation');
-        $mapper->add('description');
-        $mapper->add('website', null, array('required' => false));
-        $mapper->add('towns');
+        $mapper->add('note');
+        $mapper->add('image', 'sonata_type_model', array(), array('link_parameters' => array('context' => 'education_course')));
     }
 }

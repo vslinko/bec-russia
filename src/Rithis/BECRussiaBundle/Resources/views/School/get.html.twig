@@ -1,11 +1,17 @@
 {% extends "RithisBECRussiaBundle::school.html.twig" %}
 
 {% block school_content %}
-    <div class="clearfix">
-        <h1>About School "{{ school.title }}"</h1>
+    <section class="article">
+        <header>
+            <h2>О школе</h2>
+        </header>
 
-        {% thumbnail school.image, "big" with {class: "pull-left"} %}
+        <article>
+            <figure>
+                {% thumbnail school.image, "big" %}
+            </figure>
 
-        <div>{{ school.about|raw }}</div>
-    </div>
+            {{ school.about|raw }}
+        </article>
+    </section>
 {% endblock %}

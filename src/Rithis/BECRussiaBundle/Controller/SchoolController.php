@@ -76,6 +76,6 @@ class SchoolController extends BaseController
             10
         );
 
-        return array('pagination' => $pagination);
+        return array('school' => $school, 'pagination' => $pagination);
     }
 }

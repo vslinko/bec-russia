@@ -1,5 +1,9 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
+{% block education_course_types %}
+    {% render "RithisBECRussiaBundle:EducationCourseType:educationCourseTypesBlock" %}
+{% endblock %}
+
 {% block content %}
     {% render "RithisBECRussiaBundle:News:centreNewsBlock" %}
 {% endblock %}

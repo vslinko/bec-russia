@@ -1,0 +1,9 @@
+{% if phones|length > 0 %}
+    <div class="phones">
+        <ul>
+            {% for phone in phones %}
+                <li>{{ phone.number }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

@@ -1,47 +1,76 @@
-{% extends "RithisBootstrapBundle::base.html.twig" %}
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
 
-{% block title "British Educational Centre" %}
-{% block footer "&copy; 2012 British Educational Centre" %}
+    <title>Британский Образовательный Центр</title>
 
-{% block body %}
-<div class="container">
-    <div class="row">
-        <div class="span4">
-            <a href="{{ path("rithis_becrussia_index_get") }}"><img src="/_placeholder/370,80?text=British Educational Centre" alt=""></a>
-        </div>
-        <div class="span5">
-            {% render "RithisBECRussiaBundle:Town:townSelectBlock" %}
-        </div>
+    {% stylesheets
+    "https://raw.github.com/necolas/normalize.css/v2.0.1/normalize.css" -%}
+    <link rel="stylesheet" href="{{ asset_url }}">
+    {% endstylesheets %}
+    {%- stylesheets filter="compass"
+    "@RithisBECRussiaBundle/Resources/public/scss/scaffolding.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/grid.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/logo.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/phones.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/education-course-types.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/nav.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/article.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/news.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/button.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/news-item.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/map.scss" -%}
+    <link rel="stylesheet" href="{{ asset_url }}">
+    {% endstylesheets %}
+
+</head>
+<body>
+
+<header>
+    <figure class="logo">
+        <a href="{{ path("rithis_becrussia_index_get") }}"><img src="/bundles/rithisbecrussia/images/logo.gif"
+                                                                alt="Британский Образовательный Центр"></a>
+        <figcaption>
+            Курсы английского языка<br>
+            Железнодорожный, Новосибирск, Якутск
+        </figcaption>
+    </figure>
+    {% render "RithisBECRussiaBundle:Town:townSelectBlock" %}
+    {% render "RithisBECRussiaBundle:Town:townPhonesBlock" %}
+</header>
+
+{% block education_course_types "" %}
+
+<aside class="left">
+    {% include "RithisBECRussiaBundle::nav.html.twig" %}
+</aside>
+
+<section class="content">
+    {% block content "" %}
+</section>
+
+<aside class="right">
+    {% render "RithisBECRussiaBundle:News:schoolsNewsBlock" %}
+</aside>
+
+<footer>
+    {% include "RithisBECRussiaBundle::nav.html.twig" %}
+    <div class="logo">
+        Курсы английского языка<br>
+        Железнодорожный, Новосибирск, Якутск
     </div>
-    <hr>
-    <div class="row">
-        <div class="span3">
-            <ul class="nav nav-tabs nav-stacked">
-                <li><a href="{{ path("rithis_becrussia_index_get") }}">Index</a></li>
-                <li><a href="{{ path("rithis_becrussia_school_all") }}">Schools</a></li>
-                <li><a href="{{ path("rithis_becrussia_vacancy_all") }}">Vacancies</a></li>
-            </ul>
-        </div>
-        <div class="span9">
-            <div class="row">
-                <div class="span6">
-                    {% block content "" %}
-                </div>
-                <div class="span3">
-                    {% render "RithisBECRussiaBundle:News:schoolsNewsBlock" %}
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="span10 offset1">
-            <ul class="nav nav-pills">
-                <li><a href="{{ path("rithis_becrussia_index_get") }}">Index</a></li>
-                <li><a href="{{ path("rithis_becrussia_school_all") }}">Schools</a></li>
-                <li><a href="{{ path("rithis_becrussia_vacancy_all") }}">Vacancies</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-{% endblock %}
+    {% render "RithisBECRussiaBundle:Town:townSelectBlock" %}
+    {% render "RithisBECRussiaBundle:Town:townPhonesBlock" %}
+</footer>
+
+{% javascripts
+"https://raw.github.com/Modernizr/Modernizr/v2.6.2/modernizr.js"
+"http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+"http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"
+"@RithisBECRussiaBundle/Resources/public/js/education-course-types.js"
+"@RithisBECRussiaBundle/Resources/public/js/map.js" %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+</body>
+</html>

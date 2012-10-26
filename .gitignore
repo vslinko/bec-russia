@@ -5,4 +5,6 @@ app/config/parameters.yml
 app/logs
 vendor
 web/bundles
+web/css
+web/js
 web/uploads
