@@ -8,7 +8,7 @@ use Gedmo\Mapping\Annotation as Gedmo,
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Rithis\BECRussiaBundle\Entity\EducationCourseRepository")
  * @ORM\Table("education_courses")
  */
 class EducationCourse
@@ -49,22 +49,28 @@ class EducationCourse
     protected $description;
 
     /**
+     * @ORM\OneToOne(targetEntity="Media")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
+     */
+    protected $image;
+
+    /**
      * @ORM\Column(nullable=true)
      */
     protected $website;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Town")
-     * @ORM\JoinTable(name="education_courses_towns",
+     * @ORM\ManyToMany(targetEntity="School")
+     * @ORM\JoinTable(name="education_courses_schools",
      *  joinColumns={@ORM\JoinColumn(name="education_course_id", referencedColumnName="id", nullable=false)},
-     *  inverseJoinColumns={@ORM\JoinColumn(name="town_id", referencedColumnName="id", nullable=false)}
+     *  inverseJoinColumns={@ORM\JoinColumn(name="school_id", referencedColumnName="id", nullable=false)}
      * )
      */
-    protected $towns;
+    protected $schools;
 
     public function __construct()
     {
-        $this->towns = new ArrayCollection();
+        $this->schools = new ArrayCollection();
     }
 
     public function setId($id)
@@ -127,6 +133,16 @@ class EducationCourse
         return $this->description;
     }
 
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
     public function setWebsite($website)
     {
         $this->website = $website;
@@ -137,19 +153,19 @@ class EducationCourse
         return $this->website;
     }
 
-    public function addTown(Town $town)
+    public function addSchool(School $school)
     {
-        $this->towns[] = $town;
+        $this->schools[] = $school;
     }
 
-    public function removeTown(Town $town)
+    public function removeSchool(School $school)
     {
-        $this->towns->removeElement($town);
+        $this->schools->removeElement($school);
     }
 
-    public function getTowns()
+    public function getSchools()
     {
-        return $this->towns;
+        return $this->schools;
     }
 
     public function __toString()

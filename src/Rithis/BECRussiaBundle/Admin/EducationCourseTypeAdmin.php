@@ -17,6 +17,6 @@ class EducationCourseTypeAdmin extends Admin
     {
         $mapper->add('title');
         $mapper->add('note');
-        $mapper->add('image', 'sonata_type_model', array(), array('link_parameters' => array('context' => 'education_course')));
+        $mapper->add('image', 'sonata_type_model', array(), array('link_parameters' => array('context' => 'ed_course_type')));
     }
 }

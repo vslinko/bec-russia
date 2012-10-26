@@ -1,0 +1,17 @@
+@import "mixins";
+
+.education-courses {
+  .education-courses-title {
+    text-transform: lowercase;
+  }
+
+  .education-courses-schools {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+
+    @include times;
+  }
+}

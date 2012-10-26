@@ -7,12 +7,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
-use Rithis\BECRussiaBundle\Entity\EducationCourseType;
+use Rithis\BECRussiaBundle\Entity\EducationCourse;
 
 /**
- * @Route("/education-course-types")
+ * @Route("/education-courses")
  */
-class EducationCourseTypeController extends BaseController
+class EducationCourseController extends BaseController
 {
     /**
      * @Route("/{slug}")
@@ -20,11 +20,8 @@ class EducationCourseTypeController extends BaseController
      * @Template
      * @Cache(expires="+1 Week")
      */
-    public function getAction(EducationCourseType $type)
+    public function getAction(EducationCourse $course)
     {
-        $courses = $this->getRepository('EducationCourse')->findByTypeAndTown($type, $this->getSelectedTown());
-
-        return array('type' => $type, 'courses' => $courses);
     }
 
     /**

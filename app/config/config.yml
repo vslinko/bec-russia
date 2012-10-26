@@ -74,6 +74,12 @@ sonata_media:
             providers:
                 - sonata.media.provider.image
             formats:
+                medium: { width: 160, height: 160, quality: 70 }
+                big: { width: 220, height: 220, quality: 70 }
+        ed_course_type:
+            providers:
+                - sonata.media.provider.image
+            formats:
                 big: { width: 800, height: 400, quality: 70 }
     cdn:
         server:
