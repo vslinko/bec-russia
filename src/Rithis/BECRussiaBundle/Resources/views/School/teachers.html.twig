@@ -16,7 +16,7 @@
                     <h2>{{ teacher.name }}</h2>
                 </header>
 
-                <p>{{ teacher.description }}</p>
+                {{ teacher.description|raw }}
             </article>
         {% endfor %}
     </section>

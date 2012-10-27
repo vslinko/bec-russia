@@ -3,12 +3,17 @@
 
 .button {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 3px 10px;
   text-decoration: none;
+  border: none;
   background: $red;
   color: white;
 
   @include times;
   @include border-radius(7px);
   @include background(linear-gradient(top left, $red, shade($red, 25%)));
+
+  &.alternative {
+    @include background(linear-gradient(top left, #fb6200, shade(#fb6200, 15%)));
+  }
 }

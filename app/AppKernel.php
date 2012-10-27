@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Sonata\MediaBundle\SonataMediaBundle(),
+            new Desarrolla2\Bundle\RSSClientBundle\RSSClientBundle(),
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),

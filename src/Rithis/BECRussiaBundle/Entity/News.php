@@ -128,7 +128,7 @@ class News
         return $this->image;
     }
 
-    public function setSchool(School $school)
+    public function setSchool($school)
     {
         $this->school = $school;
     }

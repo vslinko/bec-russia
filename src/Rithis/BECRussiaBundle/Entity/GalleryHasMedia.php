@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table("media_galleries")
+ * @ORM\Table("galleries_medias")
  */
 class GalleryHasMedia extends BaseGalleryHasMedia
 {
@@ -16,7 +16,7 @@ class GalleryHasMedia extends BaseGalleryHasMedia
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
-     * @ORM\SequenceGenerator(sequenceName="media_galleries_id_seq")
+     * @ORM\SequenceGenerator(sequenceName="galleries_medias_id_seq")
      */
     protected $id;
 

@@ -1,0 +1,22 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+{% block last_poll "" %}
+
+{% block content %}
+    <section class="article poll">
+        <header>
+            <h1>Опросы</h1>
+        </header>
+
+        {% for prepared_poll in prepared_polls %}
+
+            <article>
+                <header>
+                    <h2>{{ prepared_poll.poll.question }}</h2>
+                </header>
+
+                {% include "RithisBECRussiaBundle::poll.html.twig" with prepared_poll %}
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

@@ -69,7 +69,7 @@ sonata_media:
             providers:
                 - sonata.media.provider.image
             formats:
-                medium: { width: 80, height: 80, quality: 70 }
+                medium: { width: 160, height: 160, quality: 70 }
         education_course:
             providers:
                 - sonata.media.provider.image
@@ -107,5 +107,6 @@ sonata_admin:
             Schools: { items: [rithis.becrussia.admin.school, rithis.becrussia.admin.teacher] }
             News: { items: [rithis.becrussia.admin.news] }
             Vacancies: { items: [rithis.becrussia.admin.vacancy] }
+            Poll: { items: [rithis.becrussia.admin.poll] }
     templates:
         layout: ::admin_layout.html.twig

@@ -20,7 +20,8 @@
     "@RithisBECRussiaBundle/Resources/public/scss/button.scss"
     "@RithisBECRussiaBundle/Resources/public/scss/news-item.scss"
     "@RithisBECRussiaBundle/Resources/public/scss/map.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/education-courses.scss" -%}
+    "@RithisBECRussiaBundle/Resources/public/scss/education-courses.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/poll.scss" -%}
     <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets %}
 
@@ -46,6 +47,9 @@
 
 <aside class="left">
     {% include "RithisBECRussiaBundle::nav.html.twig" %}
+    {% block last_poll %}
+        {% render "RithisBECRussiaBundle:Poll:lastPollBlock" %}
+    {% endblock %}
 </aside>
 
 <section class="content">
@@ -66,10 +70,10 @@
     {% render "RithisBECRussiaBundle:Town:townPhonesBlock" %}
 </footer>
 
+<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"></script>
 {% javascripts
 "https://raw.github.com/Modernizr/Modernizr/v2.6.2/modernizr.js"
 "http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
-"http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"
 "@RithisBECRussiaBundle/Resources/public/js/education-course-types.js"
 "@RithisBECRussiaBundle/Resources/public/js/map.js" %}
 <script src="{{ asset_url }}"></script>

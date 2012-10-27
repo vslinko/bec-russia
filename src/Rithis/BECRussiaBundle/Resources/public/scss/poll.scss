@@ -1,0 +1,17 @@
+.poll {
+  ul {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  form ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li input {
+      margin-right: 5px;
+    }
+  }
+}

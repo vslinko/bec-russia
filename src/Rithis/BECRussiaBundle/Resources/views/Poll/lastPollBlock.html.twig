@@ -1,0 +1,17 @@
+<section class="article poll">
+    <header>
+        <h2>Опрос</h2>
+    </header>
+
+    <article>
+        <header>
+            <h3>{{ poll.question }}</h3>
+        </header>
+
+        {% include "RithisBECRussiaBundle::poll.html.twig" %}
+    </article>
+
+    <footer>
+        <a class="button" href="{{ path("rithis_becrussia_poll_all") }}">Архив опросов</a>
+    </footer>
+</section>

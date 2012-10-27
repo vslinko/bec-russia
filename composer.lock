@@ -1,6 +1,137 @@
 {
-    "hash": "761119a099e1ab04734bf42e8aeff011",
+    "hash": "d9711f329c6064914ffaa9a8636963f9",
     "packages": [
+        {
+            "name": "desarrolla2/cache",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/desarrolla2/Cache.git",
+                "reference": "v1.0.0-rc.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/desarrolla2/Cache/zipball/v1.0.0-rc.1",
+                "reference": "v1.0.0-rc.1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "1351031061",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Desarrolla2\\Cache\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel González",
+                    "homepage": "http://desarrolla2.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides an cache interface for several adapters (Apc, File, Mencached, Mysql, ... )",
+            "homepage": "https://github.com/desarrolla2/Cache",
+            "keywords": [
+                "cache",
+                "apc",
+                "memcached",
+                "file cache",
+                "mysql cache"
+            ]
+        },
+        {
+            "name": "desarrolla2/rss-client",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/desarrolla2/RSSClient.git",
+                "reference": "4901d3f2ddd97c0667a50967b3d290846fb74b0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/desarrolla2/RSSClient/zipball/4901d3f2ddd97c0667a50967b3d290846fb74b0d",
+                "reference": "4901d3f2ddd97c0667a50967b3d290846fb74b0d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "ezyang/htmlpurifier": "dev-master",
+                "desarrolla2/cache": "dev-master"
+            },
+            "time": "1349448074",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Desarrolla2\\RSSClient\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel González",
+                    "homepage": "http://desarrolla2.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A independent RSS client manager library.",
+            "keywords": [
+                "rss"
+            ]
+        },
+        {
+            "name": "desarrolla2/rss-client-bundle",
+            "version": "dev-master",
+            "target-dir": "Desarrolla2/Bundle/RSSClientBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/desarrolla2/RSSClientBundle.git",
+                "reference": "7d4d6da7e0dfa3f450b1bf16258bb178c7b82bb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/desarrolla2/RSSClientBundle/zipball/7d4d6da7e0dfa3f450b1bf16258bb178c7b82bb2",
+                "reference": "7d4d6da7e0dfa3f450b1bf16258bb178c7b82bb2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "desarrolla2/rss-client": "dev-master",
+                "symfony/framework-bundle": ">=2.0,<2.2-dev"
+            },
+            "time": "1349812807",
+            "type": "symfony-bundle",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Desarrolla2\\Bundle\\RSSClientBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel González",
+                    "homepage": "http://desarrolla2.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This Bundle provides a way to get rss feeds friendly.",
+            "keywords": [
+                "client",
+                "rss"
+            ]
+        },
         {
             "name": "doctrine/common",
             "version": "2.3.0",
@@ -471,6 +602,47 @@
             "keywords": [
                 "database",
                 "orm"
+            ]
+        },
+        {
+            "name": "ezyang/htmlpurifier",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/ezyang/htmlpurifier.git",
+                "reference": "8a8b123d3322d24d77114dfa767a5eafbe9ff24b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/ezyang/htmlpurifier/zipball/8a8b123d3322d24d77114dfa767a5eafbe9ff24b",
+                "reference": "8a8b123d3322d24d77114dfa767a5eafbe9ff24b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "time": "1347811906",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "classmap": [
+                    "library/"
+                ]
+            },
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standards compliant HTML filter written in PHP",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
             ]
         },
         {
@@ -2112,6 +2284,7 @@
         "sonata-project/media-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20,
         "rithis/bootstrap-bundle": 20,
-        "rithis/image-placeholder-bundle": 20
+        "rithis/image-placeholder-bundle": 20,
+        "desarrolla2/rss-client-bundle": 20
     }
 }

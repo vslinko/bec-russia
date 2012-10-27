@@ -18,7 +18,7 @@ class TeacherAdmin extends Admin
     {
         $mapper->add('name');
         $mapper->add('image', 'sonata_type_model', array(), array('link_parameters' => array('context' => 'teacher')));
-        $mapper->add('description');
+        $mapper->add('description', null, array('attr' => array('class' => 'tinymce')));
         $mapper->add('school', 'sonata_type_model');
     }
 }

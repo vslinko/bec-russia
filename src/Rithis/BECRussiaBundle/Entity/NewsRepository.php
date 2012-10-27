@@ -18,6 +18,7 @@ class NewsRepository extends EntityRepository
     public function findForSchoolsNewsBlock($town)
     {
         $qb = $this->createSortedQueryBuilder($town)
+            ->andWhere('n.school IS NOT NULL')
             ->setMaxResults(5);
 
         return $qb->getQuery()->getResult();

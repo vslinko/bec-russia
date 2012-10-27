@@ -3,6 +3,8 @@ rithis_becrussia_index_get:
     defaults:
         _controller: FrameworkBundle:Template:template
         template: "RithisBECRussiaBundle:Index:get.html.twig"
+    requirements:
+        _method: GET
 
 _rithis_becrussia:
     resource: "@RithisBECRussiaBundle/Controller"

@@ -46,3 +46,15 @@ services:
       arguments: [null, Rithis\BECRussiaBundle\Entity\Vacancy, SonataAdminBundle:CRUD]
       tags:
         - { name: sonata.admin, manager_type: orm, group: Vacancies, label: Vacancy }
+
+   rithis.becrussia.admin.poll:
+      class: Rithis\BECRussiaBundle\Admin\PollAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\Poll, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Poll, label: Poll }
+
+   rithis.becrussia.admin.poll_answer:
+      class: Rithis\BECRussiaBundle\Admin\PollAnswerAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\PollAnswer, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Poll, label: Poll Answer }
