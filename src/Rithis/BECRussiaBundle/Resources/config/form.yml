@@ -17,3 +17,8 @@ services:
           - @rithis.becrussia.choice_list.reason
           - @rithis.becrussia.choice_list.schedule
           - @rithis.becrussia.choice_list.language_level
+
+   rithis.becrussia.form.online_request:
+      class: Rithis\BECRussiaBundle\Form\Type\OnlineRequestType
+      arguments:
+          - @rithis.becrussia.choice_list.language_level

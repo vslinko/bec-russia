@@ -46,7 +46,7 @@ class OnlineRequestController extends BaseController
 
         return array(
             'success' => $this->getRequest()->getSession()->getFlashBag()->get('online-request'),
-            'form' => $this->createForm(new OnlineRequestType(), $onlineRequest)->createView(),
+            'form' => $this->createForm($this->get('rithis.becrussia.form.online_request'), $onlineRequest)->createView(),
         );
     }
 
@@ -57,7 +57,7 @@ class OnlineRequestController extends BaseController
      */
     public function postAction()
     {
-        $form = $this->createForm(new OnlineRequestType());
+        $form = $this->createForm($this->get('rithis.becrussia.form.online_request'));
         $form->bind($this->getRequest());
 
         if ($form->isValid()) {
