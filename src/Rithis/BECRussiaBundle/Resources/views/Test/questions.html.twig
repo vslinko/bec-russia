@@ -1,0 +1,26 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+{% block content %}
+<section class="article">
+    <header>
+        <h1>Онлайн-тестирование</h1>
+    </header>
+
+    <form action="{{ path("rithis_becrussia_test_postanswers") }}" method="post">
+        {% for question in questions %}
+            <h2>{{ question.question }}</h2>
+
+            {% for answer in question.answers %}
+                <p>
+                    <label>
+                        <input type="radio" name="answers[{{ question.id }}]" value="{{ answer.points }}">
+                        {{ answer.answer }}
+                    </label>
+                </p>
+            {% endfor %}
+        {% endfor %}
+
+        <p><button type="submit" class="button">Ответить</button></p>
+    </form>
+</section>
+{% endblock %}

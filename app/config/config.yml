@@ -110,5 +110,6 @@ sonata_admin:
             News: { items: [rithis.becrussia.admin.news] }
             Vacancies: { items: [rithis.becrussia.admin.vacancy] }
             Poll: { items: [rithis.becrussia.admin.poll] }
+            Test: { items: [rithis.becrussia.admin.test_question, rithis.becrussia.admin.test_result] }
     templates:
         layout: ::admin_layout.html.twig

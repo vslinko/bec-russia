@@ -58,3 +58,21 @@ services:
       arguments: [null, Rithis\BECRussiaBundle\Entity\PollAnswer, SonataAdminBundle:CRUD]
       tags:
         - { name: sonata.admin, manager_type: orm, group: Poll, label: Poll Answer }
+
+   rithis.becrussia.admin.test_answer:
+      class: Rithis\BECRussiaBundle\Admin\TestAnswerAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\TestAnswer, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Test, label: Test Answer }
+
+   rithis.becrussia.admin.test_question:
+      class: Rithis\BECRussiaBundle\Admin\TestQuestionAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\TestQuestion, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Test, label: Test Question }
+
+   rithis.becrussia.admin.test_result:
+      class: Rithis\BECRussiaBundle\Admin\TestResultAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\TestResult, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Test, label: Test Result }

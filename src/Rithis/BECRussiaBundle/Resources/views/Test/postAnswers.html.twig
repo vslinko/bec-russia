@@ -1,0 +1,17 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+{% block content %}
+<section class="article">
+    <header>
+        <h1>Онлайн-тестирование</h1>
+    </header>
+
+    <article>
+        <header>
+            <h2>{{ result.title }}</h2>
+        </header>
+
+        {{ result.result|raw }}
+    </article>
+</section>
+{% endblock %}
