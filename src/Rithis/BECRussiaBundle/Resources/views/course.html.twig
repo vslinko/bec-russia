@@ -1,0 +1,17 @@
+<article>
+    <figure>
+        {% thumbnail course.image, "big" %}
+    </figure>
+
+    <header>
+        <ul class="education-courses-schools">
+            {% for school in course.schools %}
+                <li><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">{{ school.title }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <h2><a href="{{ path("rithis_becrussia_educationcourse_get", {slug: course.slug}) }}">{{ course.title }}</a></h2>
+    </header>
+
+    {{ course.description|raw }}
+</article>

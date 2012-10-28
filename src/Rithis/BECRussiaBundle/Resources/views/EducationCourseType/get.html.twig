@@ -9,23 +9,7 @@
     <p>{{ type.description }}</p>
 
     {% for course in courses %}
-        <article>
-            <figure>
-                {% thumbnail course.image, "medium" %}
-            </figure>
-
-            <header>
-                <ul class="education-courses-schools">
-                    {% for school in course.schools %}
-                        <li><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">{{ school.title }}</a></li>
-                    {% endfor %}
-                </ul>
-
-                <h2><a href="{{ path("rithis_becrussia_educationcourse_get", {slug: course.slug}) }}">{{ course.title }}</a></h2>
-            </header>
-
-            <blockquote>{{ course.annotation }}</blockquote>
-        </article>
+        {% include "RithisBECRussiaBundle::course.html.twig" %}
     {% endfor %}
 </section>
 {% endblock %}

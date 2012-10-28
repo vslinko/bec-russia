@@ -22,7 +22,8 @@
     "@RithisBECRussiaBundle/Resources/public/scss/map.scss"
     "@RithisBECRussiaBundle/Resources/public/scss/education-courses.scss"
     "@RithisBECRussiaBundle/Resources/public/scss/poll.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/symfony-form.scss" -%}
+    "@RithisBECRussiaBundle/Resources/public/scss/symfony-form.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/banner.scss" -%}
     <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets %}
 
@@ -58,6 +59,11 @@
 </section>
 
 <aside class="right">
+    {% spaceless %}
+    <a href="{{ path("rithis_becrussia_educationcourse_search") }}" class="banner">
+        <img src="/bundles/rithisbecrussia/images/educaton-sourse-search.jpg" alt="">
+    </a>
+    {% endspaceless %}
     {% render "RithisBECRussiaBundle:News:schoolsNewsBlock" %}
 </aside>
 

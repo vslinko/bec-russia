@@ -60,6 +60,21 @@ class EducationCourse
     protected $website;
 
     /**
+     * @ORM\Column
+     */
+    protected $reason;
+
+    /**
+     * @ORM\Column
+     */
+    protected $schedule;
+
+    /**
+     * @ORM\Column
+     */
+    protected $languageLevel;
+
+    /**
      * @ORM\ManyToMany(targetEntity="School")
      * @ORM\JoinTable(name="education_courses_schools",
      *  joinColumns={@ORM\JoinColumn(name="education_course_id", referencedColumnName="id", nullable=false)},
@@ -151,6 +166,36 @@ class EducationCourse
     public function getWebsite()
     {
         return $this->website;
+    }
+
+    public function setReason($reason)
+    {
+        $this->reason = $reason;
+    }
+
+    public function getReason()
+    {
+        return $this->reason;
+    }
+
+    public function setSchedule($schedule)
+    {
+        $this->schedule = $schedule;
+    }
+
+    public function getSchedule()
+    {
+        return $this->schedule;
+    }
+
+    public function setLanguageLevel($languageLevel)
+    {
+        $this->languageLevel = $languageLevel;
+    }
+
+    public function getLanguageLevel()
+    {
+        return $this->languageLevel;
     }
 
     public function addSchool(School $school)

@@ -1,0 +1,35 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+{% form_theme form with ["RithisBECRussiaBundle::form.html.twig"] %}
+
+{% block content %}
+    <section class="article education-courses">
+        <header>
+            <h1>Выбор программы обучения</h1>
+        </header>
+
+        <form action="{{ path("rithis_becrussia_educationcourse_filter") }}" method="post" class="symfony-form">
+            {{ form_widget(form) }}
+            <button type="submit" class="button">Искать</button>
+        </form>
+
+        {% if courses is defined %}
+            {% for course in courses %}
+                {% include "RithisBECRussiaBundle::course.html.twig" %}
+            {% else %}
+                <p>
+                    {% if similar|length > 0 %}
+                        По вашему запросу не найдено ни одной программы обучения,<br>
+                        но мы нашли наиболее подходящие вам:
+                    {% else %}
+                        По вашему запросу не найдено ни одной программы обучения.
+                    {% endif %}
+                </p>
+
+                {% for course in similar %}
+                    {% include "RithisBECRussiaBundle::course.html.twig" %}
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+    </section>
+{% endblock %}

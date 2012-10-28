@@ -15,6 +15,30 @@ use Rithis\BECRussiaBundle\Entity\EducationCourse;
 class EducationCourseController extends BaseController
 {
     /**
+     * @Route("/search")
+     * @Method("GET")
+     * @Template
+     */
+    public function searchAction()
+    {
+        return array('form' => $this->createForm($this->get('rithis.becrussia.form.education_course_search'))->createView());
+    }
+
+    /**
+     * @Route("/search")
+     * @Method("POST")
+     * @Template("RithisBECRussiaBundle:EducationCourse:search.html.twig")
+     */
+    public function filterAction()
+    {
+        $form = $this->createForm($this->get('rithis.becrussia.form.education_course_search'));
+        $form->bind($this->getRequest());
+        $courses = $this->getRepository('EducationCourse')->filter($form->getData());
+        $similar = $this->getRepository('EducationCourse')->similar($form->getData());
+        return array('form' => $form->createView(), 'courses' => $courses, 'similar' => $similar);
+    }
+
+    /**
      * @Route("/{slug}")
      * @Method("GET")
      * @Template
