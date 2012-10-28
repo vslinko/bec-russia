@@ -69,7 +69,7 @@ class PollController extends BaseController
 
         return array(
             'poll' => $poll,
-            'already_answered' => $this->isAlreadyAnswered($poll),
+            'already_answered' => $poll ? $this->isAlreadyAnswered($poll) : false,
         );
     }
 

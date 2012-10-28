@@ -1,0 +1,20 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+{% form_theme form with ["RithisBECRussiaBundle::form.html.twig"] %}
+
+{% block content %}
+    <section class="article">
+        <header>
+            <h1>Онлайн-заявка</h1>
+        </header>
+
+        <form action="{{ path("rithis_becrussia_onlinerequest_post") }}" method="post" class="symfony-form">
+            {% if success %}
+                <p class="symfony-form-thanks">Спасибо за вашу заявку!</p>
+            {% endif %}
+
+            {{ form_widget(form) }}
+            <button type="submit" class="button">Отправить</button>
+        </form>
+    </section>
+{% endblock %}

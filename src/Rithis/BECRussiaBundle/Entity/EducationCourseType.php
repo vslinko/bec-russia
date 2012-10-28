@@ -38,10 +38,20 @@ class EducationCourseType
     protected $note;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    protected $description;
+
+    /**
      * @ORM\OneToOne(targetEntity="Media")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
      */
     protected $image;
+
+    /**
+     * @ORM\Column(length=8, nullable=true)
+     */
+    protected $age;
 
     /**
      * @ORM\OneToMany(targetEntity="EducationCourse", mappedBy="type")
@@ -91,6 +101,26 @@ class EducationCourseType
     public function getNote()
     {
         return $this->note;
+    }
+
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function setAge($age)
+    {
+        $this->age = $age;
+    }
+
+    public function getAge()
+    {
+        return $this->age;
     }
 
     public function addEducationCourse(EducationCourse $educationCourse)

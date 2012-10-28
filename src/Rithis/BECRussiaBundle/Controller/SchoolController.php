@@ -32,6 +32,7 @@ class SchoolController extends BaseController
      */
     public function getAction(School $school)
     {
+        $this->saveLastSchool($school);
     }
 
     /**
@@ -41,6 +42,7 @@ class SchoolController extends BaseController
      */
     public function teachersAction(School $school)
     {
+        $this->saveLastSchool($school);
     }
 
     /**
@@ -50,6 +52,7 @@ class SchoolController extends BaseController
      */
     public function discountsAction(School $school)
     {
+        $this->saveLastSchool($school);
     }
 
     /**
@@ -59,6 +62,7 @@ class SchoolController extends BaseController
      */
     public function contactsAction(School $school)
     {
+        $this->saveLastSchool($school);
     }
 
     /**
@@ -68,6 +72,8 @@ class SchoolController extends BaseController
      */
     public function newsAction(School $school)
     {
+        $this->saveLastSchool($school);
+
         $query = $this->getRepository('News')->createSchoolNewsQueryBuilder($school);
 
         $pagination = $this->get('knp_paginator')->paginate(

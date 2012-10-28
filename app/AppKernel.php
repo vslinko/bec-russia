@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Desarrolla2\Bundle\RSSClientBundle\RSSClientBundle(),
+            new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),

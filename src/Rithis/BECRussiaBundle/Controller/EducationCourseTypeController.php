@@ -22,6 +22,8 @@ class EducationCourseTypeController extends BaseController
      */
     public function getAction(EducationCourseType $type)
     {
+        $this->saveLastEducationCourseType($type);
+
         $courses = $this->getRepository('EducationCourse')->findByTypeAndTown($type, $this->getSelectedTown());
 
         return array('type' => $type, 'courses' => $courses);

@@ -22,6 +22,8 @@ class EducationCourseController extends BaseController
      */
     public function getAction(EducationCourse $course)
     {
+        $this->saveLastEducationCourse($course);
+        $this->saveLastEducationCourseType($course->getType());
     }
 
     /**

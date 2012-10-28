@@ -5,12 +5,14 @@ imports:
 
 framework:
     secret: %secret%
+    default_locale: ru
     router: { resource: "%kernel.root_dir%/config/routing.yml" }
     templating: { engines: [twig] }
     form: ~
     csrf_protection: ~
     session: ~
     translator: ~
+    validation: { enable_annotations: true }
 
 doctrine:
     dbal:

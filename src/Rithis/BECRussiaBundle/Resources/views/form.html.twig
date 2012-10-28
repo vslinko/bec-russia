@@ -1,0 +1,21 @@
+{% block form_row %}
+    <div class="symfony-form-row">
+        {{ form_label(form) }}
+        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+    </div>
+{% endblock %}
+
+{% block captcha_row %}
+    <div class="symfony-form-row">
+        <label for="{{ id }}">
+            <img src="{{ captcha_code }}" title="captcha" width="{{ captcha_width }}" height="{{ captcha_height }}" />
+        </label>
+        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+    </div>
+{% endblock %}
+
+{% block captcha_widget %}
+    {{ form_widget(form) }}
+{% endblock %}

@@ -1,0 +1,44 @@
+@import "mixins";
+@import "variables";
+
+.symfony-form {
+  $label-width: 150px;
+
+  .symfony-form-thanks {
+    padding: 10px 0 20px $label-width;
+  }
+
+  .symfony-form-row {
+    padding-bottom: 25px;
+
+    @include clearfix;
+
+    label {
+      display: block;
+      float: left;
+      width: $label-width;
+      padding: 3px 10px 0 0;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    input[type=text], input[type=number], select, textarea {
+      width: $content-width - $label-width - 20px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    ul {
+      clear: both;
+      list-style: none;
+      padding-left: $label-width;
+      color: $red;
+    }
+  }
+
+  button {
+    margin-left: $label-width;
+  }
+}
