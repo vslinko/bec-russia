@@ -76,3 +76,9 @@ services:
       arguments: [null, Rithis\BECRussiaBundle\Entity\TestResult, SonataAdminBundle:CRUD]
       tags:
         - { name: sonata.admin, manager_type: orm, group: Test, label: Test Result }
+
+   rithis.becrussia.admin.page:
+      class: Rithis\BECRussiaBundle\Admin\PageAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\Page, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Page, label: Page }

@@ -9,3 +9,10 @@ rithis_becrussia_index_get:
 _rithis_becrussia:
     resource: "@RithisBECRussiaBundle/Controller"
     type: annotation
+
+rithis_becrussia_page_get:
+    pattern: /{uri}
+    defaults: { _controller: RithisBECRussiaBundle:Page:get }
+    requirements:
+        _method: GET
+        uri: .*

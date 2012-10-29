@@ -5,5 +5,18 @@
 {% endblock %}
 
 {% block content %}
+    {% set page = page('mainpage') %}
+    {% if page %}
+        <section class="article">
+            <header>
+                <h2>{{ page.title }}</h2>
+            </header>
+
+            <article>
+                {{ page.content|raw }}
+            </article>
+        </section>
+    {% endif %}
+
     {% render "RithisBECRussiaBundle:News:centreNewsBlock" %}
 {% endblock %}
