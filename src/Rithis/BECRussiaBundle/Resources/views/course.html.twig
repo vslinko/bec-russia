@@ -1,6 +1,6 @@
 <article>
     <figure>
-        {% thumbnail course.image, "big" %}
+        {% thumbnail course.image, thumbnail_size|default("medium") %}
     </figure>
 
     <header>
