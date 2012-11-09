@@ -16,6 +16,8 @@ framework:
 
 doctrine:
     dbal:
+        types:
+            json: Sonata\Doctrine\Types\JsonType
         driver: %database_driver%
         host: %database_host%
         port: %database_port%
@@ -104,6 +106,14 @@ sonata_media:
                 - sonata.media.provider.image
             formats:
                 big: { width: 800, height: 400, quality: 70 }
+        book:
+            download:
+                strategy: sonata.media.security.public_strategy
+                mode: http
+            providers:
+                - sonata.media.provider.file
+            formats:
+                default: {}
     cdn:
         server:
             path: /uploads/media
@@ -133,5 +143,6 @@ sonata_admin:
             Poll: { items: [rithis.becrussia.admin.poll] }
             Test: { items: [rithis.becrussia.admin.test_question, rithis.becrussia.admin.test_result] }
             Page: { items: [rithis.becrussia.admin.page] }
+            Library: { items: [rithis.becrussia.admin.book_category, rithis.becrussia.admin.book] }
     templates:
         layout: ::admin_layout.html.twig

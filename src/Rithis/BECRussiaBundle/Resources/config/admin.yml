@@ -88,3 +88,15 @@ services:
       arguments: [null, Rithis\BECRussiaBundle\Entity\Page, SonataAdminBundle:CRUD]
       tags:
         - { name: sonata.admin, manager_type: orm, group: Page, label: Page }
+
+   rithis.becrussia.admin.book_category:
+      class: Rithis\BECRussiaBundle\Admin\BookCategoryAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\BookCategory, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Library, label: Category }
+
+   rithis.becrussia.admin.book:
+      class: Rithis\BECRussiaBundle\Admin\BookAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\Book, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Library, label: Book }
