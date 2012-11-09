@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Desarrolla2\Bundle\RSSClientBundle\RSSClientBundle(),
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
+            new FOQ\ElasticaBundle\FOQElasticaBundle(),
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),

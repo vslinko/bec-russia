@@ -37,6 +37,7 @@
         "desarrolla2/rss-client-bundle": "@dev",
         "gregwar/captcha-bundle": "@dev",
         "phpexcel/phpexcel": "@stable",
+        "exercise/elastica-bundle": "@dev",
         "sonata-project/doctrine-orm-admin-bundle": "@dev",
         "rithis/bootstrap-bundle": "@dev",
         "rithis/image-placeholder-bundle": "@dev"

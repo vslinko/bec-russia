@@ -1,0 +1,32 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+{% block content %}
+    <section class="article list">
+        <header>
+            <h1>Поиск</h1>
+        </header>
+
+        <form action="{{ path("rithis_becrussia_search_get") }}" method="get">
+            <p><input type="search" name="query" value="{{ query }}"></p>
+            <p><button class="button">Искать</button></p>
+        </form>
+
+        {% if pagination is defined %}
+            <header>
+                <h2>Результаты поиска</h2>
+            </header>
+
+            {% for page in pagination %}
+                <article>
+                    <header>
+                        <h3><a href="{{ path("rithis_becrussia_page_get", {uri: page.uri}) }}">{{ page.title }}</a></h3>
+                    </header>
+                </article>
+            {% else %}
+                <p>К сожалению ничего не найдено.</p>
+            {% endfor %}
+        {% endif %}
+    </section>
+
+    {{ pagination.render("RithisBECRussiaBundle::pagination.html.twig")|raw }}
+{% endblock %}
