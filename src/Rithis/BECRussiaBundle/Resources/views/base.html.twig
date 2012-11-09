@@ -25,7 +25,8 @@
     "@RithisBECRussiaBundle/Resources/public/scss/symfony-form.scss"
     "@RithisBECRussiaBundle/Resources/public/scss/banner.scss"
     "@RithisBECRussiaBundle/Resources/public/scss/library.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/schedule.scss"-%}
+    "@RithisBECRussiaBundle/Resources/public/scss/schedule.scss"
+    "@RithisBECRussiaBundle/Resources/public/scss/forms-panel.scss" -%}
     <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets %}
 
@@ -43,6 +44,16 @@
     </figure>
     {% render "RithisBECRussiaBundle:Town:townSelectBlock" %}
     {% render "RithisBECRussiaBundle:Town:townPhonesBlock" %}
+    <div class="forms-panel">
+        <form action="{{ path("rithis_becrussia_search_get") }}" method="get">
+            <input type="text" name="query" placeholder="Поиск">
+            <button type="submit" class="button">Искать</button>
+        </form>
+        <form action="{{ path("rithis_becrussia_subscribe_post") }}" method="post">
+            <input type="email" name="email" placeholder="Ваш e-mail" value="{% block subscribe_email_value "" %}">
+            <button type="submit" class="button">Подписаться</button>
+        </form>
+    </div>
 </header>
 
 {% block education_course_types %}

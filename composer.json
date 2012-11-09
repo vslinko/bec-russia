@@ -37,6 +37,7 @@
         "desarrolla2/rss-client-bundle": "@dev",
         "gregwar/captcha-bundle": "@dev",
         "phpexcel/phpexcel": "@stable",
+        "unisender/unisender": "@stable",
         "exercise/elastica-bundle": "@dev",
         "sonata-project/doctrine-orm-admin-bundle": "@dev",
         "rithis/bootstrap-bundle": "@dev",
@@ -61,5 +62,21 @@
             "php app/console assetic:dump"
         ]
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "unisender/unisender",
+                "version": "1.2",
+                "dist": {
+                    "url": "http://www.unisender.com/downloads/php_wrapper.zip",
+                    "type": "zip"
+                },
+                "autoload": {
+                    "classmap": [""]
+                }
+            }
+        }
+    ]
 }

@@ -8,3 +8,5 @@ parameters:
     database_user: postgres
     database_password: ~
     database_path: ~
+
+    unisender_api_key: ~

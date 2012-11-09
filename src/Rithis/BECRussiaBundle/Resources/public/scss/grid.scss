@@ -16,12 +16,13 @@ body > header, body > footer {
 }
 
 body > header {
-  .logo, .town, .phones {
-    height: 150px;
+  .town, .phones {
+    height: 100px;
   }
 
   .logo {
     width: $logo-width;
+    height: 150px;
   }
 
   .town {
@@ -30,7 +31,13 @@ body > header {
 
   .phones {
     width: $phones-width + 10px;
+    padding-top: 5px;
     padding-right: 10px;
+  }
+
+  .forms-panel {
+    float: right;
+    height: 50px;
   }
 }
 
