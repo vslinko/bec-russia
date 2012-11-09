@@ -5,7 +5,7 @@ namespace Rithis\BECRussiaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Rithis\BECRussiaBundle\Entity\PageRepository")
  * @ORM\Table("pages")
  */
 class Page
