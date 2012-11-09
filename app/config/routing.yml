@@ -7,6 +7,9 @@ _resources_sonata_admin:
     type: sonata_admin
     prefix: /admin
 
+_sonata_media:
+    resource: "@SonataMediaBundle/Resources/config/routing/media.xml"
+
 _rithis_imageplaceholder:
     resource: "@RithisImagePlaceholderBundle/Resources/config/routing.yml"
     prefix: /_placeholder
