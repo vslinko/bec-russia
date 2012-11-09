@@ -1,0 +1,6 @@
+services:
+   rithis.becrussia.doctrine.school_schedule_listener:
+      class: Rithis\BECRussiaBundle\Listener\SchoolScheduleListener
+      tags:
+          - { name: doctrine.event_listener, event: prePersist }
+          - { name: doctrine.event_listener, event: preUpdate }

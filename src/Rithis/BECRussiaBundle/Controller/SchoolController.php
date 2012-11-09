@@ -84,4 +84,14 @@ class SchoolController extends BaseController
 
         return array('school' => $school, 'pagination' => $pagination);
     }
+
+    /**
+     * @Route("/{slug}/schedule")
+     * @Template
+     * @Cache(expires="+1 Week")
+     */
+    public function scheduleAction(School $school)
+    {
+        $this->saveLastSchool($school);
+    }
 }

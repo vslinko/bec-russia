@@ -1,0 +1,19 @@
+{% extends "RithisBECRussiaBundle::school.html.twig" %}
+
+{% block school_content %}
+    <section class="article schedule">
+        <header>
+            <h2>Расписание</h2>
+        </header>
+
+        <table>
+        {% for row in school.schedule %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+    </section>
+{% endblock %}

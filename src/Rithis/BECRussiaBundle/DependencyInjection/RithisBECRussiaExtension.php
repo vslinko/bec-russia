@@ -15,5 +15,6 @@ class RithisBECRussiaExtension extends Extension
         $loader->load('admin.yml');
         $loader->load('form.yml');
         $loader->load('twig.yml');
+        $loader->load('doctrine.yml');
     }
 }

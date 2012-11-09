@@ -48,6 +48,11 @@ class School
     protected $discounts;
 
     /**
+     * @ORM\Column(type="array")
+     */
+    protected $schedule;
+
+    /**
      * @ORM\OneToOne(targetEntity="Media")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
      */
@@ -141,6 +146,16 @@ class School
         return $this->discounts;
     }
 
+    public function setSchedule($schedule)
+    {
+        $this->schedule = $schedule;
+    }
+
+    public function getSchedule()
+    {
+        return $this->schedule;
+    }
+
     public function setImage($image)
     {
         $this->image = $image;
@@ -195,6 +210,11 @@ class School
     {
         $phone->setSchool($this);
         $this->phones[] = $phone;
+    }
+
+    public function addPhones(Phone $phone)
+    {
+        $this->addPhone($phone);
     }
 
     public function removePhone(Phone $phone)
