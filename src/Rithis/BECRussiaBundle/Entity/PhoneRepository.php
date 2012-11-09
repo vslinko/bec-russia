@@ -16,4 +16,12 @@ class PhoneRepository extends EntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function findGlobal()
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.global = TRUE')
+            ->getQuery()
+            ->getResult();
+    }
 }

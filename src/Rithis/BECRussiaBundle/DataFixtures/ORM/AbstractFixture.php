@@ -26,10 +26,13 @@ abstract class AbstractFixture extends BaseAbstractFixture implements OrderedFix
 
     protected function addPhones(School $school, array $phoneNumbers)
     {
-        foreach ($phoneNumbers as $phoneNumber => $visibleForTown) {
+        foreach ($phoneNumbers as $phoneNumber => $settings) {
+            list($visibleForTown, $global) = $settings;
+
             $phone = new Phone();
             $phone->setNumber($phoneNumber);
             $phone->setVisibleForTown($visibleForTown);
+            $phone->setGlobal($global);
             $school->addPhone($phone);
         }
     }

@@ -49,7 +49,7 @@ class TownController extends BaseController
         if ($town) {
             $phones = $this->getRepository('Phone')->findVisibleInTown($town);
         } else {
-            $phones = array();
+            $phones = $this->getRepository('Phone')->findGlobal();
         }
 
         return array(

@@ -22,6 +22,11 @@ class Phone
     protected $visibleForTown;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $global;
+
+    /**
      * @ORM\ManyToOne(targetEntity="School", inversedBy="phones")
      * @ORM\JoinColumn(name="school_id", referencedColumnName="id")
      */
@@ -45,6 +50,16 @@ class Phone
     public function isVisibleForTown()
     {
         return $this->visibleForTown;
+    }
+
+    public function setGlobal($default)
+    {
+        $this->global = $default;
+    }
+
+    public function isGlobal()
+    {
+        return $this->global;
     }
 
     public function setSchool(School $school)

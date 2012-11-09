@@ -11,5 +11,6 @@ class PhoneAdmin extends Admin
     {
         $mapper->add('number');
         $mapper->add('visibleForTown', null, array('required' => false));
+        $mapper->add('global', null, array('required' => false));
     }
 }
