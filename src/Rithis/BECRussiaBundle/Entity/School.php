@@ -79,11 +79,17 @@ class School
      */
     protected $phones;
 
+    /**
+     * @ORM\OneToMany(targetEntity="SchoolComment", mappedBy="school")
+     */
+    protected $comments;
+
     public function __construct()
     {
         $this->teachers = new ArrayCollection();
         $this->news = new ArrayCollection();
         $this->phones = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     public function setId($id)
@@ -225,6 +231,28 @@ class School
     public function getPhones()
     {
         return $this->phones;
+    }
+
+    public function addComment(SchoolComment $comment)
+    {
+        $this->comments[] = $comment;
+    }
+
+    public function removeComment(SchoolComment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    public function getModeratedComments()
+    {
+        return $this->getComments()->filter(function ($comment) {
+            return $comment->isModerated();
+        });
     }
 
     public function __toString()

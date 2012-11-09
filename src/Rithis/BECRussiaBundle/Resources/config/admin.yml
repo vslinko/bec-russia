@@ -23,6 +23,12 @@ services:
       tags:
         - { name: sonata.admin, manager_type: orm, group: Schools, label: School }
 
+   rithis.becrussia.admin.school_comment:
+      class: Rithis\BECRussiaBundle\Admin\SchoolCommentAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\SchoolComment, SonataAdminBundle:CRUD]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Schools, label: Comment }
+
    rithis.becrussia.admin.phone:
       class: Rithis\BECRussiaBundle\Admin\PhoneAdmin
       arguments: [null, Rithis\BECRussiaBundle\Entity\Phone, SonataAdminBundle:CRUD]

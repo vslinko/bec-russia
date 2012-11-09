@@ -29,6 +29,12 @@ class SchoolAdmin extends Admin
         $mapper->with('Shedule');
         $mapper->add('schedule', 'file');
 
+        $mapper->with('Comments', array('collapsed' => true));
+        $mapper->add('comments', 'sonata_type_collection', array('by_reference' => false), array(
+            'edit' => 'inline',
+            'inline' => 'table'
+        ));
+
         $mapper->with('About Page', array('collapsed' => true));
         $mapper->add('about', null, array('attr' => array('class' => 'tinymce')));
 

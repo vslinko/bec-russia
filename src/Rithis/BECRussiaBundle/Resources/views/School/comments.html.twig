@@ -1,0 +1,37 @@
+{% extends "RithisBECRussiaBundle::school.html.twig" %}
+
+{% form_theme form with ["RithisBECRussiaBundle::form.html.twig"] %}
+
+{% block school_content %}
+    <section class="article list">
+        <header>
+            <h2>Отзывы</h2>
+        </header>
+
+        {% for comment in school.moderatedComments %}
+            <article>
+                <header>
+                    <h3>{{ comment.authorName }}</h3>
+                </header>
+
+                <p>{{ comment.text }}</p>
+            </article>
+        {% else %}
+            <p>Пока отзывов нет.</p>
+        {% endfor %}
+
+        <header>
+            <h2>Оставить отзыв</h2>
+        </header>
+
+        <form action="{{ path("rithis_becrussia_school_postcomment", {slug: school.slug}) }}" method="post" class="symfony-form">
+            {% if success %}
+                <p class="symfony-form-thanks">Спасибо за ваш отзыв!</p>
+            {% endif %}
+
+            {{ form_widget(form) }}
+
+            <button type="submit" class="button">Отправить</button>
+        </form>
+    </section>
+{% endblock %}
