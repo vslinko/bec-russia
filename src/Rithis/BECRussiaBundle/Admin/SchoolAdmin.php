@@ -26,6 +26,9 @@ class SchoolAdmin extends Admin
             'inline' => 'table'
         ));
 
+        $mapper->with('Shedule');
+        $mapper->add('schedule', 'file');
+
         $mapper->with('About Page', array('collapsed' => true));
         $mapper->add('about', null, array('attr' => array('class' => 'tinymce')));
 

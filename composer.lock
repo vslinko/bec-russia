@@ -1,5 +1,5 @@
 {
-    "hash": "038e621e81b4d782066fe910c3782888",
+    "hash": "322e770c95addb1e90eaeeb903b8bc81",
     "packages": [
         {
             "name": "desarrolla2/cache",
@@ -806,12 +806,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/Gaufrette",
-                "reference": "0628ac151f6326e8a1c97f531a5bb891d9a0ab6f"
+                "reference": "v0.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/Gaufrette/archive/0628ac151f6326e8a1c97f531a5bb891d9a0ab6f.zip",
-                "reference": "0628ac151f6326e8a1c97f531a5bb891d9a0ab6f",
+                "url": "https://github.com/KnpLabs/Gaufrette/archive/v0.1.3.zip",
+                "reference": "v0.1.3",
                 "shasum": ""
             },
             "require": {
@@ -1324,6 +1324,41 @@
             "keywords": [
                 "log",
                 "logging"
+            ]
+        },
+        {
+            "name": "phpexcel/phpexcel",
+            "version": "v1.7.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ddeboer/phpexcel",
+                "reference": "v1.7.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/ddeboer/phpexcel/zipball/v1.7.7",
+                "reference": "v1.7.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">5.2.0"
+            },
+            "time": "2012-09-04 11:29:37",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes"
+                }
+            },
+            "license": [
+                "GNU"
+            ],
+            "description": "PHPExcel - OpenXML - Create Excel2007 documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
+            "keywords": [
+                "excel",
+                "xls"
             ]
         },
         {
@@ -2347,6 +2382,7 @@
         "sonata-project/media-bundle": 20,
         "desarrolla2/rss-client-bundle": 20,
         "gregwar/captcha-bundle": 20,
+        "phpexcel/phpexcel": 0,
         "sonata-project/doctrine-orm-admin-bundle": 20,
         "rithis/bootstrap-bundle": 20,
         "rithis/image-placeholder-bundle": 20

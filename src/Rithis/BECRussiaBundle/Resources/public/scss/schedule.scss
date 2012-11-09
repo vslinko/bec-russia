@@ -1,0 +1,14 @@
+@import "variables";
+
+.schedule {
+  table {
+    width: 100%;
+    table-layout: fixed;
+
+    td {
+      height: 30px;
+      padding: 5px 3px;
+      border: 1px solid $gray;
+    }
+  }
+}
