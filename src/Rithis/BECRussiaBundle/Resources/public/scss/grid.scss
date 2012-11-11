@@ -58,6 +58,17 @@ body > footer {
     width: $phones-width + 10px;
     padding: 0 10px 0 0;
   }
+
+  .creator {
+    padding-left: 20px;
+    line-height: 20px;
+
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+    }
+  }
 }
 
 aside.left {
