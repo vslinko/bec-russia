@@ -61,7 +61,7 @@
 {% endblock %}
 
 <aside class="left">
-    {% include "RithisBECRussiaBundle::nav.html.twig" %}
+    <nav>{{ knp_menu_render('RithisBECRussiaBundle:Builder:mainMenu', {firstClass: null, lastClass: null}) }}</nav>
     {% block last_poll %}
         {% render "RithisBECRussiaBundle:Poll:lastPollBlock" %}
     {% endblock %}
@@ -81,7 +81,7 @@
 </aside>
 
 <footer>
-    {% include "RithisBECRussiaBundle::nav.html.twig" %}
+    <nav>{{ knp_menu_render('RithisBECRussiaBundle:Builder:mainMenu', {firstClass: null, lastClass: null}) }}</nav>
     <div class="logo">
         Курсы английского языка<br>
         Железнодорожный, Новосибирск, Якутск
