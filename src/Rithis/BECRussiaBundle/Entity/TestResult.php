@@ -10,6 +10,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TestResult
 {
+    const TYPE_BEGINNER = 'Beginner';
+    const TYPE_ELEMENTARY = 'Elementary';
+    const TYPE_PRE_INTERMEDIATE = 'Pre-intermediate';
+    const TYPE_INTERMEDIATE = 'Intermediate';
+    const TYPE_UPPER_INTERMEDIATE = 'Upper intermediate';
+    const TYPE_ADVANCED = 'Advanced';
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -32,6 +39,11 @@ class TestResult
      * @ORM\Column(type="text")
      */
     protected $result;
+
+    /**
+     * @ORM\Column(length=32)
+     */
+    protected $type;
 
     public function setId($id)
     {
@@ -71,6 +83,16 @@ class TestResult
     public function getResult()
     {
         return $this->result;
+    }
+
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    public function getType()
+    {
+        return $this->type;
     }
 
     public function __toString()

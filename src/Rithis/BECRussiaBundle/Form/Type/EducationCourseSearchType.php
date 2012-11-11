@@ -6,21 +6,20 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface,
     Symfony\Component\Form\FormBuilderInterface,
     Symfony\Component\Form\AbstractType;
 
-use Rithis\BECRussiaBundle\Form\ChoiceList\LanguageLevelChoiceList,
-    Rithis\BECRussiaBundle\Form\ChoiceList\ScheduleChoiceList,
+use Rithis\BECRussiaBundle\Form\ChoiceList\ScheduleChoiceList,
     Rithis\BECRussiaBundle\Form\ChoiceList\ReasonChoiceList;
+
+use Rithis\BECRussiaBundle\Entity\TestResult;
 
 class EducationCourseSearchType extends AbstractType
 {
     private $reasons;
     private $schedules;
-    private $languageLevels;
 
-    public function __construct(ReasonChoiceList $reasons, ScheduleChoiceList $schedules, LanguageLevelChoiceList $languageLevels)
+    public function __construct(ReasonChoiceList $reasons, ScheduleChoiceList $schedules)
     {
         $this->reasons = $reasons;
         $this->schedules = $schedules;
-        $this->languageLevels = $languageLevels;
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -35,7 +34,14 @@ class EducationCourseSearchType extends AbstractType
         ));
         $builder->add('reason', 'choice', array('label' => 'Для чего вам английский?', 'choice_list' => $this->reasons));
         $builder->add('schedule', 'choice', array('label' => 'Режим обучения', 'choice_list' => $this->schedules));
-        $builder->add('languageLevel', 'choice', array('label' => 'Ваш уровень знаний', 'choice_list' => $this->languageLevels));
+        $builder->add('languageLevel', 'choice', array('label' => 'Ваш уровень знаний', 'choices' => array(
+            TestResult::TYPE_BEGINNER => TestResult::TYPE_BEGINNER,
+            TestResult::TYPE_ELEMENTARY => TestResult::TYPE_ELEMENTARY,
+            TestResult::TYPE_PRE_INTERMEDIATE => TestResult::TYPE_PRE_INTERMEDIATE,
+            TestResult::TYPE_INTERMEDIATE => TestResult::TYPE_INTERMEDIATE,
+            TestResult::TYPE_UPPER_INTERMEDIATE => TestResult::TYPE_UPPER_INTERMEDIATE,
+            TestResult::TYPE_ADVANCED => TestResult::TYPE_ADVANCED,
+        )));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

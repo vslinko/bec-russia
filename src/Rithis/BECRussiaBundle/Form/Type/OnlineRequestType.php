@@ -6,17 +6,10 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface,
     Symfony\Component\Form\FormBuilderInterface,
     Symfony\Component\Form\AbstractType;
 
-use Rithis\BECRussiaBundle\Form\ChoiceList\LanguageLevelChoiceList;
+use Rithis\BECRussiaBundle\Entity\TestResult;
 
 class OnlineRequestType extends AbstractType
 {
-    private $languageLevels;
-
-    public function __construct(LanguageLevelChoiceList $languageLevels)
-    {
-        $this->languageLevels = $languageLevels;
-    }
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', null, array('label' => 'Ваше имя'));
@@ -27,7 +20,14 @@ class OnlineRequestType extends AbstractType
             'adult' => 'от 18 лет',
         )));
         $builder->add('educationCourse', null, array('label' => 'Образовательная программа'));
-        $builder->add('languageLevel', 'choice', array('label' => 'Уровень знания английского языка', 'choice_list' => $this->languageLevels));
+        $builder->add('languageLevel', 'choice', array('label' => 'Уровень знания английского языка', 'choices' => array(
+            TestResult::TYPE_BEGINNER => 'Никогда не занимался',
+            TestResult::TYPE_ELEMENTARY => 'Плохо',
+            TestResult::TYPE_PRE_INTERMEDIATE => 'Ниже среднего',
+            TestResult::TYPE_INTERMEDIATE => 'Средний',
+            TestResult::TYPE_UPPER_INTERMEDIATE => 'Выше среднего',
+            TestResult::TYPE_ADVANCED => 'Отлично',
+        )));
         $builder->add('note', null, array('label' => 'Текст заявки'));
         $builder->add('email', null, array('label' => 'E-mail для связи'));
         $builder->add('phone', null, array('label' => 'Телефон для связи'));

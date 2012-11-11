@@ -44,9 +44,14 @@ class OnlineRequestController extends BaseController
             }
         }
 
+        $result = $this->loadLastTestResult();
+        if ($result) {
+            $onlineRequest->setLanguageLevel($result->getType());
+        }
+
         return array(
             'success' => $this->getRequest()->getSession()->getFlashBag()->get('online-request'),
-            'form' => $this->createForm($this->get('rithis.becrussia.form.online_request'), $onlineRequest)->createView(),
+            'form' => $this->createForm(new OnlineRequestType(), $onlineRequest)->createView(),
         );
     }
 
@@ -57,7 +62,7 @@ class OnlineRequestController extends BaseController
      */
     public function postAction()
     {
-        $form = $this->createForm($this->get('rithis.becrussia.form.online_request'));
+        $form = $this->createForm(new OnlineRequestType());
         $form->bind($this->getRequest());
 
         if ($form->isValid()) {
