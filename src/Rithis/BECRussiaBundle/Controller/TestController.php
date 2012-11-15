@@ -33,6 +33,7 @@ class TestController extends BaseController
         $answers = $this->getRequest()->request->get('answers');
 
         $result = $this->getRepository('TestResult')->findBestMatch(array_sum($answers));
+        $this->saveLastTestResult($result);
 
         return array(
             'result' => $result,

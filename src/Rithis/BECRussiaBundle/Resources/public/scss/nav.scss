@@ -33,18 +33,18 @@ nav {
           border-bottom: 1px solid $gray;
 
           @include box-shadow(inset 0 10px 20px -10px rgba(0, 0, 0, .5));
-
-          &:hover {
-            background: white url("/bundles/rithisbecrussia/images/nav-a-hover-background.gif") no-repeat;
-            color: $red;
-
-            @include box-shadow(none);
-          }
         }
 
         body > footer & {
           padding: 0 10px;
         }
+      }
+
+      aside.left &.current a {
+        background: white url("/bundles/rithisbecrussia/images/nav-a-hover-background.gif") no-repeat;
+        color: $red;
+
+        @include box-shadow(none);
       }
     }
   }

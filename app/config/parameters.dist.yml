@@ -9,4 +9,6 @@ parameters:
     database_password: ~
     database_path: ~
 
+
     vk_api_id: <vk_api_id>
+    unisender_api_key: ~

@@ -46,18 +46,21 @@ class LoadTestData extends AbstractFixture
         $result->setMinimalPoints(3);
         $result->setTitle('Nice try');
         $result->setResult('<p>Nice try</p>');
+        $result->setType(TestResult::TYPE_BEGINNER);
         $manager->persist($result);
 
         $result = new TestResult();
         $result->setMinimalPoints(5);
         $result->setTitle('Good');
         $result->setResult('<p>Good</p>');
+        $result->setType(TestResult::TYPE_INTERMEDIATE);
         $manager->persist($result);
 
         $result = new TestResult();
         $result->setMinimalPoints(6);
         $result->setTitle('Excellent');
         $result->setResult('<p>Excellent</p>');
+        $result->setType(TestResult::TYPE_ADVANCED);
         $manager->persist($result);
 
         $manager->flush();

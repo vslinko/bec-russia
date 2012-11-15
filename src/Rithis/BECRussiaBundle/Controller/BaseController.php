@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Rithis\BECRussiaBundle\Entity\EducationCourseType,
     Rithis\BECRussiaBundle\Entity\EducationCourse,
+    Rithis\BECRussiaBundle\Entity\TestResult,
     Rithis\BECRussiaBundle\Entity\School;
 
 class BaseController extends Controller
@@ -50,6 +51,17 @@ class BaseController extends Controller
     protected function loadLastSchool()
     {
         $school = $this->getRequest()->getSession()->get('last-visited-school');
+        return $school ? $this->getDoctrine()->getManager()->merge($school) : $school;
+    }
+
+    protected function saveLastTestResult(TestResult $school)
+    {
+        $this->getRequest()->getSession()->set('last-test-result', $school);
+    }
+
+    protected function loadLastTestResult()
+    {
+        $school = $this->getRequest()->getSession()->get('last-test-result');
         return $school ? $this->getDoctrine()->getManager()->merge($school) : $school;
     }
 }

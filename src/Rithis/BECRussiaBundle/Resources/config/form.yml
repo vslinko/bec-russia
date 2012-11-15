@@ -7,18 +7,8 @@ services:
       class: Rithis\BECRussiaBundle\Form\ChoiceList\ScheduleChoiceList
       arguments: [@doctrine.orm.entity_manager]
 
-   rithis.becrussia.choice_list.language_level:
-      class: Rithis\BECRussiaBundle\Form\ChoiceList\LanguageLevelChoiceList
-      arguments: [@doctrine.orm.entity_manager]
-
    rithis.becrussia.form.education_course_search:
       class: Rithis\BECRussiaBundle\Form\Type\EducationCourseSearchType
       arguments:
           - @rithis.becrussia.choice_list.reason
           - @rithis.becrussia.choice_list.schedule
-          - @rithis.becrussia.choice_list.language_level
-
-   rithis.becrussia.form.online_request:
-      class: Rithis\BECRussiaBundle\Form\Type\OnlineRequestType
-      arguments:
-          - @rithis.becrussia.choice_list.language_level

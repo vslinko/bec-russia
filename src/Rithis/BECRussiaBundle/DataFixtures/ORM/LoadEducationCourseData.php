@@ -4,15 +4,16 @@ namespace Rithis\BECRussiaBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
 
-use Rithis\BECRussiaBundle\Entity\EducationCourse;
+use Rithis\BECRussiaBundle\Entity\EducationCourse,
+    Rithis\BECRussiaBundle\Entity\TestResult;
 
 class LoadEducationCourseData extends AbstractFixture
 {
     static private $types = array(
-        'dietiam' => array('Улучшить успеваемость в школе', 'Утро', 'Никогда не занимался'),
-        'podrostkam' => array('Повысить уровень знания английского языка', 'День', 'Средний'),
-        'vzroslym' => array('Для путешествий по миру', 'Только вечер', 'Выше среднего'),
-        'kompaniiam' => array('Для работы', 'Только выходные', 'Продвинутый'),
+        'dietiam' => array('Улучшить успеваемость в школе', 'Утро', TestResult::TYPE_BEGINNER),
+        'podrostkam' => array('Повысить уровень знания английского языка', 'День', TestResult::TYPE_PRE_INTERMEDIATE),
+        'vzroslym' => array('Для путешествий по миру', 'Только вечер', TestResult::TYPE_UPPER_INTERMEDIATE),
+        'kompaniiam' => array('Для работы', 'Только выходные', TestResult::TYPE_ADVANCED),
     );
 
     public function load(ObjectManager $manager)

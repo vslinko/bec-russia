@@ -1,5 +1,5 @@
 {
-    "hash": "42619ca5bc157bd6f857a7e9b5b67154",
+    "hash": "19d5faadbab2b04f66a71a00ac1287b3",
     "packages": [
         {
             "name": "desarrolla2/cache",
@@ -11,7 +11,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/desarrolla2/Cache/archive/v1.0.0-rc.1.zip",
+                "url": "https://github.com/desarrolla2/Cache/zipball/v1.0.0-rc.1",
                 "reference": "v1.0.0-rc.1",
                 "shasum": ""
             },
@@ -56,7 +56,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/desarrolla2/RSSClient/archive/4901d3f2ddd97c0667a50967b3d290846fb74b0d.zip",
+                "url": "https://github.com/desarrolla2/RSSClient/zipball/4901d3f2ddd97c0667a50967b3d290846fb74b0d",
                 "reference": "4901d3f2ddd97c0667a50967b3d290846fb74b0d",
                 "shasum": ""
             },
@@ -99,7 +99,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/desarrolla2/RSSClientBundle/archive/7d4d6da7e0dfa3f450b1bf16258bb178c7b82bb2.zip",
+                "url": "https://github.com/desarrolla2/RSSClientBundle/zipball/7d4d6da7e0dfa3f450b1bf16258bb178c7b82bb2",
                 "reference": "7d4d6da7e0dfa3f450b1bf16258bb178c7b82bb2",
                 "shasum": ""
             },
@@ -185,7 +185,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -384,7 +384,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/DoctrineFixturesBundle/archive/9edc67af16e736a31605e7fa9c9e3edbd9db6427.zip",
+                "url": "https://github.com/doctrine/DoctrineFixturesBundle/zipball/9edc67af16e736a31605e7fa9c9e3edbd9db6427",
                 "reference": "9edc67af16e736a31605e7fa9c9e3edbd9db6427",
                 "shasum": ""
             },
@@ -437,7 +437,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/DoctrineMigrationsBundle/archive/e494aceebe05200c3f5e7b54c9facf2cf0b2099c.zip",
+                "url": "https://github.com/doctrine/DoctrineMigrationsBundle/zipball/e494aceebe05200c3f5e7b54c9facf2cf0b2099c",
                 "reference": "e494aceebe05200c3f5e7b54c9facf2cf0b2099c",
                 "shasum": ""
             },
@@ -490,7 +490,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/migrations/archive/c1d875ce7d092dd1bc7508c3867b5c6b97431e43.zip",
+                "url": "https://github.com/doctrine/migrations/zipball/c1d875ce7d092dd1bc7508c3867b5c6b97431e43",
                 "reference": "c1d875ce7d092dd1bc7508c3867b5c6b97431e43",
                 "shasum": ""
             },
@@ -684,7 +684,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ezyang/htmlpurifier/archive/8a8b123d3322d24d77114dfa767a5eafbe9ff24b.zip",
+                "url": "https://github.com/ezyang/htmlpurifier/zipball/8a8b123d3322d24d77114dfa767a5eafbe9ff24b",
                 "reference": "8a8b123d3322d24d77114dfa767a5eafbe9ff24b",
                 "shasum": ""
             },
@@ -786,7 +786,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Gregwar/CaptchaBundle/archive/78e1cee035154130f3b3b128038ffedd870e003f.zip",
+                "url": "https://github.com/Gregwar/CaptchaBundle/zipball/78e1cee035154130f3b3b128038ffedd870e003f",
                 "reference": "78e1cee035154130f3b3b128038ffedd870e003f",
                 "shasum": ""
             },
@@ -996,7 +996,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenu/archive/v1.1.2.zip",
+                "url": "https://github.com/KnpLabs/KnpMenu/zipball/v1.1.2",
                 "reference": "v1.1.2",
                 "shasum": ""
             },
@@ -1013,7 +1013,6 @@
                 "silex/silex": "for the integration with your silex application",
                 "twig/twig": "for the TwigRenderer and the integration with your templates"
             },
-            "time": "1339345240",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1035,7 +1034,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -1048,7 +1047,8 @@
             "keywords": [
                 "menu",
                 "tree"
-            ]
+            ],
+            "time": "1339345240"
         },
         {
             "name": "knplabs/knp-menu-bundle",
@@ -1315,7 +1315,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/leafo/scssphp-compass/archive/f1631ddb17731326863954d99b39694f0bbed6ec.zip",
+                "url": "https://github.com/leafo/scssphp-compass/zipball/f1631ddb17731326863954d99b39694f0bbed6ec",
                 "reference": "f1631ddb17731326863954d99b39694f0bbed6ec",
                 "shasum": ""
             },
@@ -1442,7 +1442,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/rithis/BootstrapBundle/archive/ec402e18d14de94bb21c8d67677478a893cb7610.zip",
+                "url": "https://github.com/rithis/BootstrapBundle/zipball/ec402e18d14de94bb21c8d67677478a893cb7610",
                 "reference": "ec402e18d14de94bb21c8d67677478a893cb7610",
                 "shasum": ""
             },
@@ -1480,7 +1480,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/rithis/ImagePlaceholderBundle/archive/6a0503d0ddd26fb8679c9156642b94fc61d89d34.zip",
+                "url": "https://github.com/rithis/ImagePlaceholderBundle/zipball/6a0503d0ddd26fb8679c9156642b94fc61d89d34",
                 "reference": "6a0503d0ddd26fb8679c9156642b94fc61d89d34",
                 "shasum": ""
             },
@@ -1729,7 +1729,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/sonata-doctrine-extensions/archive/d2cd67a25602fecab6067290536f163ea54f1c8c.zip",
+                "url": "https://github.com/sonata-project/sonata-doctrine-extensions/zipball/d2cd67a25602fecab6067290536f163ea54f1c8c",
                 "reference": "d2cd67a25602fecab6067290536f163ea54f1c8c",
                 "shasum": ""
             },
@@ -1889,7 +1889,6 @@
             "suggest": {
                 "ext-curl": "*"
             },
-            "time": "1346967589",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1915,7 +1914,8 @@
                 "csv",
                 "client",
                 "export"
-            ]
+            ],
+            "time": "1346967589"
         },
         {
             "name": "sonata-project/jquery-bundle",
@@ -1936,7 +1936,6 @@
                 "php": ">=5.3.2",
                 "symfony/framework-bundle": "2.*"
             },
-            "time": "1346283282",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1963,7 +1962,8 @@
             "keywords": [
                 "jquery",
                 "sonata"
-            ]
+            ],
+            "time": "1346283282"
         },
         {
             "name": "sonata-project/media-bundle",
@@ -2466,6 +2466,23 @@
             "keywords": [
                 "templating"
             ]
+        },
+        {
+            "name": "unisender/unisender",
+            "version": "1.2",
+            "dist": {
+                "type": "zip",
+                "url": "http://www.unisender.com/downloads/php_wrapper.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            }
         }
     ],
     "packages-dev": null,
@@ -2494,6 +2511,7 @@
         "desarrolla2/rss-client-bundle": 20,
         "gregwar/captcha-bundle": 20,
         "phpexcel/phpexcel": 0,
+        "unisender/unisender": 0,
         "exercise/elastica-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20,
         "rithis/bootstrap-bundle": 20,

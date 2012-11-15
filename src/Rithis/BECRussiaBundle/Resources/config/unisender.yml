@@ -1,0 +1,4 @@
+services:
+   rithis.becrussia.unisender:
+      class: UniSenderApi
+      arguments: [%unisender_api_key%]

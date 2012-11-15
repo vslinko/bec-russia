@@ -16,12 +16,13 @@ body > header, body > footer {
 }
 
 body > header {
-  .logo, .town, .phones {
-    height: 150px;
+  .town, .phones {
+    height: 100px;
   }
 
   .logo {
     width: $logo-width;
+    height: 150px;
   }
 
   .town {
@@ -30,7 +31,13 @@ body > header {
 
   .phones {
     width: $phones-width + 10px;
+    padding-top: 5px;
     padding-right: 10px;
+  }
+
+  .forms-panel {
+    float: right;
+    height: 50px;
   }
 }
 
@@ -50,6 +57,17 @@ body > footer {
   .phones {
     width: $phones-width + 10px;
     padding: 0 10px 0 0;
+  }
+
+  .creator {
+    padding-left: 20px;
+    line-height: 20px;
+
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+    }
   }
 }
 

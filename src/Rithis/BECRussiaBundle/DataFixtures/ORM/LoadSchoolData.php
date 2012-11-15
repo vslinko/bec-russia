@@ -18,10 +18,10 @@ class LoadSchoolData extends AbstractFixture
         $school->setImage($this->getMedia('school-zhielieznodorozhnyi-image.gif', 'school'));
         $school->setTown($this->getReference('town-zhielieznodorozhnyi'));
         $this->addPhones($school, array(
-            '+7 (495) 514-23-76' => true,
-            '+7 (495) 640-44-80' => true,
-            '+7 (498) 304-22-40' => true,
-            '+7 (498) 304-22-41' => false,
+            '+7 (495) 514-23-76' => array(true, true),
+            '+7 (495) 640-44-80' => array(true, false),
+            '+7 (498) 304-22-40' => array(true, false),
+            '+7 (498) 304-22-41' => array(false, false),
         ));
         $this->setReference('school-zhielieznodorozhnyi', $school);
         $manager->persist($school);
@@ -34,7 +34,7 @@ class LoadSchoolData extends AbstractFixture
         $school->setImage($this->getMedia('school-iakutsk-image.gif', 'school'));
         $school->setTown($this->getReference('town-iakutsk'));
         $this->addPhones($school, array(
-            '+7 (4112) 25-20-55 ' => true,
+            '+7 (4112) 25-20-55 ' => array(true, false),
         ));
         $this->setReference('school-iakutsk', $school);
         $manager->persist($school);
