@@ -183,9 +183,10 @@ class SchoolController extends BaseController
     /**
      * @Route("/{slug}/galleries/{gallery}")
      * @Method("GET")
+     * @Cache(expires="+1 Week")
      */
     public function galleryAction(School $school, $gallery)
-    {   //* @Cache(expires="+1 Week")
+    {   
         $this->saveLastSchool($school);
         
         $gallery = $this->getRepository('Gallery')->findOneBy(array('slug' => $gallery));

@@ -17,5 +17,6 @@ class RithisBECRussiaExtension extends Extension
         $loader->load('twig.yml');
         $loader->load('doctrine.yml');
         $loader->load('unisender.yml');
+        $loader->load('provider.yml');
     }
 }

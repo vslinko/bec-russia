@@ -1,0 +1,29 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+
+{% block content %}
+    <section class="article list library">
+        <header>
+            <h1>Библиотека</h1>
+            <div class="filtering">
+                Тип: 
+                {% for name, text in {all: 'Все', article: 'Статьи', book: 'Книги'} %}
+                    {% if provider is sameas(name) %}
+                        <span>{{ text }}</span>
+                    {% else %}
+                        <a href="{{ path("rithis_becrussia_library_library", app.request.query.all|merge({'provider': name})) }}">{{ text }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </header>
+
+        {% for media in pagination %}
+            <div class="library-item">
+                <a href="{% path media, "default" %}" >{{ media.name }}</a>
+            </div>
+        {% endfor %}
+
+        {{ pagination.render("RithisBECRussiaBundle::pagination.html.twig")|raw }}
+
+    </section>
+{% endblock %}

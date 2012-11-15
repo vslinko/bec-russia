@@ -118,12 +118,13 @@ sonata_media:
                 - sonata.media.provider.image
             formats:
                 big: { width: 800, height: 400, quality: 70 }
-        book:
+        library:
             download:
                 strategy: sonata.media.security.public_strategy
                 mode: http
             providers:
-                - sonata.media.provider.file
+                - rithis.becrussia.library.provider.article
+                - rithis.becrussia.library.provider.book
             formats:
                 default: {}
     cdn:
@@ -155,6 +156,6 @@ sonata_admin:
             Poll: { items: [rithis.becrussia.admin.poll] }
             Test: { items: [rithis.becrussia.admin.test_question, rithis.becrussia.admin.test_result] }
             Page: { items: [rithis.becrussia.admin.page] }
-            Library: { items: [rithis.becrussia.admin.book_category, rithis.becrussia.admin.book] }
+            Library: { items: [rithis.becrussia.admin.library] }
     templates:
         layout: ::admin_layout.html.twig

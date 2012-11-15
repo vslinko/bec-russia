@@ -1,0 +1,16 @@
+services:
+    rithis.becrussia.library.provider.article:
+        class: Sonata\MediaBundle\Provider\FileProvider
+        parent: sonata.media.provider.file
+        arguments:
+            - rithis.becrussia.library.provider.article
+        tags:
+            - { name: sonata.media.provider }
+
+    rithis.becrussia.library.provider.book:
+        class: Sonata\MediaBundle\Provider\FileProvider
+        parent: sonata.media.provider.file
+        arguments:
+            - rithis.becrussia.library.provider.book
+        tags:
+            - { name: sonata.media.provider }

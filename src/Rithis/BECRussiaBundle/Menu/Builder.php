@@ -16,7 +16,7 @@ class Builder extends ContainerAware
         $menu->addChild('О центре', array('route' => 'rithis_becrussia_index_get'));
         $menu->addChild('Школы', array('route' => 'rithis_becrussia_school_all'));
         $menu->addChild('Вакансии', array('route' => 'rithis_becrussia_vacancy_all'));
-        $menu->addChild('Библиотека', array('route' => 'rithis_becrussia_library_categories'));
+        $menu->addChild('Библиотека', array('route' => 'rithis_becrussia_library_library'));
 
         return $menu;
     }

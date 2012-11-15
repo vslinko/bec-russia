@@ -19,11 +19,28 @@ class LibraryController extends BaseController
      * @Template
      * @Cache(expires="+1 Week")
      */
-    public function categoriesAction()
+    public function libraryAction()
     {
-        return array(
-            'categories' => $this->getRepository('BookCategory')->findAll(),
+        $query = $this->getRepository('Media')
+            ->createQueryBuilder('m')
+            ->where('m.context = :context')
+            ->setParameter('context', 'library');
+        
+        if ($this->getRequest()->query->has('provider') && 'all' !== $this->getRequest()->query->get('provider')) {
+            $provider = $this->getRequest()->query->get('provider');
+            $query->andWhere('m.provider = :provider')
+                ->setParameter('provider', 'rithis.becrussia.library.provider.' . $provider);
+        } else {
+            $provider = 'all';
+        }
+    
+        $pagination = $this->get('knp_paginator')->paginate(
+            $query,
+            $this->getRequest()->query->get('page', 1),
+            10
         );
+
+        return array('pagination' => $pagination, 'provider' => $provider);
     }
     
     /**
