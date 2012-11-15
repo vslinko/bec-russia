@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
 
             new Rithis\BootstrapBundle\RithisBootstrapBundle(),
             new Rithis\ImagePlaceholderBundle\RithisImagePlaceholderBundle(),

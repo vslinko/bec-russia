@@ -29,6 +29,14 @@ services:
       tags:
         - { name: sonata.admin, manager_type: orm, group: Schools, label: Comment }
 
+   rithis.becrussia.admin.school_gallery:
+      class: Rithis\BECRussiaBundle\Admin\SchoolGalleryAdmin
+      arguments: [null, Rithis\BECRussiaBundle\Entity\Gallery, RithisBECRussiaBundle:SchoolGalleryAdmin, @sonata.media.pool]
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Schools, label: Gallery }
+      calls:
+        - [setTemplate, [list, RithisBECRussiaBundle:SchoolAdmin:gallery_list.html.twig]]
+
    rithis.becrussia.admin.phone:
       class: Rithis\BECRussiaBundle\Admin\PhoneAdmin
       arguments: [null, Rithis\BECRussiaBundle\Entity\Phone, SonataAdminBundle:CRUD]

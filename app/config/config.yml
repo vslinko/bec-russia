@@ -14,6 +14,10 @@ framework:
     translator: ~
     validation: { enable_annotations: true }
 
+twig:
+    globals:
+        vk_api_id: %vk_api_id%
+
 doctrine:
     dbal:
         types:
@@ -90,6 +94,14 @@ sonata_media:
                 small: { width: 80, height: 80, quality: 70 }
                 medium: { width: 160, height: 160, quality: 70 }
                 big: { width: 220, height: 220, quality: 70 }
+        school_gallery:
+            providers:
+                - sonata.media.provider.image
+                - sonata.media.provider.youtube
+            formats:
+                small: { width: 80, height: 80, quality: 70 }
+                medium: { width: 160, height: 160, quality: 70 }
+                big: { width: 220, height: 220, quality: 70 }
         teacher:
             providers:
                 - sonata.media.provider.image
@@ -137,7 +149,7 @@ sonata_admin:
         groups:
             Towns: { items: [rithis.becrussia.admin.town] }
             Courses: { items: [rithis.becrussia.admin.education_course] }
-            Schools: { items: [rithis.becrussia.admin.school, rithis.becrussia.admin.teacher] }
+            Schools: { items: [rithis.becrussia.admin.school, rithis.becrussia.admin.teacher, rithis.becrussia.admin.school_gallery] }
             News: { items: [rithis.becrussia.admin.news] }
             Vacancies: { items: [rithis.becrussia.admin.vacancy] }
             Poll: { items: [rithis.becrussia.admin.poll] }

@@ -1,0 +1,37 @@
+<article class="gallery-item">
+    <div class="title">
+        <a href="{{ path("rithis_becrussia_school_gallery", {slug: school.slug, gallery: gallery.slug}) }}">{{ gallery.name }}</a>
+
+        <span>{{ gallery.createdAt|date('d.m.Y') }}</span>
+    </div>
+
+    <div class="thumbnail">
+        {% for has_media in gallery.galleryHasMedias %}
+            {% if loop.index < 5 %}
+            <a href="{{ path("rithis_becrussia_school_gallery", {slug: school.slug, gallery: gallery.slug}) }}">{% media has_media.media, "small" %}</a>
+            {% endif %}
+        {% endfor %}
+        
+    </div>
+
+    <div class="description">
+        {{ gallery.description }}
+    </div>
+
+    <div class="links">
+        <a href="#">Обсудить на форуме</a>
+        
+        <a class="full-gallery" href="{{ path("rithis_becrussia_school_gallery", {slug: school.slug, gallery: gallery.slug}) }}">Все фото</a>
+
+        <div id="vk_like_{{ gallery.id }}" class="vk_like"></div>
+        <script type="text/javascript">
+            VK.Widgets.Like("vk_like_{{ gallery.id }}", {
+                type: "full",
+                pageUrl: "{{ path("rithis_becrussia_school_gallery", {slug: school.slug, gallery: gallery.slug}) }}",
+                pageTitle: "{{ gallery.name }}",
+                pageDescription: "{{ gallery.description }}",
+                pageImage: "{% if gallery.galleryHasMedias.first %}{% path gallery.galleryHasMedias.first.media, "small" %}{% endif %}"
+            });
+        </script>
+    </div>
+</article>

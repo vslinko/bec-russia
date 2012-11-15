@@ -83,6 +83,11 @@ class School
      * @ORM\OneToMany(targetEntity="SchoolComment", mappedBy="school")
      */
     protected $comments;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Gallery", mappedBy="school")
+     */
+    protected $galleries;
 
     public function __construct()
     {
@@ -90,6 +95,7 @@ class School
         $this->news = new ArrayCollection();
         $this->phones = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->galleries = new ArrayCollection();
     }
 
     public function setId($id)
@@ -253,6 +259,26 @@ class School
         return $this->getComments()->filter(function ($comment) {
             return $comment->isModerated();
         });
+    }
+
+    public function addGalleries(Gallery $gallery)
+    {
+        $this->galleries[] = $gallery;
+    }
+
+    public function addGallery(Gallery $gallery)
+    {
+        $this->galleries[] = $gallery;
+    }
+
+    public function removeGallery(Gallery $gallery)
+    {
+        $this->galleries->removeElement($gallery);
+    }
+
+    public function getGalleries()
+    {
+        return $this->galleries;
     }
 
     public function __toString()
