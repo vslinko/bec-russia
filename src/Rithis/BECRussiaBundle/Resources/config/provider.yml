@@ -14,3 +14,27 @@ services:
             - rithis.becrussia.library.provider.book
         tags:
             - { name: sonata.media.provider }
+
+    rithis.becrussia.library.provider.video:
+        class: Sonata\MediaBundle\Provider\FileProvider
+        parent: sonata.media.provider.file
+        arguments:
+            - rithis.becrussia.library.provider.video
+        tags:
+            - { name: sonata.media.provider }
+
+    rithis.becrussia.library.provider.audio:
+        class: Sonata\MediaBundle\Provider\FileProvider
+        parent: sonata.media.provider.file
+        arguments:
+            - rithis.becrussia.library.provider.audio
+        tags:
+            - { name: sonata.media.provider }
+
+    rithis.becrussia.library.provider.soft:
+        class: Sonata\MediaBundle\Provider\FileProvider
+        parent: sonata.media.provider.file
+        arguments:
+            - rithis.becrussia.library.provider.soft
+        tags:
+            - { name: sonata.media.provider }

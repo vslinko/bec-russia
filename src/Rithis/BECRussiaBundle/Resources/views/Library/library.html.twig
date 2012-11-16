@@ -7,19 +7,25 @@
             <h1>Библиотека</h1>
             <div class="filtering">
                 Тип: 
-                {% for name, text in {all: 'Все', article: 'Статьи', book: 'Книги'} %}
+                <select>
+                {% for name in ['all', 'article', 'book', 'video', 'audio', 'soft'] %}
+                    {% set provider_name = "rithis.becrussia.library.provider.#{name}" %}
+                    <option
                     {% if provider is sameas(name) %}
-                        <span>{{ text }}</span>
+                         selected 
                     {% else %}
-                        <a href="{{ path("rithis_becrussia_library_library", app.request.query.all|merge({'provider': name})) }}">{{ text }}</a>
+                         data-href="{{ path("rithis_becrussia_library_library", app.request.query.all|merge({'provider': name})) }}" 
                     {% endif %}
+                    >{{ provider_name|trans({}, 'rithis_bec_russia_library') }}</option>
                 {% endfor %}
+                </select>
             </div>
         </header>
 
         {% for media in pagination %}
             <div class="library-item">
                 <a href="{% path media, "default" %}" >{{ media.name }}</a>
+                <span class="provider">{{ media.providerName|trans({}, 'rithis_bec_russia_library') }}</span>
             </div>
         {% endfor %}
 

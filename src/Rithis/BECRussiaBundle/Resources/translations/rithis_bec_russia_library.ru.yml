@@ -1,0 +1,10 @@
+rithis:
+    becrussia:
+        library:
+            provider:
+                all: Все
+                article: Статьи
+                book: Электронные книги
+                video: Видеоматериалы
+                audio: Аудиоматериалы
+                soft: Обучающие программы и игры

@@ -28,7 +28,7 @@ class LibraryController extends BaseController
         
         if ($this->getRequest()->query->has('provider') && 'all' !== $this->getRequest()->query->get('provider')) {
             $provider = $this->getRequest()->query->get('provider');
-            $query->andWhere('m.provider = :provider')
+            $query->andWhere('m.providerName = :provider')
                 ->setParameter('provider', 'rithis.becrussia.library.provider.' . $provider);
         } else {
             $provider = 'all';

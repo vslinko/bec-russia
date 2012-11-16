@@ -125,6 +125,9 @@ sonata_media:
             providers:
                 - rithis.becrussia.library.provider.article
                 - rithis.becrussia.library.provider.book
+                - rithis.becrussia.library.provider.video
+                - rithis.becrussia.library.provider.audio
+                - rithis.becrussia.library.provider.soft
             formats:
                 default: {}
     cdn:
