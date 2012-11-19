@@ -12,7 +12,7 @@ $(function () {
             modal = defaultModal.clone().appendTo('body').reveal({animation: 'none'});
         
         modal.on('reveal:close', function (e) {
-            $(this).destroy();
+            $(this).remove();
         });
 
         $.getJSON(target.attr('href'), function (response) {

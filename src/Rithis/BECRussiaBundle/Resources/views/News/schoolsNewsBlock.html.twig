@@ -8,7 +8,9 @@
             <article class="news-item">
                 <header>
                     <figure>
+                        <a class="image-preview" href="{% path news.image, "big" %}">
                         {% thumbnail news.image, "small" %}
+                        </a>
                     </figure>
 
                     <p class="news-created-at">{{ news.createdAt|date('d.m.Y') }}</p>

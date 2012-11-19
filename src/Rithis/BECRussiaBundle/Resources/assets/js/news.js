@@ -1,23 +1,25 @@
 $(function () {
-    $(".news-item").mouseenter(function(){
-      var target = $(this),
-        fig = target.find('figure'),
-        bigger = fig.clone();
-    
-      bigger.addClass('bigger');
-      bigger.css({
-          'position': 'absolute',
-          'margin-left': '-3px',
-          'margin-top': '-3px',
-      });
-      
-      bigger.find('img').css({
-          'width': fig.width() + 6,
-          'height': fig.width() + 6
-      });
-      
-      fig.before(bigger);
-    }).mouseleave(function(){
-      $(this).find('figure.bigger').remove();
+    var body = $('<div class="reveal-body"></div>'),
+        actions = $('<div class="reveal-actions"><a class="close-reveal-modal" href="#"></a></div>'),
+        defaultModal = $('<div class="reveal-modal"></div>').append([actions, body]);
+
+    $(".news-item .image-preview").click(function (e) {
+        var target = $(this),
+            modal = defaultModal.clone().appendTo('body');
+        
+        modal.on('reveal:close', function (e) {
+            modal.remove();
+        });
+
+        $('<img>').attr({ src: $(this).attr('href') }).load(function() {
+            modal
+                .width($(this).width())
+                .height($(this).height())
+                .css({'margin-left': '-110px'});
+            modal.find('.reveal-body').append(this);
+            modal.reveal({animation: 'none'});
+        });
+
+        return false;
     });
 });

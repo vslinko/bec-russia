@@ -9,7 +9,9 @@
         {% for news in pagination %}
             <article class="news-item">
                 <figure>
+                    <a class="image-preview" href="{% path news.image, "big" %}">
                     {% thumbnail news.image, "medium" %}
+                    </a>
                 </figure>
 
                 <header>
