@@ -1,111 +1,194 @@
-<!DOCTYPE html>
-<html lang="{{ app.request.locale }}">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
 <head>
-
-    <title>Британский Образовательный Центр</title>
-
-    {% stylesheets
-    "https://raw.github.com/necolas/normalize.css/v2.0.1/normalize.css" -%}
-    <link rel="stylesheet" href="{{ asset_url }}">
-    {% endstylesheets %}
-    {%- stylesheets filter="compass"
-    "@RithisBECRussiaBundle/Resources/public/scss/scaffolding.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/grid.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/logo.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/phones.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/education-course-types.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/nav.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/article.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/news.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/button.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/news-item.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/map.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/education-courses.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/poll.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/symfony-form.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/banner.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/library.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/gallery.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/reveal.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/schedule.scss"
-    "@RithisBECRussiaBundle/Resources/public/scss/forms-panel.scss" -%}
-    <link rel="stylesheet" href="{{ asset_url }}">
-    {% endstylesheets %}
-
-    {% block js %}
-    {% endblock %}
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="BEC, British Center, British Centre, British Educational Center, British Educational Centre, english, happy english, английский балашиха, английский ЕГЭ, английский железнодорожный, английский москва, английский московская область, английский язык, британский образовательный центр, изучение английского языка, испанский язык, китайский язык, корпоративный английский, курсы английского языка, курсы иностранного языка, международные сертификаты, носители языка, образование английский, обучение английскому, оксфорд, подготовка к ЕГЭ, преподаватель английский, разговорный английский, репетитор английский, сеть языковых школ, собеседование на английском, учить английский, школа английского языка, школа иностранных языков" />
+    <meta name="description" content="Якутск, Новосибирск, Железнодорожный, Английский Язык, Британский Образовательный Центр, British Educational Center" />
+    <title>Британский Образовательный Центр. Обучение иностранным языкам с носителями. Якутск, Новосибирск, Железнодорожный, Английский Язык</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+    <link rel="stylesheet" href="{{ asset("bundles/rithisbecrussia/css/index.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset("bundles/rithisbecrussia/css/reveal.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset("bundles/rithisbecrussia/css/pills.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset("bundles/rithisbecrussia/css/education-course-types.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset("bundles/rithisbecrussia/css/town-select.css") }}" type="text/css"/>
 </head>
 <body>
 
-<header>
-    <figure class="logo">
-        <a href="{{ path("rithis_becrussia_index_get") }}"><img src="/bundles/rithisbecrussia/images/logo.gif"
-                                                                alt="Британский Образовательный Центр"></a>
-        <figcaption>
-            Курсы английского языка<br>
-            Железнодорожный, Новосибирск, Якутск
-        </figcaption>
-    </figure>
-    {% render "RithisBECRussiaBundle:Town:townSelectBlock" %}
-    {% render "RithisBECRussiaBundle:Town:townPhonesBlock" %}
-    <div class="forms-panel">
-        <form action="{{ path("rithis_becrussia_search_get") }}" method="get">
-            <input type="text" name="query" placeholder="Поиск">
-            <button type="submit" class="button">Искать</button>
-        </form>
-        <form action="{{ path("rithis_becrussia_subscribe_post") }}" method="post">
-            <input type="email" name="email" placeholder="Ваш e-mail" value="{% block subscribe_email_value "" %}">
-            <button type="submit" class="button">Подписаться</button>
-        </form>
-    </div>
-</header>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" height="100%">
+<tr valign="top">
+<td width="10%" class="main_left"></td>
+<td bgcolor="#ffffff"><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="1" height="1"><br></td>
+<td width="80%">
 
-{% block education_course_types %}
-    {% render "RithisBECRussiaBundle:EducationCourseType:educationCourseTypesInlineBlock" %}
-{% endblock %}
+<!--начало верхней таблицы с логотипом-->
+<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ab1118">
+    <tr>
+        <td valign="top">
+            <a href="{{ path("rithis_becrussia_index_get") }}"><img src="{{ asset("bundles/rithisbecrussia/pict/logo.gif") }}" alt="" border="0"></a><br>
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                    <td valign="top"><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="97" height="1"><br></td>
+                    <td width="100%">
+                        <h1 class="h1_top">Курсы английского языка</h1>
+                        <h2 class="h2_top">Железнодорожный, Новосибирск, Якутск</h2>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td><img src="{{ asset("bundles/rithisbecrussia/pict/table_logo_1.gif") }}" alt="" border="0"><br></td>
+        <td class="table_logo">
+            <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" height="12" border="0"><br>
+            {% render "RithisBECRussiaBundle:Town:townSelectBlock" %}
+            <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" height="16" border="0"><br>
+            <a href=""><img src="{{ asset("bundles/rithisbecrussia/pict/button_enter.gif") }}" alt="Вход для клиентов" border="0"></a><br>
+            <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="7"><br>
+            <!--форма поиска-->
+            <form action="{{ path("rithis_becrussia_search_get") }}" method="get">
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td width="100%">
+                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                <tr>
+                                    <td><img src="{{ asset("bundles/rithisbecrussia/pict/form_left.gif") }}" alt="" border="0"><br></td>
+                                    <td class="td_form" width="100%">
+                                        <input class="form" name="query" value="Поиск по сайту" type="text">
+                                    </td>
+                                    <td><img src="{{ asset("bundles/rithisbecrussia/pict/form_right.gif") }}" alt="" border="0"><br></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="1"><br></td>
+                        <td><input type="image" src="{{ asset("bundles/rithisbecrussia/pict/button_ok.gif") }}" alt="ОК" border="0"><br></td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+        <td width="100%" class="table_logo" align="right" valign="top">
+            <br>
+            {% render "RithisBECRussiaBundle:Town:townPhonesBlock" %}
+            <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="21"><br>
+            <!--форма подписки-->
+            <form action="{{ path("rithis_becrussia_subscribe_post") }}" method="post">
+                <table width="500" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td width="100%">
+                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                <tr>
+                                    <td><img src="{{ asset("bundles/rithisbecrussia/pict/form_left.gif") }}" alt="" border="0"><br></td>
+                                    <td class="td_form" width="100%">
+                                        <input class="form" value="{% block subscribe_email_value "Ваш E-mail" %}" type="text">
+                                    </td>
+                                    <td><img src="{{ asset("bundles/rithisbecrussia/pict/form_right.gif") }}" alt="" border="0"><br></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="1"><br></td>
+                        <td><input type="image" src="{{ asset("bundles/rithisbecrussia/pict/button_ok.gif") }}" alt="ОК" border="0"><br></td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+        <td class="table_logo"><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="8" height="1"><br></td>
+    </tr>
+</table>
+<!--конец верхней таблицы с логотипом-->
 
-<aside class="left">
-    <nav>{{ knp_menu_render('RithisBECRussiaBundle:Builder:mainMenu', {firstClass: null, lastClass: null}) }}</nav>
+<!--начало таблицы с промоблоком-->
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td bgcolor="#ffffff">
+            <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="1" height="1"><br>
+        </td>
+    </tr>
+    <tr>
+        <td width="100%">
+            {% block education_course_types %}
+                {% render "RithisBECRussiaBundle:EducationCourseType:educationCourseTypesInlineBlock" %}
+            {% endblock %}
+        </td>
+    </tr>
+</table>
+<!--конец таблицы с промоблоком-->
+
+<!--начало основной таблицы-->
+<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+<tr valign="top">
+<td>
+    {{ knp_menu_render('RithisBECRussiaBundle:Builder:mainMenu', {footer: false}, 'bec') }}
+
+    <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="1" height="1"><br>
+    <a href="http://www.britania-tour.ru"><img src="{{ asset("bundles/rithisbecrussia/pict/banner_left_britania.jpg") }}" alt="Туристическое агентство Британия-Тур" width="279" height="153" border="0"></a><br>
+    <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="1" height="1"><br>
+    <a href="{{ path("rithis_becrussia_onlinerequest_new") }}"><img src="{{ asset("bundles/rithisbecrussia/pict/banner_left_order.jpg") }}" alt="Заявка на обучение" width="279" height="191" border="0"></a><br><br>
+
     {% block last_poll %}
         {% render "RithisBECRussiaBundle:Poll:lastPollBlock" %}
     {% endblock %}
-</aside>
-
-<section class="content">
+</td>
+<td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="15" height="1"><br></td>
+<td width="100%"><br>
     {% block content "" %}
-</section>
-
-<aside class="right">
-    {% spaceless %}
-    <a href="{{ path("rithis_becrussia_educationcourse_search") }}" class="banner">
-        <img src="/bundles/rithisbecrussia/images/educaton-sourse-search.jpg" alt="">
-    </a>
-    {% endspaceless %}
+</td>
+<td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="15" height="1"><br></td>
+<td>
+    <a href="{{ path("rithis_becrussia_educationcourse_search") }}"><img src="{{ asset("bundles/rithisbecrussia/pict/banner_right_help.jpg") }}" alt="Посощь в подборе образовательной программы" width="245" height="191" border="0"></a><br>
+    <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="1" height="1"><br>
+    <a href="{{ path("rithis_becrussia_test_questions") }}"><img src="{{ asset("bundles/rithisbecrussia/pict/banner_right_test.jpg") }}" alt="Пройти бесплатное тестирование" width="245" height="191" border="0"></a><br>
+    <br>
     {% render "RithisBECRussiaBundle:News:schoolsNewsBlock" %}
-</aside>
+</td>
+</tr>
+</table>
+<!--конец основной таблицы-->
 
-<footer>
-    <nav>{{ knp_menu_render('RithisBECRussiaBundle:Builder:mainMenu', {firstClass: null, lastClass: null}) }}</nav>
-    <div class="logo">
-        Курсы английского языка<br>
-        Железнодорожный, Новосибирск, Якутск
-    </div>
-    {% render "RithisBECRussiaBundle:Town:townSelectBlock" %}
-    {% render "RithisBECRussiaBundle:Town:townPhonesBlock" %}
-    <p class="creator">Разработка сайта — <a href="http://rithis.com" target="_blank">Студия Ритхис</a></p>
-</footer>
+<!--начало нижней таблицы-->
+<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ab1118" class="footer">
+    <tr>
+        <td class="botmenu"><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="97" height="55"><br></td>
+        <td colspan="4" class="botmenu">
+            {{ knp_menu_render('RithisBECRussiaBundle:Builder:mainMenu', {footer: true}, 'bec') }}
+        </td>
+    </tr>
+    <tr>
+        <td valign="top"><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="97" height="1"><br></td>
+        <td>
+            <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" height="1" border="0" width="300"><br>
+            <h1 class="h1_top">Курсы английского языка</h1>
+            <h2 class="h2_top">Железнодорожный, Новосибирск, Якутск</h2>
+        </td>
+        <td class="table_logo">
+            <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" height="1" border="0" width="214"><br>
+            {% render "RithisBECRussiaBundle:Town:townSelectBlock" %}
+        </td>
+        <td width="100%" class="table_logo" align="right" valign="top">
+            {% render "RithisBECRussiaBundle:Town:townPhonesBlock" %}
+        </td>
+        <td class="table_logo"><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="8" height="1"><br></td>
+    </tr>
+</table>
+<!--конец нижней таблицы-->
+
+</td>
+<td bgcolor="#ffffff"><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="1" height="1"><br></td>
+<td width="10%" class="main_right"></td>
+</tr>
+</table>
 
 <script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"></script>
-{% javascripts
-"https://raw.github.com/Modernizr/Modernizr/v2.6.2/modernizr.js"
-"http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+{#
 "@RithisBECRussiaBundle/Resources/public/js/education-course-types.js"
-"@RithisBECRussiaBundle/Resources/public/js/map.js"
-"https://raw.github.com/zurb/foundation/v3.2.2/vendor/assets/javascripts/foundation/jquery.foundation.reveal.js"
-"@RithisBECRussiaBundle/Resources/assets/js/gallery.js"
-"bundles/rithisbecrussia/js/galleria/galleria-1.2.8.min.js"
-"@RithisBECRussiaBundle/Resources/assets/js/news.js"
-"@RithisBECRussiaBundle/Resources/assets/js/library.js"
+
+#}
+{% javascripts
+    "http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+    "https://raw.github.com/zurb/foundation/v3.2.2/vendor/assets/javascripts/foundation/jquery.foundation.reveal.js"
+    "bundles/rithisbecrussia/js/galleria/galleria-1.2.8.min.js"
+    "@RithisBECRussiaBundle/Resources/assets/js/gallery.js"
+    "@RithisBECRussiaBundle/Resources/assets/js/news.js"
+    "@RithisBECRussiaBundle/Resources/assets/js/library.js"
+    "@RithisBECRussiaBundle/Resources/public/js/map.js"
+    "@RithisBECRussiaBundle/Resources/public/js/town-select.js"
 %}
 <script src="{{ asset_url }}"></script>
 {% endjavascripts %}

@@ -1,0 +1,33 @@
+.education-course-types {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.education-course-types li {
+    float: left;
+    width: 25%;
+}
+
+.education-course-types li a {
+    display: block;
+    height: 70px;
+    padding-top: 25px;
+    color: #424242;
+    font-size: 28px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    text-decoration: none;
+    border-right: 1px solid #666666;
+    background: url("../pict/mb.png") right;
+}
+
+.education-course-types li a small {
+    display: block;
+    font-size: 14px;
+}
+
+.education-course-types li a:hover {
+    color: white;
+    background-position: left;
+}

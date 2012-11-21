@@ -23,6 +23,7 @@ class RithisBECRussiaExtension extends Extension
         $loader->load('doctrine.yml');
         $loader->load('unisender.yml');
         $loader->load('provider.yml');
+        $loader->load('menu.yml');
 
         foreach ($config['library'] as $name => $providerConfigs) {
             $provider = 'rithis.becrussia.library.provider.' . $name;

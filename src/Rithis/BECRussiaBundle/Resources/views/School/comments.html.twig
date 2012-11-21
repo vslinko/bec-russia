@@ -3,35 +3,26 @@
 {% form_theme form with ["RithisBECRussiaBundle::form.html.twig"] %}
 
 {% block school_content %}
-    <section class="article list">
-        <header>
-            <h2>Отзывы</h2>
-        </header>
+    <div class="title">Отзывы<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"></div>
 
-        {% for comment in school.moderatedComments %}
-            <article>
-                <header>
-                    <h3>{{ comment.authorName }}</h3>
-                </header>
+    {% for comment in school.moderatedComments %}
+        <h3>{{ comment.authorName }}</h3>
 
-                <p>{{ comment.text }}</p>
-            </article>
-        {% else %}
-            <p>Пока отзывов нет.</p>
-        {% endfor %}
+        <p>{{ comment.text }}</p>
+    {% else %}
+        <p>Пока отзывов нет.</p>
+    {% endfor %}
+    <br>
 
-        <header>
-            <h2>Оставить отзыв</h2>
-        </header>
+    <div class="title">Оставить отзыв<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-        <form action="{{ path("rithis_becrussia_school_postcomment", {slug: school.slug}) }}" method="post" class="symfony-form">
-            {% if success %}
-                <p class="symfony-form-thanks">Спасибо за ваш отзыв!</p>
-            {% endif %}
+    <form action="{{ path("rithis_becrussia_school_postcomment", {slug: school.slug}) }}" method="post" class="symfony-form">
+        {% if success %}
+            <p class="symfony-form-thanks">Спасибо за ваш отзыв!</p>
+        {% endif %}
 
-            {{ form_widget(form) }}
+        {{ form_widget(form) }}
 
-            <button type="submit" class="button">Отправить</button>
-        </form>
-    </section>
+        <button type="submit" class="button">Отправить</button>
+    </form>
 {% endblock %}

@@ -1,21 +1,10 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
 {% block content %}
-    <section class="article list">
-        <header>
-            <h1>Вакансии</h1>
-        </header>
+    <div class="title">Вакансии<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-        {% for vacancy in vacancies %}
-            <article>
-                <header>
-                    <h2>
-                        <a href="{{ path("rithis_becrussia_vacancy_get", {slug: vacancy.slug}) }}">{{ vacancy.title }}</a>
-                    </h2>
-                </header>
-
-                <blockquote>{{ vacancy.annotation }}</blockquote>
-            </article>
-        {% endfor %}
-    </section>
+    {% for vacancy in vacancies %}
+        <a href="{{ path("rithis_becrussia_vacancy_get", {slug: vacancy.slug}) }}">{{ vacancy.title }}</a><br>
+        {{ vacancy.annotation }}<br><br>
+    {% endfor %}
 {% endblock %}

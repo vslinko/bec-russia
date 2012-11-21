@@ -1,15 +1,11 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
 {% block content %}
-<section class="article list list-with-figure education-courses">
-    <header>
-        <h1>Образовательные курсы {{ type.title }}</h1>
-    </header>
+    <div class="title">Образовательные курсы {{ type.title }}<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"></div>
 
     <p>{{ type.description }}</p>
 
     {% for course in courses %}
         {% include "RithisBECRussiaBundle::course.html.twig" %}
     {% endfor %}
-</section>
 {% endblock %}

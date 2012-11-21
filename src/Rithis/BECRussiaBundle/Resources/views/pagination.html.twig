@@ -1,39 +1,37 @@
 {% if pageCount > 1 %}
-    <nav class="pills">
-        <ul>
-            {% if first is defined and current != first %}
-                <li>
-                    <a href="{{ path(route, query|merge({(pageParameterName): first})) }}">&lt;&lt;</a>
-                </li>
-            {% endif %}
+    <ul class="pills">
+        {% if first is defined and current != first %}
+            <li>
+                <a href="{{ path(route, query|merge({(pageParameterName): first})) }}">&lt;&lt;</a>
+            </li>
+        {% endif %}
 
-            {% if previous is defined %}
-                <li>
-                    <a href="{{ path(route, query|merge({(pageParameterName): previous})) }}">&lt;</a>
-                </li>
-            {% endif %}
+        {% if previous is defined %}
+            <li>
+                <a href="{{ path(route, query|merge({(pageParameterName): previous})) }}">&lt;</a>
+            </li>
+        {% endif %}
 
-            {% for page in pagesInRange %}
-                {% if page != current %}
-                    <li>
-                        <a href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a>
-                    </li>
-                {% else %}
-                    <li><b>{{ page }}</b></li>
-                {% endif %}
-            {% endfor %}
-
-            {% if next is defined %}
+        {% for page in pagesInRange %}
+            {% if page != current %}
                 <li>
-                    <a href="{{ path(route, query|merge({(pageParameterName): next})) }}">&gt;</a>
+                    <a href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a>
                 </li>
+            {% else %}
+                <li><b>{{ page }}</b></li>
             {% endif %}
+        {% endfor %}
 
-            {% if last is defined and current != last %}
-                <li>
-                    <a href="{{ path(route, query|merge({(pageParameterName): last})) }}">&gt;&gt;</a>
-                </li>
-            {% endif %}
-        </ul>
-    </nav>
+        {% if next is defined %}
+            <li>
+                <a href="{{ path(route, query|merge({(pageParameterName): next})) }}">&gt;</a>
+            </li>
+        {% endif %}
+
+        {% if last is defined and current != last %}
+            <li>
+                <a href="{{ path(route, query|merge({(pageParameterName): last})) }}">&gt;&gt;</a>
+            </li>
+        {% endif %}
+    </ul>
 {% endif %}

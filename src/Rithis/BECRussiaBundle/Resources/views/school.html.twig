@@ -1,25 +1,21 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
 {% block content %}
-<section class="article">
-    <header>
-        <h2>Школа "{{ school.title }}"</h2>
-    </header>
+<div class="title">Школа "{{ school.title }}"<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"></div>
 
-    <nav class="pills">
-        <ul>
-            <li><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">О школе</a></li>
-            <li><a href="{{ path("rithis_becrussia_school_teachers", {slug: school.slug}) }}">Преподаватели</a></li>
-            <li><a href="{{ path("rithis_becrussia_school_news", {slug: school.slug}) }}">Новости школы</a></li>
-            <li><a href="{{ path("rithis_becrussia_school_discounts", {slug: school.slug}) }}">Скидки</a></li>
-            <li><a href="{{ path("rithis_becrussia_school_galleries", {slug: school.slug}) }}">Фото и Видео</a></li>
-            <li><a href="{{ path("rithis_becrussia_school_comments", {slug: school.slug}) }}">Отзывы</a></li>
-            <li><a href="{{ path("rithis_becrussia_school_schedule", {slug: school.slug}) }}">Расписание</a></li>
-            <li><a href="{{ path("rithis_becrussia_school_contacts", {slug: school.slug}) }}">Контакты</a></li>
-            <li><a href="{{ path("rithis_becrussia_onlinerequest_new") }}">Заявка на обучение</a></li>
-        </ul>
-    </nav>
+<ul class="pills">
+    <li><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">О школе</a></li>
+    <li><a href="{{ path("rithis_becrussia_school_teachers", {slug: school.slug}) }}">Преподаватели</a></li>
+    <li><a href="{{ path("rithis_becrussia_school_news", {slug: school.slug}) }}">Новости школы</a></li>
+    <li><a href="{{ path("rithis_becrussia_school_discounts", {slug: school.slug}) }}">Скидки</a></li>
+    <li><a href="{{ path("rithis_becrussia_school_galleries", {slug: school.slug}) }}">Фото и Видео</a></li>
+    <li><a href="{{ path("rithis_becrussia_school_comments", {slug: school.slug}) }}">Отзывы</a></li>
+    <li><a href="{{ path("rithis_becrussia_school_schedule", {slug: school.slug}) }}">Расписание</a></li>
+    <li><a href="{{ path("rithis_becrussia_school_contacts", {slug: school.slug}) }}">Контакты</a></li>
+    <li><a href="{{ path("rithis_becrussia_onlinerequest_new") }}">Заявка на обучение</a></li>
+</ul>
+<div style="clear: both"></div>
+<br>
 
-    {% block school_content "" %}
-</section>
+{% block school_content "" %}
 {% endblock %}

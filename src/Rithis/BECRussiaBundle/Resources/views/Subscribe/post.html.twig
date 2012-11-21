@@ -3,15 +3,11 @@
 {% block subscribe_email_value email %}
 
 {% block content %}
-<section class="article">
-    <header>
-        <h1>Результаты подписки</h1>
-    </header>
+    <div class="title">Результаты подписки<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
     {% if success %}
         <p>Вы успешно подписаны на рассылку!</p>
     {% else %}
         <p>Произошла проблема при подписке, побробуйте еще раз.</p>
     {% endif %}
-</section>
 {% endblock %}

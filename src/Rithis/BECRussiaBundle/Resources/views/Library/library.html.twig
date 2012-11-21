@@ -2,34 +2,33 @@
 
 
 {% block content %}
-    <section class="article list library">
-        <header>
-            <h1>Библиотека</h1>
+    <div class="library">
+            <div class="title">Библиотека<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
+
             <div class="filtering">
-                Тип: 
+                Тип:
                 <select>
                 {% for name in ['all', 'article', 'book', 'video', 'audio', 'soft'] %}
                     {% set provider_name = "rithis.becrussia.library.provider.#{name}" %}
                     <option
                     {% if provider is sameas(name) %}
-                         selected 
+                         selected
                     {% else %}
-                         data-href="{{ path("rithis_becrussia_library_library", app.request.query.all|merge({'provider': name})) }}" 
+                         data-href="{{ path("rithis_becrussia_library_library", app.request.query.all|merge({'provider': name})) }}"
                     {% endif %}
                     >{{ provider_name|trans({}, 'rithis_bec_russia_library') }}</option>
                 {% endfor %}
                 </select>
             </div>
-        </header>
 
         {% for media in pagination %}
+            <br>
             <div class="library-item">
                 <a href="{% path media, "default" %}" >{{ media.name }}</a>
-                <span class="provider">{{ media.providerName|trans({}, 'rithis_bec_russia_library') }}</span>
+                {#<span class="provider">{{ media.providerName|trans({}, 'rithis_bec_russia_library') }}</span>#}
             </div>
         {% endfor %}
 
         {{ pagination.render("RithisBECRussiaBundle::pagination.html.twig")|raw }}
-
-    </section>
+    </div>
 {% endblock %}

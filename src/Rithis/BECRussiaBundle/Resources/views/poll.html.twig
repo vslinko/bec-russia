@@ -6,12 +6,16 @@
     </ul>
 {% else %}
     <form action="{{ path("rithis_becrussia_poll_postresults", {id: poll.id}) }}" method="post">
-        <ul>
-            {% for answer in poll.answers %}
-                <li><label><input type="radio" name="answer" value="{{ answer.id }}">{{ answer.answer }}</label></li>
-            {% endfor %}
-        </ul>
-
-        <button type="submit" class="alternative button">Проголосовать</button>
+        {% for answer in poll.answers %}
+            <input type="radio" value="{{ answer.id }}">{{ answer.answer }}<br>
+        {% endfor %}
+        <br>
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="10"><br></td>
+                <td width="50%"><input type="image" src="{{ asset("bundles/rithisbecrussia/pict/button_vote.gif") }}" alt="Проголосовать" width="114" height="21" border="0"><br></td>
+                <td width="50%" align="right">{#<a href="">Результаты</a>#}</td>
+            </tr>
+        </table>
     </form>
 {% endif %}

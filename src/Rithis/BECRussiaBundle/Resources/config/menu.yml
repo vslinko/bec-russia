@@ -1,0 +1,7 @@
+services:
+    rithis.becrussia.menu.renderer:
+        class: Rithis\BECRussiaBundle\Menu\Renderer
+        arguments:
+            - @twig
+        tags:
+            - { name: knp_menu.renderer, alias: bec }

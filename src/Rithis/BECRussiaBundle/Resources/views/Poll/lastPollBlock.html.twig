@@ -1,19 +1,34 @@
 {% if poll %}
-    <section class="article poll">
-        <header>
-            <h2>Опрос</h2>
-        </header>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="10"><br></td>
+        <td width="100%">
+            <div class="title">Опрос<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
+            <div class="vote_text">
+                {{ poll.question }}
 
-        <article>
-            <header>
-                <h3>{{ poll.question }}</h3>
-            </header>
-
-            {% include "RithisBECRussiaBundle::poll.html.twig" %}
-        </article>
-
-        <footer>
-            <a class="button" href="{{ path("rithis_becrussia_poll_all") }}">Архив опросов</a>
-        </footer>
-    </section>
+                {% for answer in poll.answers %}
+                    <input type="radio" value="{{ answer.id }}" >{{ answer.answer }}<br>
+                {% endfor %}
+            </div>
+        </td>
+    </tr>
+</table>
+<br>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="10"><br></td>
+        <td width="50%"><input type="image" src="{{ asset("bundles/rithisbecrussia/pict/button_vote.gif") }}" alt="Проголосовать" width="114" height="21" border="0"><br></td>
+        <td width="50%" align="right">{#<a href="">Результаты</a>#}</td>
+    </tr>
+</table>
+<br>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="10"><br></td>
+        <td class="all" width="100%"></td>
+        <td><a href="{{ path("rithis_becrussia_poll_all") }}"><img src="{{ asset("bundles/rithisbecrussia/pict/votes_all.gif") }}" alt="Архив опросов" border="0"></a><br></td>
+    </tr>
+</table>
+<br><br>
 {% endif %}

@@ -1,12 +1,9 @@
 {% extends "RithisBECRussiaBundle::school.html.twig" %}
 
 {% block school_content %}
-    <section class="article schedule">
-        <header>
-            <h2>Расписание</h2>
-        </header>
+    <div class="title">Расписание<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"></div>
 
-        <table>
+    <table>
         {% for row in school.schedule %}
             <tr>
                 {% for cell in row %}
@@ -14,6 +11,5 @@
                 {% endfor %}
             </tr>
         {% endfor %}
-        </table>
-    </section>
+    </table>
 {% endblock %}

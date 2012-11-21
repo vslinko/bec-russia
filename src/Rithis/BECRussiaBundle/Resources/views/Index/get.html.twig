@@ -1,17 +1,39 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
 {% block education_course_types %}
-    <div class="education-course-types">
-        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
-            <param name="flashVars" value="_xml=/education-course-types/export.xml" />
+    <div id="flashContent" style="width:100%">
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="100%" height="390" id="promo" align="left">
+            <param name="movie" value="{{ asset('bundles/rithisbecrussia/swf/education-course-types.swf') }}" />
+            <param name="quality" value="high" />
+            <param name="bgcolor" value="#ffffff" />
+            <param name="play" value="true" />
+            <param name="loop" value="true" />
+            <param name="wmode" value="window" />
+            <param name="scale" value="showall" />
+            <param name="menu" value="true" />
+            <param name="devicefont" value="false" />
+            <param name="salign" value="" />
+            <param name="flashVars" value="_xml={{ path("rithis_becrussia_educationcoursetype_export", {_format: "xml"}) }}" />
+            <param name="allowScriptAccess" value="sameDomain" />
             <!--[if !IE]>-->
-            <object type="application/x-shockwave-flash" data="{{ asset('bundles/rithisbecrussia/swf/education-course-types.swf') }}">
-                <param name="flashVars" value="_xml=/education-course-types/export.xml" />
-            <!--<![endif]-->
-                <a href="http://www.adobe.com/go/getflash">
-                    <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/>
-                </a>
-            <!--[if !IE]>-->
+            <object type="application/x-shockwave-flash" data="{{ asset('bundles/rithisbecrussia/swf/education-course-types.swf') }}" width="100%" height="390">
+                <param name="movie" value="{{ asset('bundles/rithisbecrussia/swf/education-course-types.swf') }}" />
+                <param name="quality" value="high" />
+                <param name="bgcolor" value="#ffffff" />
+                <param name="play" value="true" />
+                <param name="loop" value="true" />
+                <param name="wmode" value="window" />
+                <param name="scale" value="showall" />
+                <param name="menu" value="true" />
+                <param name="devicefont" value="false" />
+                <param name="salign" value="" />
+                <param name="flashVars" value="_xml={{ path("rithis_becrussia_educationcoursetype_export", {_format: "xml"}) }}" />
+                <param name="allowScriptAccess" value="sameDomain" />
+                <!--<![endif]-->
+                <a href="http://www.adobe.com/go/getflash">
+                    <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+                </a>
+                <!--[if !IE]>-->
             </object>
             <!--<![endif]-->
         </object>
@@ -20,17 +42,9 @@
 
 {% block content %}
     {% set page = page('mainpage') %}
-    {% if page %}
-        <section class="article">
-            <header>
-                <h2>{{ page.title }}</h2>
-            </header>
 
-            <article>
-                {{ page.content|raw }}
-            </article>
-        </section>
-    {% endif %}
+    <div class="title">{{ page.title }}<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
+    {{ page.content|raw }}
 
     {% render "RithisBECRussiaBundle:News:centreNewsBlock" %}
 {% endblock %}

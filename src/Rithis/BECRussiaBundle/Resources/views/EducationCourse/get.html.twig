@@ -1,11 +1,5 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
 {% block content %}
-<section class="article education-courses">
-    <header>
-        <h1>{{ course.title }}</h1>
-    </header>
-
     {% include "RithisBECRussiaBundle::course.html.twig" with {thumbnail_size: "big"} %}
-</section>
 {% endblock %}

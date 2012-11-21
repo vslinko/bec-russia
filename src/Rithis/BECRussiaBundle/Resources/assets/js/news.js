@@ -3,10 +3,10 @@ $(function () {
         actions = $('<div class="reveal-actions"><a class="close-reveal-modal" href="#"></a></div>'),
         defaultModal = $('<div class="reveal-modal"></div>').append([actions, body]);
 
-    $(".news-item .image-preview").click(function (e) {
+    $(".image-preview").click(function (e) {
         var target = $(this),
             modal = defaultModal.clone().appendTo('body');
-        
+
         modal.on('reveal:close', function (e) {
             modal.remove();
         });

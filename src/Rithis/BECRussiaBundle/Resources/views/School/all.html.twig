@@ -1,36 +1,29 @@
 {% extends "RithisBECRussiaBundle::school.html.twig" %}
 
 {% block content %}
-    <section class="article list-with-figure list">
-        <header>
-            <h1>Школы</h1>
-        </header>
+    <div class="title">Школы<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-        {% for school in schools %}
-            <article>
-                <figure>
-                    {% thumbnail school.image, "medium" %}
-                </figure>
+    {% for school in schools %}
+        <div class="title"><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">{{ school.title }}</a><br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-                <header>
-                    <h2><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">{{ school.title }}</a>
-                    </h2>
-                </header>
+        <div style="float: left; margin: 0 10px 10px 0">
+            {% thumbnail school.image, "medium" %}
+        </div>
 
-                <blockquote>
-                    <p>Адрес: {{ school.address }}</p>
+        <div>
+            <p>Адрес: {{ school.address }}</p>
 
-                    <p>Телефоны:</p>
+            <p>Телефоны:</p>
 
-                    {% if school.phones|length > 0 %}
-                        <ul>
-                            {% for phone in school.phones %}
-                                <li>{{ phone.number }}</li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </blockquote>
-            </article>
-        {% endfor %}
-    </section>
+            {% if school.phones|length > 0 %}
+                <ul>
+                    {% for phone in school.phones %}
+                        <li>{{ phone.number }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div style="clear: both;"></div>
+    {% endfor %}
 {% endblock %}

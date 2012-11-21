@@ -27,7 +27,7 @@ class NewsController extends BaseController
         $pagination = $this->get('knp_paginator')->paginate(
             $query,
             $this->getRequest()->query->get('page', 1),
-            10
+            1
         );
 
         return array('pagination' => $pagination);

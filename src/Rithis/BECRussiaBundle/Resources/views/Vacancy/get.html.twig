@@ -1,13 +1,7 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
 {% block content %}
-    <section class="article">
-        <header>
-            <h1>{{ vacancy.title }}</h1>
-        </header>
+    <div class="title">{{ vacancy.title }}<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-        <article>
-            {{ vacancy.description|raw }}
-        </article>
-    </section>
+    {{ vacancy.description|raw }}
 {% endblock %}

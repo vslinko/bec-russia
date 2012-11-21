@@ -1,25 +1,19 @@
 {% extends "RithisBECRussiaBundle::school.html.twig" %}
 
 {% block school_content %}
-    <section class="article">
-        <header>
-            <h2>Контакты</h2>
-        </header>
+    <div class="title">Контакты<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"></div>
 
-        <article>
-            <p>Телефоны:</p>
+    <p>Телефоны:</p>
 
-            {% if school.phones|length > 0 %}
-                <ul>
-                    {% for phone in school.phones %}
-                        <li>{{ phone.number }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
+    {% if school.phones|length > 0 %}
+        <ul>
+            {% for phone in school.phones %}
+                <li>{{ phone.number }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
-            <p>Адрес: {{ school.address }}</p>
+    <p>Адрес: {{ school.address }}</p>
 
-            <div class="map" data-element="map" data-address="{{ school.town }} {{ school.address }}"></div>
-        </article>
-    </section>
+    <div style="width: 100%; height: 500px" data-element="map" data-address="{{ school.town }} {{ school.address }}"></div>
 {% endblock %}

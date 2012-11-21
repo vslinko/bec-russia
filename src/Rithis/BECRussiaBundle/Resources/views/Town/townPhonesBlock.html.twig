@@ -1,9 +1,10 @@
 {% if phones|length > 0 %}
-    <div class="phones">
-        <ul>
-            {% for phone in phones %}
-                <li>{{ phone.number }}</li>
-            {% endfor %}
-        </ul>
-    </div>
+    <font class="phone_big">{{ phones[0].number }}</font><br>
+    <font class="phone_small">
+        {% if phones|length > 1 %}
+        {% for i in range(1, phones.length) %}
+            {{ phones[i].number }}{% if not loop.last %},{% endif %}
+        {% endfor %}
+        {% endif %}
+    </font><br>
 {% endif %}

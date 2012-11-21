@@ -1,19 +1,17 @@
-{% block form_row %}
-    <div class="symfony-form-row">
-        {{ form_label(form) }}
-        {{ form_widget(form) }}
-        {{ form_errors(form) }}
-    </div>
-{% endblock %}
+{% extends "form_table_layout.html.twig" %}
 
 {% block captcha_row %}
-    <div class="symfony-form-row">
+    <tr>
+        <td>
         <label for="{{ id }}">
             <img src="{{ captcha_code }}" title="captcha" width="{{ captcha_width }}" height="{{ captcha_height }}" />
         </label>
+        </td>
+        <td>
         {{ form_widget(form) }}
         {{ form_errors(form) }}
-    </div>
+        </td>
+    </tr>
 {% endblock %}
 
 {% block captcha_widget %}

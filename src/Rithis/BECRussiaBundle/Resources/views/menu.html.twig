@@ -1,0 +1,18 @@
+<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+{% for child in item.children %}
+    {% if child.current %}
+    <tr>
+        <td class="menu_act"><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="97" height="30"><br></td>
+        <td class="menu_act_text" width="100%">{{ child.name }}</td>
+    </tr>
+    {% else %}
+    <tr>
+        <td class="menu_pas"><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="97" height="30"><br></td>
+        <td class="menu_pas" width="100%"><a href="{{ child.uri }}" class="a_menu_pas">{{ child.name }}</a></td>
+    </tr>
+    {% endif %}
+    {% if not loop.last %}
+    <tr><td colspan="2" bgcolor="#cd7074"><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="1" height="1"><br></td></tr>
+    {% endif %}
+{% endfor %}
+</table>

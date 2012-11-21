@@ -1,17 +1,11 @@
 {% extends "RithisBECRussiaBundle::school.html.twig" %}
 
 {% block school_content %}
-    <section class="article">
-        <header>
-            <h2>О школе</h2>
-        </header>
+    <div class="title">О школе<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-        <article>
-            <figure>
-                {% thumbnail school.image, "big" %}
-            </figure>
+    <div style="float: left; margin: 0 10px 10px 0">
+        {% thumbnail school.image, "big" %}
+    </div>
 
-            {{ school.about|raw }}
-        </article>
-    </section>
+    {{ school.about|raw }}
 {% endblock %}

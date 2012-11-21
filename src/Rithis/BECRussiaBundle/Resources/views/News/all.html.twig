@@ -1,29 +1,31 @@
 {% extends "RithisBECRussiaBundle::base.html.twig" %}
 
 {% block content %}
-    <section class="article list-with-figure list">
-        <header>
-            <h1>Новости</h1>
-        </header>
+    <div class="title">Новости<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-        {% for news in pagination %}
-            <article class="news-item">
-                <figure>
+    {% for news in pagination %}
+        <table width="170" cellspacing="0" cellpadding="0" border="0" align="left">
+            <tr>
+                <td>
                     <a class="image-preview" href="{% path news.image, "big" %}">
-                    {% thumbnail news.image, "medium" %}
+                        {% thumbnail news.image, "medium" %}
                     </a>
-                </figure>
-
-                <header>
-                    <p class="news-created-at">{{ news.createdAt|date('d.m.Y') }}</p>
-
-                    <h2><a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}">{{ news.title }}</a></h2>
-                </header>
-
-                <blockquote>{{ news.annotation }}</blockquote>
-            </article>
-        {% endfor %}
-    </section>
+                    {#<img src="{{ asset("bundles/rithisbecrussia/pict/pict.jpg") }}" alt="" width="160" height="141" border="0" class="pict">#}
+                    <br></td>
+                <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"></td>
+            </tr>
+            <tr>
+                <td><img src="{{ asset("bundles/rithisbecrussia/pict/pict_shadow_bg.gif") }}" alt="" border="0" width="100%" height="7"><br></td>
+                <td></td>
+            </tr>
+        </table>
+        <font class="news_date">{{ news.createdAt|date('d.m.Y') }}</font><br>
+        <a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}" class="news_title">{{ news.title }}</a><br>
+        {{ news.annotation }}
+        <a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}" class="podr">Читать новость полностью</a>
+        <br><br><br>
+        <div style="clear: both"></div>
+    {% endfor %}
 
     {{ pagination.render("RithisBECRussiaBundle::pagination.html.twig")|raw }}
 {% endblock %}

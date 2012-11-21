@@ -1,29 +1,35 @@
 {% if news|length > 0 %}
-    <section class="article list-with-figure list">
-        <header>
-            <h2>Новости центра</h2>
-        </header>
+<div class="title">новости центра<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-        {% for news in news %}
-            <article class="news-item">
-                <figure>
-                    <a class="image-preview" href="{% path news.image, "big" %}">
-                    {% thumbnail news.image, "medium" %}
-                    </a>
-                </figure>
+{% for news in news %}
+<table width="170" cellspacing="0" cellpadding="0" border="0" align="left">
+    <tr>
+        <td>
+            <a class="image-preview" href="{% path news.image, "big" %}">
+                {% thumbnail news.image, "medium" %}
+            </a>
+            {#<img src="{{ asset("bundles/rithisbecrussia/pict/pict.jpg") }}" alt="" width="160" height="141" border="0" class="pict">#}
+            <br></td>
+        <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"></td>
+    </tr>
+    <tr>
+        <td><img src="{{ asset("bundles/rithisbecrussia/pict/pict_shadow_bg.gif") }}" alt="" border="0" width="100%" height="7"><br></td>
+        <td></td>
+    </tr>
+</table>
+<font class="news_date">{{ news.createdAt|date('d.m.Y') }}</font><br>
+<a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}" class="news_title">{{ news.title }}</a><br>
+    {{ news.annotation }}
+<a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}" class="podr">Читать новость полностью</a>
+<br><br><br>
+<div style="clear: both"></div>
+{% endfor %}
 
-                <header>
-                    <p class="news-created-at">{{ news.createdAt|date('d.m.Y') }}</p>
-
-                    <h3><a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}">{{ news.title }}</a></h3>
-                </header>
-
-                <blockquote>{{ news.annotation }}</blockquote>
-            </article>
-        {% endfor %}
-
-        <footer>
-            <a href="{{ path("rithis_becrussia_news_all") }}" class="button">Читать все новости</a>
-        </footer>
-    </section>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="all" width="100%"></td>
+        <td><a href="{{ path("rithis_becrussia_news_all") }}"><img src="{{ asset("bundles/rithisbecrussia/pict/news_all.gif") }}" alt="Читать все новости" width="154" height="24" border="0"></a><br></td>
+    </tr>
+</table>
+<br>
 {% endif %}

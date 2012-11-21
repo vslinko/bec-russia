@@ -6,29 +6,27 @@
     <script type="text/javascript">
         VK.init({apiId: {{ vk_api_id }}, onlyWidgets: true});
     </script>
-
 {% endblock %}
 
 {% block school_content %}
-    <section class="article list-with-figure list galleries">
-        <header>
-            <h1>Фото и Видео</h1>
-            <div class="filtering">
-                Тип: 
-                {% for name, text in {all: 'Все', image: 'Изображение', youtube: 'Видео'} %}
-                    {% if provider is sameas(name) %}
-                        <span>{{ text }}</span>
-                    {% else %}
-                        <a href="{{ path("rithis_becrussia_school_galleries", app.request.query.all|merge({'slug': school.slug, 'provider': name})) }}">{{ text }}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </header>
+    <div class="title">Фото и Видео<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-        {% for gallery in pagination %}
-            {% include 'RithisBECRussiaBundle:School:gallery-item.html.twig' with {'gallery': gallery} %}
-        {% endfor %}
-    </section>
+    <div class="galleries">
+        <div class="filtering">
+            Тип:
+            {% for name, text in {all: 'Все', image: 'Изображение', youtube: 'Видео'} %}
+                {% if provider is sameas(name) %}
+                    <span>{{ text }}</span>
+                {% else %}
+                    <a href="{{ path("rithis_becrussia_school_galleries", app.request.query.all|merge({'slug': school.slug, 'provider': name})) }}">{{ text }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    {% for gallery in pagination %}
+        {% include 'RithisBECRussiaBundle:School:gallery-item.html.twig' with {'gallery': gallery} %}
+    {% endfor %}
 
     {{ pagination.render("RithisBECRussiaBundle::pagination.html.twig")|raw }}
 {% endblock %}

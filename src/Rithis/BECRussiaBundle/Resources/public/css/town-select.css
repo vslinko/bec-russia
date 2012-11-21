@@ -1,0 +1,34 @@
+.town-select {
+    position: absolute;
+    background: white;
+    background: rgba(255,255,255,.9);
+    padding: 15px;
+    border: 1px solid #666666;
+    margin: 5px 0 0 50px;
+    display: none;
+}
+
+.town-select .town-select-title {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.town-select a {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.town-select input {
+    margin-top: 10px;
+}
+
+.footer .town-select {
+    margin: -190px 0 0 50px;
+}
+
+.town-select .selected {
+    color: black;
+}

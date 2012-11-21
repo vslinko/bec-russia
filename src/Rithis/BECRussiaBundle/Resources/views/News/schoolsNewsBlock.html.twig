@@ -1,33 +1,42 @@
 {% if news|length > 0 %}
-    <section class="article list-with-figure list">
-        <header>
-            <h2>Новости филиалов</h2>
-        </header>
+<div class="title">новости филиалов<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-        {% for news in news %}
-            <article class="news-item">
-                <header>
-                    <figure>
-                        <a class="image-preview" href="{% path news.image, "big" %}">
-                        {% thumbnail news.image, "small" %}
-                        </a>
-                    </figure>
+{% for news in news %}
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td>
+            <a class="image-preview" href="{% path news.image, "big" %}">
+                {% thumbnail news.image, "small" %}
+            </a>
+            <br></td>
+        {#<td><img src="{{ asset("bundles/rithisbecrussia/pict/pict.jpg") }}" alt="" width="90" border="0" class="pict"><br></td>#}
+        <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="10"><br></td>
+        <td width="100%">
+            <font class="news_date_fil">{{ news.createdAt|date('d.m.Y') }}</font><br>
+            <a href="{{ path("rithis_becrussia_school_get", {slug: news.school.slug}) }}" class="podr">{{ news.school }}</a>
+            <div class="news_text_fil">Школа: <strong>{{ news.school.address }}</strong></div>
+        </td>
+        <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="10"></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="5"><br>
+            <a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}" class="news_title_fil">{{ news.title }}</a><br>
+            <div class="news_text_fil">{{ news.annotation }}
+                <a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}" class="podr">Читать новость полностью</a></div>
+        </td>
+        <td></td>
+    </tr>
+</table>
+<br><br>
+{% endfor %}
 
-                    <p class="news-created-at">{{ news.createdAt|date('d.m.Y') }}</p>
-
-                    <p>
-                        <a href="{{ path("rithis_becrussia_school_get", {slug: news.school.slug}) }}">{{ news.school }}</a>
-                    </p>
-                    <address>{{ news.school.address }}</address>
-                    <h3><a href="{{ path("rithis_becrussia_news_get", {slug: news.slug}) }}">{{ news.title }}</a></h3>
-                </header>
-
-                <blockquote>{{ news.annotation }}</blockquote>
-            </article>
-        {% endfor %}
-
-        <footer>
-            <a href="{{ path("rithis_becrussia_news_all") }}" class="button">Читать все новости</a>
-        </footer>
-    </section>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="all" width="100%"></td>
+        <td><a href="{{ path("rithis_becrussia_news_all") }}"><img src="{{ asset("bundles/rithisbecrussia/pict/news_all.gif") }}" alt="Читать все новости" width="154" height="24" border="0"></a><br></td>
+        <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="10"></td>
+    </tr>
+</table>
+<br>
 {% endif %}

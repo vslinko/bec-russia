@@ -1,17 +1,15 @@
-<article>
-    <figure>
-        {% thumbnail course.image, thumbnail_size|default("medium") %}
-    </figure>
+<div>
+    <div class="title"><a href="{{ path("rithis_becrussia_educationcourse_get", {slug: course.slug}) }}">{{ course.title }}</a><br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-    <header>
-        <ul class="education-courses-schools">
-            {% for school in course.schools %}
-                <li><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">{{ school.title }}</a></li>
-            {% endfor %}
-        </ul>
+    <div style="float: left; margin: 0 10px 10px 0;">
+    {% thumbnail course.image, thumbnail_size|default("medium") %}
+    </div>
 
-        <h2><a href="{{ path("rithis_becrussia_educationcourse_get", {slug: course.slug}) }}">{{ course.title }}</a></h2>
-    </header>
+    <ul style="float: right; list-style: none">
+        {% for school in course.schools %}
+            <li><a href="{{ path("rithis_becrussia_school_get", {slug: school.slug}) }}">{{ school.title }}</a></li>
+        {% endfor %}
+    </ul>
 
     {{ course.description|raw }}
-</article>
+</div>

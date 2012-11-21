@@ -1,3 +1,4 @@
+{#
 <div class="town">
     <form action="{{ path("rithis_becrussia_town_select") }}" method="post">
         <label>
@@ -11,4 +12,22 @@
         </label>
         <button type="submit">Изменить</button>
     </form>
+</div>
+#}
+
+
+Ваш город: <b>{{ selected_town.name }}</b><br>
+<div><a href="#" class="a_white town-select-href">изменить</a><br>
+
+<div class="town-select">
+    <form action="{{ path("rithis_becrussia_town_select") }}" method="post">
+        <input type="hidden" name="town">
+        <div class="town-select-title">ВАШ ГОРОД:</div>
+        <a href="#" data-value=""{% if not selected_town.id %} class="selected"{% endif %}>Все города</a>
+        {% for town in towns %}
+            <a href="#" data-value="{{ town.id }}"{% if selected_town.id == town.id %} class="selected"{% endif %}>{{ town.name }}</a>
+        {% endfor %}
+        <input type="image" src="{{ asset("bundles/rithisbecrussia/pict/button_filter.gif") }}">
+    </form>
+</div>
 </div>
