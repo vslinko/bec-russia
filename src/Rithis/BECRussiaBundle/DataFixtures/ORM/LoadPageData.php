@@ -15,6 +15,24 @@ class LoadPageData extends AbstractFixture
         $page->setTitle('История центра');
         $page->setContent($this->getContent('page-mainpage.html'));
         $manager->persist($page);
+
+        $fake = array(
+            'about_centre' => 'О центре',
+            'methodology' => 'Методика',
+            'franchising' => 'Франчайзинг',
+            'press' => 'Пресса',
+            'certificates' => 'Подарочные сертификаты',
+        );
+
+        foreach ($fake as $key => $title) {
+            $page = new Page();
+            $page->setSecretKey($key);
+            $page->setUri($key);
+            $page->setTitle($title);
+            $page->setContent($title);
+            $manager->persist($page);
+        }
+
         $manager->flush();
     }
 
