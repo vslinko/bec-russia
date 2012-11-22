@@ -11,12 +11,38 @@ class Builder extends ContainerAware
     {
         $menu = $factory->createItem('root');
 
+        $em = $this->container->get('doctrine')->getManager();
+        $keys = array(
+            'about_centre',
+            'methodology',
+            'franchising',
+            'press',
+            'certificates',
+        );
+        $pages = $em->getRepository('RithisBECRussiaBundle:Page')->findBy(array('secretKey' => $keys));
+        $addChild = function ($key) use ($menu, $pages) {
+            $pages = array_filter($pages, function ($page) use ($key) {
+                return $page->getSecretKey() == $key;
+            });
+
+            if (count($pages) == 1) {
+                $page = array_shift($pages);
+
+                $menu->addChild($page->getTitle(), array('uri' => '/' . $page->getUri()));
+            }
+        };
+
         $menu->setCurrentUri($this->container->get('request')->getRequestUri());
 
-        $menu->addChild('О центре', array('route' => 'rithis_becrussia_index_get'));
+        $menu->addChild('Главная', array('route' => 'rithis_becrussia_index_get'));
+        $addChild('about_centre');
         $menu->addChild('Школы', array('route' => 'rithis_becrussia_school_all'));
-        $menu->addChild('Вакансии', array('route' => 'rithis_becrussia_vacancy_all'));
+        $addChild('methodology');
+        $addChild('franchising');
+        $addChild('press');
         $menu->addChild('Библиотека', array('route' => 'rithis_becrussia_library_library'));
+        $addChild('certificates');
+        $menu->addChild('Вакансии', array('route' => 'rithis_becrussia_vacancy_all'));
 
         return $menu;
     }
