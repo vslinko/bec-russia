@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo,
+use Symfony\Component\Validator\Constraints as Assert,
+    Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -27,16 +28,19 @@ class Vacancy
 
     /**
      * @ORM\Column(length=140)
+     * @Assert\NotBlank
      */
     protected $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $annotation;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $description;
 

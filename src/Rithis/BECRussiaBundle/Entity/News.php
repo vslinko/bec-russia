@@ -2,8 +2,11 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo,
+use Symfony\Component\Validator\Constraints as Assert,
+    Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
+
+use DateTime;
 
 /**
  * @ORM\Entity(repositoryClass="Rithis\BECRussiaBundle\Entity\NewsRepository")
@@ -27,28 +30,33 @@ class News
 
     /**
      * @ORM\Column(length=140)
+     * @Assert\NotBlank
      */
     protected $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $annotation;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $description;
 
     /**
      * @ORM\Column("created_at", type="datetime")
      * @Gedmo\Timestampable(on="create")
+     * @Assert\NotBlank
      */
     protected $createdAt;
 
     /**
-     * @ORM\OneToOne(targetEntity="Media")
+     * @ORM\ManyToOne(targetEntity="Media")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
+     * @Assert\NotBlank
      */
     protected $image;
 
@@ -57,6 +65,11 @@ class News
      * @ORM\JoinColumn(name="school_id", referencedColumnName="id")
      */
     protected $school;
+
+    public function __construct()
+    {
+        $this->createdAt = new DateTime();
+    }
 
     public function setId($id)
     {

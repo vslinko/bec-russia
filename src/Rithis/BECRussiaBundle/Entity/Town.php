@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo,
+use Symfony\Component\Validator\Constraints as Assert,
+    Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -29,6 +30,7 @@ class Town
 
     /**
      * @ORM\Column(length=64)
+     * @Assert\NotBlank
      */
     protected $name;
 
@@ -90,6 +92,6 @@ class Town
 
     public function __toString()
     {
-        return $this->getName();
+        return (string) $this->getName();
     }
 }

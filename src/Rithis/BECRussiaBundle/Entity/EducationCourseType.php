@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo,
+use Symfony\Component\Validator\Constraints as Assert,
+    Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -29,27 +30,32 @@ class EducationCourseType
 
     /**
      * @ORM\Column(length=64)
+     * @Assert\NotBlank
      */
     protected $title;
 
     /**
      * @ORM\Column
+     * @Assert\NotBlank
      */
     protected $note;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $description;
 
     /**
      * @ORM\OneToOne(targetEntity="Media")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
+     * @Assert\NotBlank
      */
     protected $image;
 
     /**
      * @ORM\Column(length=8, nullable=true)
+     * @Assert\NotBlank
      */
     protected $age;
 

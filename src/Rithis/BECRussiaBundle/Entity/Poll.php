@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo,
+use Symfony\Component\Validator\Constraints as Assert,
+    Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -23,6 +24,7 @@ class Poll
 
     /**
      * @ORM\Column(length=140)
+     * @Assert\NotBlank
      */
     protected $question;
 
@@ -34,6 +36,7 @@ class Poll
 
     /**
      * @ORM\OneToMany(targetEntity="PollAnswer", mappedBy="poll", cascade={"persist"})
+     * @Assert\Valid
      */
     protected $answers;
 

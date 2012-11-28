@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert,
+    Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="Rithis\BECRussiaBundle\Entity\PageRepository")
@@ -30,11 +31,13 @@ class Page
 
     /**
      * @ORM\Column
+     * @Assert\NotBlank
      */
     protected $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $content;
 

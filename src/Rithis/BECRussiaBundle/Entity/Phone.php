@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert,
+    Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="Rithis\BECRussiaBundle\Entity\PhoneRepository")
@@ -29,6 +30,7 @@ class Phone
     /**
      * @ORM\ManyToOne(targetEntity="School", inversedBy="phones")
      * @ORM\JoinColumn(name="school_id", referencedColumnName="id")
+     * @Assert\NotBlank
      */
     protected $school;
 

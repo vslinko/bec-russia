@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo,
+use Symfony\Component\Validator\Constraints as Assert,
+    Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -29,38 +30,45 @@ class School
 
     /**
      * @ORM\Column(length=140)
+     * @Assert\NotBlank
      */
     protected $title;
 
     /**
      * @ORM\Column
+     * @Assert\NotBlank
      */
     protected $address;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $about;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $discounts;
 
     /**
      * @ORM\Column(type="array")
+     * @Assert\NotBlank
      */
     protected $schedule;
 
     /**
-     * @ORM\OneToOne(targetEntity="Media")
+     * @ORM\ManyToOne(targetEntity="Media")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
+     * @Assert\NotBlank
      */
     protected $image;
 
     /**
      * @ORM\ManyToOne(targetEntity="Town", inversedBy="schools")
      * @ORM\JoinColumn(name="town_id", referencedColumnName="id", nullable=false)
+     * @Assert\NotBlank
      */
     protected $town;
 
@@ -83,7 +91,7 @@ class School
      * @ORM\OneToMany(targetEntity="SchoolComment", mappedBy="school")
      */
     protected $comments;
-    
+
     /**
      * @ORM\OneToMany(targetEntity="Gallery", mappedBy="school")
      */

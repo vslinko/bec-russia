@@ -153,7 +153,7 @@ sonata_admin:
         groups:
             Towns: { items: [rithis.becrussia.admin.town] }
             Courses: { items: [rithis.becrussia.admin.education_course] }
-            Schools: { items: [rithis.becrussia.admin.school, rithis.becrussia.admin.teacher, rithis.becrussia.admin.school_gallery] }
+            Schools: { items: [rithis.becrussia.admin.school, rithis.becrussia.admin.teacher] }
             News: { items: [rithis.becrussia.admin.news] }
             Vacancies: { items: [rithis.becrussia.admin.vacancy] }
             Poll: { items: [rithis.becrussia.admin.poll] }

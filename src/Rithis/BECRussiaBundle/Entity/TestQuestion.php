@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert,
+    Doctrine\ORM\Mapping as ORM;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -22,11 +23,13 @@ class TestQuestion
 
     /**
      * @ORM\Column
+     * @Assert\NotBlank
      */
     protected $question;
 
     /**
      * @ORM\OneToMany(targetEntity="TestAnswer", mappedBy="question", cascade={"persist"})
+     * @Assert\Valid
      */
     protected $answers;
 

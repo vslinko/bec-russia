@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert,
+    Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="Rithis\BECRussiaBundle\Entity\TestResultRepository")
@@ -27,21 +28,25 @@ class TestResult
 
     /**
      * @ORM\Column
+     * @Assert\NotBlank
      */
     protected $title;
 
     /**
      * @ORM\Column("minimal_points", type="integer")
+     * @Assert\NotBlank
      */
     protected $minimalPoints;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $result;
 
     /**
      * @ORM\Column(length=32)
+     * @Assert\NotBlank
      */
     protected $type;
 

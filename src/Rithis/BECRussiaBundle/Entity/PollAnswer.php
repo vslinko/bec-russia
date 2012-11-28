@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert,
+    Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
@@ -20,6 +21,7 @@ class PollAnswer
 
     /**
      * @ORM\Column(length=140)
+     * @Assert\NotBlank
      */
     protected $answer;
 
@@ -31,6 +33,7 @@ class PollAnswer
     /**
      * @ORM\ManyToOne(targetEntity="Poll", inversedBy="answers")
      * @ORM\JoinColumn(name="poll_id", referencedColumnName="id")
+     * @Assert\NotBlank
      */
     protected $poll;
 

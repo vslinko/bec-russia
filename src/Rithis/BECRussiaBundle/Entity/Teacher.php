@@ -2,7 +2,8 @@
 
 namespace Rithis\BECRussiaBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo,
+use Symfony\Component\Validator\Constraints as Assert,
+    Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -27,23 +28,27 @@ class Teacher
 
     /**
      * @ORM\Column
+     * @Assert\NotBlank
      */
     protected $name;
 
     /**
-     * @ORM\OneToOne(targetEntity="Media")
+     * @ORM\ManyToOne(targetEntity="Media")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
+     * @Assert\NotBlank
      */
     protected $image;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $description;
 
     /**
      * @ORM\ManyToOne(targetEntity="School", inversedBy="teachers")
      * @ORM\JoinColumn(name="school_id", referencedColumnName="id", nullable=false)
+     * @Assert\NotBlank
      */
     protected $school;
 

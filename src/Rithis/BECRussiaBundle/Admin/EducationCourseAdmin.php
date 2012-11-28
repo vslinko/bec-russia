@@ -22,6 +22,8 @@ class EducationCourseAdmin extends Admin
         $mapper->add('type', 'sonata_type_model');
         $mapper->add('annotation');
         $mapper->add('description', null, array('attr' => array('class' => 'tinymce')));
+        $mapper->add('reason');
+        $mapper->add('schedule');
         $mapper->add('image', 'sonata_type_model', array(), array('link_parameters' => array('context' => 'education_course')));
         $mapper->add('website', null, array('required' => false));
         $mapper->add('schools');

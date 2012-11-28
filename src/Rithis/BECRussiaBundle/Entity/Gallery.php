@@ -4,7 +4,8 @@ namespace Rithis\BECRussiaBundle\Entity;
 
 use Sonata\MediaBundle\Entity\BaseGallery;
 
-use Gedmo\Mapping\Annotation as Gedmo,
+use Symfony\Component\Validator\Constraints as Assert,
+    Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,25 +21,28 @@ class Gallery extends BaseGallery
      * @ORM\SequenceGenerator(sequenceName="galleries_id_seq")
      */
     protected $id;
-    
+
     /**
      * @ORM\Column(length=140)
      * @Gedmo\Slug(fields={"name"})
+     * @Assert\NotBlank
      */
     protected $slug;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
      */
     protected $provider;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    protected $description; 
-     
+    protected $description;
+
     /**
      * @ORM\ManyToOne(targetEntity="School", inversedBy="galleries")
+     * @Assert\NotBlank
      */
     protected $school;
 
@@ -46,7 +50,7 @@ class Gallery extends BaseGallery
     {
         return $this->id;
     }
-    
+
     public function setSlug($slug)
     {
         $this->slug = $slug;
@@ -56,7 +60,7 @@ class Gallery extends BaseGallery
     {
         return $this->slug;
     }
-    
+
     public function setProvider($provider)
     {
         $this->provider = $provider;
