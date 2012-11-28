@@ -1,4 +1,5 @@
 {% if poll %}
+<form action="{{ path("rithis_becrussia_poll_postresults", {id: poll.id}) }}" method="post">
 <table width="100%" cellspacing="0" cellpadding="0" border="0">
     <tr>
         <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="10"><br></td>
@@ -7,9 +8,17 @@
             <div class="vote_text">
                 {{ poll.question }}
 
-                {% for answer in poll.answers %}
-                    <input type="radio" value="{{ answer.id }}" >{{ answer.answer }}<br>
-                {% endfor %}
+                {% if already_answered %}
+                    <ul>
+                    {% for answer in poll.answers %}
+                        <li>{{ answer.answer }} ({{ answer.count }})</li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    {% for answer in poll.answers %}
+                        <input type="radio" name="answer" value="{{ answer.id }}" >{{ answer.answer }}<br>
+                    {% endfor %}
+                {% endif %}
             </div>
         </td>
     </tr>
@@ -18,10 +27,11 @@
 <table width="100%" cellspacing="0" cellpadding="0" border="0">
     <tr>
         <td><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="5" height="10"><br></td>
-        <td width="50%"><input type="image" src="{{ asset("bundles/rithisbecrussia/pict/button_vote.gif") }}" alt="Проголосовать" width="114" height="21" border="0"><br></td>
+        <td width="50%">{% if not already_answered %}<input type="image" src="{{ asset("bundles/rithisbecrussia/pict/button_vote.gif") }}" alt="Проголосовать" width="114" height="21" border="0"><br>{% endif %}</td>
         <td width="50%" align="right">{#<a href="">Результаты</a>#}</td>
     </tr>
 </table>
+</form>
 <br>
 <table width="100%" cellspacing="0" cellpadding="0" border="0">
     <tr>

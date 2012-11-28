@@ -7,7 +7,7 @@
 {% else %}
     <form action="{{ path("rithis_becrussia_poll_postresults", {id: poll.id}) }}" method="post">
         {% for answer in poll.answers %}
-            <input type="radio" value="{{ answer.id }}">{{ answer.answer }}<br>
+            <input type="radio" value="{{ answer.id }}" name="answer">{{ answer.answer }}<br>
         {% endfor %}
         <br>
         <table width="100%" cellspacing="0" cellpadding="0" border="0">

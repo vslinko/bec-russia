@@ -51,11 +51,13 @@ class PollController extends BaseController
             if ($answer) {
                 $answer->incrementCount();
                 $this->getDoctrine()->getManager()->flush();
+                $this->setIpAddressAnswered($poll);
+                $this->addSessionMark($poll);
             }
+        } else if ($answerId) {
+            $this->setIpAddressAnswered($poll);
+            $this->addSessionMark($poll);
         }
-
-        $this->setIpAddressAnswered($poll);
-        $this->addSessionMark($poll);
 
         return $this->redirect($request->server->get('HTTP_REFERER', '/'));
     }
