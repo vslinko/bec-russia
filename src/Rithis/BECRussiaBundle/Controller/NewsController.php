@@ -22,15 +22,22 @@ class NewsController extends BaseController
      */
     public function allAction()
     {
+        $filter = $this->getRequest()->query->get('filter');
         $query = $this->getRepository('News')->createSortedQueryBuilder($this->getSelectedTown());
+
+        if ($filter == 'centre') {
+            $query->andWhere('n.school IS NULL');
+        } else if ($filter == 'schools') {
+            $query->andWhere('n.school IS NOT NULL');
+        }
 
         $pagination = $this->get('knp_paginator')->paginate(
             $query,
             $this->getRequest()->query->get('page', 1),
-            1
+            10
         );
 
-        return array('pagination' => $pagination);
+        return array('pagination' => $pagination, 'filter' => $filter);
     }
 
     /**
