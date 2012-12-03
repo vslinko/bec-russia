@@ -84,40 +84,40 @@ sonata_media:
             providers:
                 - sonata.media.provider.image
             formats:
-                small: { width: 80, height: 80, quality: 70 }
-                medium: { width: 160, height: 160, quality: 70 }
-                big: { width: 220, height: 220, quality: 70 }
+                small: { width: 80, quality: 70 }
+                medium: { width: 160, quality: 70 }
+                big: { width: 220, quality: 70 }
         school:
             providers:
                 - sonata.media.provider.image
             formats:
-                small: { width: 80, height: 80, quality: 70 }
-                medium: { width: 160, height: 160, quality: 70 }
-                big: { width: 220, height: 220, quality: 70 }
+                small: { width: 80, quality: 70 }
+                medium: { width: 160, quality: 70 }
+                big: { width: 220, quality: 70 }
         school_gallery:
             providers:
                 - sonata.media.provider.image
                 - sonata.media.provider.youtube
             formats:
-                small: { width: 80, height: 80, quality: 70 }
-                medium: { width: 160, height: 160, quality: 70 }
-                big: { width: 220, height: 220, quality: 70 }
+                small: { width: 80, quality: 70 }
+                medium: { width: 160, quality: 70 }
+                big: { width: 220, quality: 70 }
         teacher:
             providers:
                 - sonata.media.provider.image
             formats:
-                medium: { width: 160, height: 160, quality: 70 }
+                medium: { width: 160, quality: 70 }
         education_course:
             providers:
                 - sonata.media.provider.image
             formats:
-                medium: { width: 160, height: 160, quality: 70 }
-                big: { width: 220, height: 220, quality: 70 }
+                medium: { width: 160, quality: 70 }
+                big: { width: 220, quality: 70 }
         ed_course_type:
             providers:
                 - sonata.media.provider.image
             formats:
-                big: { width: 800, height: 400, quality: 70 }
+                big: { height: 400, quality: 70 }
         library:
             download:
                 strategy: sonata.media.security.public_strategy
