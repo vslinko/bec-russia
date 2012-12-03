@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<main>
-    {% for type in types %}
-    <city photo="{% path type.image, 'big' %}" link="{{ path("rithis_becrussia_educationcoursetype_get", {slug: type.slug}) }}" />
-    {% endfor %}
-</main>

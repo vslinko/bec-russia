@@ -15,18 +15,6 @@ use Rithis\BECRussiaBundle\Entity\EducationCourseType;
 class EducationCourseTypeController extends BaseController
 {
     /**
-     * @Route("/export.{_format}", requirements={"_format": "xml"})
-     * @Method("GET")
-     * @Template
-     */
-    public function exportAction()
-    {
-        return array(
-            'types' => $this->getRepository('EducationCourseType')->findForEducationCourseTypesBlock(),
-        );
-    }
-
-    /**
      * @Route("/{slug}")
      * @Method("GET")
      * @Template
