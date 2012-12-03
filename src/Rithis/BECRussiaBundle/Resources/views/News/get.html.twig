@@ -4,7 +4,9 @@
     <div class="title">{{ news.title }}<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
     <div style="float: left; margin: 0 10px 10px 0">
-        {% thumbnail news.image, "big" %}
+        <a class="image-preview" href="{% path news.image, "big" %}">
+            {% thumbnail news.image, "medium" %}
+        </a>
     </div>
 
     <font class="news_date">{{ news.createdAt|date('d.m.Y') }}</font><br>
