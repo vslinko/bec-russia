@@ -13,7 +13,8 @@ class BaseController extends Controller
 {
     protected function getSelectedTown()
     {
-        return $this->getRequest()->getSession()->get('town');
+        $town = $this->getRequest()->getSession()->get('town');
+        return $town ? $this->getDoctrine()->getManager()->merge($town) : $town;
     }
 
     protected function getRepository($entityName)
