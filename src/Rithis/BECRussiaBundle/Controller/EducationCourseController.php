@@ -7,7 +7,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
-use Rithis\BECRussiaBundle\Entity\EducationCourse;
+use Rithis\BECRussiaBundle\Form\DataClass\EducationCourseSearch,
+    Rithis\BECRussiaBundle\Entity\EducationCourse;
 
 /**
  * @Route("/education-courses")
@@ -21,7 +22,24 @@ class EducationCourseController extends BaseController
      */
     public function searchAction()
     {
-        return array('form' => $this->createForm($this->get('rithis.becrussia.form.education_course_search'))->createView());
+        $request = new EducationCourseSearch();
+
+        $town = $this->getSelectedTown();
+        if ($town) {
+            $request->setTown($this->getSelectedTown());
+        }
+
+        $type = $this->loadLastEducationCourseType();
+        if ($type) {
+            $request->setAge($type->getAge());
+        }
+
+        $result = $this->loadLastTestResult();
+        if ($result) {
+            $request->setLanguageLevel($result->getType());
+        }
+
+        return array('form' => $this->createForm($this->get('rithis.becrussia.form.education_course_search'), $request)->createView());
     }
 
     /**
