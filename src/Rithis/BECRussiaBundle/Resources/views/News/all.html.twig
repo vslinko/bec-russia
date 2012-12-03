@@ -16,7 +16,7 @@
             <tr>
                 <td>
                     <a class="image-preview" href="{% path news.image, "big" %}">
-                        {% thumbnail news.image, "medium" %}
+                        {% thumbnail news.image, "medium" with {class: 'pict'} %}
                     </a>
                     {#<img src="{{ asset("bundles/rithisbecrussia/pict/pict.jpg") }}" alt="" width="160" height="141" border="0" class="pict">#}
                     <br></td>

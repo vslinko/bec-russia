@@ -5,7 +5,7 @@
 
     <div style="float: left; margin: 0 10px 10px 0">
         <a class="image-preview" href="{% path news.image, "big" %}">
-            {% thumbnail news.image, "medium" %}
+            {% thumbnail news.image, "medium" with {class: 'pict'} %}
         </a>
     </div>
 
