@@ -91,7 +91,8 @@ class SchoolController extends BaseController
         $pagination = $this->get('knp_paginator')->paginate(
             $query,
             $this->getRequest()->query->get('page', 1),
-            10
+            10,
+            array('distinct' => false)
         );
 
         return array('school' => $school, 'pagination' => $pagination);
@@ -162,7 +163,7 @@ class SchoolController extends BaseController
         $this->saveLastSchool($school);
 
         $query = $this->getRepository('Gallery')->createSchoolQueryBuilder($school);
-        
+
         if ($this->getRequest()->query->has('provider') && 'all' !== $this->getRequest()->query->get('provider')) {
             $provider = $this->getRequest()->query->get('provider');
             $query->andWhere('g.provider = :provider')
@@ -174,7 +175,8 @@ class SchoolController extends BaseController
         $pagination = $this->get('knp_paginator')->paginate(
             $query,
             $this->getRequest()->query->get('page', 1),
-            10
+            10,
+            array('distinct' => false)
         );
 
         return array('school' => $school, 'pagination' => $pagination, 'provider' => $provider);
@@ -186,9 +188,9 @@ class SchoolController extends BaseController
      * @Cache(expires="+1 Week")
      */
     public function galleryAction(School $school, $gallery)
-    {   
+    {
         $this->saveLastSchool($school);
-        
+
         $gallery = $this->getRepository('Gallery')->findOneBy(array('slug' => $gallery));
 
         $medias = array();
@@ -213,7 +215,7 @@ class SchoolController extends BaseController
         $provider = $this->get('sonata.media.provider.image');
         $thumbnailFormat = $provider->getFormatName($media, 'small');
         $bigFormat = $provider->getFormatName($media, 'big');
-        
+
         return array(
             'thumb' => $provider->generatePublicUrl($media, $thumbnailFormat),
             'image' => $provider->generatePublicUrl($media, $bigFormat),
@@ -224,7 +226,7 @@ class SchoolController extends BaseController
     }
 
     public function extractYoutube(MediaInterface $media)
-    {        
+    {
         return array(
             'video' => sprintf('http://www.youtube.com/watch?v=%s', $media->getProviderReference()),
             'title' => $media->getName(),
