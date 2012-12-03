@@ -1,6 +1,7 @@
 {% if phones|length > 0 %}
     <font class="phone_big">{{ phones[0].number }}</font><br>
     <font class="phone_small">
+	&nbsp;
         {% if phones|length > 1 %}
         {% for i in range(1, phones.length) %}
             {{ phones[i].number }}{% if not loop.last %},{% endif %}

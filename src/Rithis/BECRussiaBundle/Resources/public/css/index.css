@@ -82,14 +82,14 @@ form
 .phone_big
 {
     font-family: Times New Roman;
-    font-size: 40 px;
+    font-size: 40px;
     color: #ffffff;
     font-weight: bold;
 }
 .phone_small
 {
     font-family: Times New Roman;
-    font-size: 20 px;
+    font-size: 20px;
     color: #ffffff;
     font-weight: bold;
 }
@@ -210,4 +210,9 @@ form
 {
     font-size: 11px;
     color: #555555
+}
+.town
+{
+    font-size: 14px;
+    color: #ffffff;
 }
