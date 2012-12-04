@@ -63,6 +63,7 @@ foq_elastica:
     indexes:
         website:
             client: default
+            finder: ~
             types:
                 page:
                     mappings:
@@ -74,7 +75,64 @@ foq_elastica:
                         provider:
                             query_builder_method: createIsRealQueryBuilder
                         listener: ~
-                        finder: ~
+                education_course:
+                    mappings:
+                        title: { boost: 5 }
+                        description: { boost: 3 }
+                    persistence:
+                        driver: orm
+                        model: Rithis\BECRussiaBundle\Entity\EducationCourse
+                        provider: ~
+                        listener: ~
+                education_course_type:
+                    mappings:
+                        title: { boost: 5 }
+                        description: { boost: 3 }
+                    persistence:
+                        driver: orm
+                        model: Rithis\BECRussiaBundle\Entity\EducationCourseType
+                        provider: ~
+                        listener: ~
+                news:
+                    mappings:
+                        title: { boost: 5 }
+                        annotation: { boost: 5 }
+                        description: { boost: 3 }
+                    persistence:
+                        driver: orm
+                        model: Rithis\BECRussiaBundle\Entity\News
+                        provider: ~
+                        listener: ~
+                school:
+                    mappings:
+                        title: { boost: 5 }
+                        address: { boost: 5 }
+                        about: { boost: 3 }
+                        discounts: { boost: 3 }
+                    persistence:
+                        driver: orm
+                        model: Rithis\BECRussiaBundle\Entity\School
+                        provider: ~
+                        listener: ~
+                teacher:
+                    mappings:
+                        name: { boost: 5 }
+                        description: { boost: 3 }
+                    persistence:
+                        driver: orm
+                        model: Rithis\BECRussiaBundle\Entity\Teacher
+                        provider: ~
+                        listener: ~
+                vacancy:
+                    mappings:
+                        title: { boost: 5 }
+                        annotation: { boost: 5 }
+                        description: { boost: 3 }
+                    persistence:
+                        driver: orm
+                        model: Rithis\BECRussiaBundle\Entity\Vacancy
+                        provider: ~
+                        listener: ~
 
 sonata_doctrine_orm_admin:
     entity_manager: ~

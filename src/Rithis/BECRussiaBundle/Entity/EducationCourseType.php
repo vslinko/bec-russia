@@ -54,6 +54,11 @@ class EducationCourseType
     protected $age;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    protected $position;
+
+    /**
      * @ORM\OneToMany(targetEntity="EducationCourse", mappedBy="type")
      */
     protected $educationCourses;
@@ -151,5 +156,16 @@ class EducationCourseType
     public function __toString()
     {
         return $this->getTitle();
+    }
+
+    
+    public function setPosition($position)
+    {
+        $this->position = $position;
+    }
+
+    public function getPosition()
+    {
+        return $this->position;
     }
 }

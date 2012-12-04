@@ -16,10 +16,38 @@
                 <h2>Результаты поиска</h2>
             </header>
 
-            {% for page in pagination %}
+            {% for item in pagination %}
                 <article>
                     <header>
-                        <h3><a href="{{ path("rithis_becrussia_page_get", {uri: page.uri}) }}">{{ page.title }}</a></h3>
+                        {% if item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\Page' %}
+
+                            <h3><a href="{{ path("rithis_becrussia_page_get", {uri: item.uri}) }}">{{ item.title }}</a></h3>
+
+                        {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\EducationCourse' %}
+
+                            <h3><a href="{{ path("rithis_becrussia_educationcourse_get", {slug: item.slug}) }}">{{ item.title }}</a></h3>
+
+                        {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\EducationCourseType' %}
+
+                            <h3><a href="{{ path("rithis_becrussia_educationcoursetype_get", {slug: item.slug}) }}">{{ item.title }}</a></h3>
+
+                        {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\News' %}
+
+                            <h3><a href="{{ path("rithis_becrussia_news_get", {slug: item.slug}) }}">{{ item.title }}</a></h3>
+
+                        {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\School' %}
+
+                            <h3><a href="{{ path("rithis_becrussia_school_get", {slug: item.slug}) }}">{{ item.title }}</a></h3>
+
+                        {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\Teacher' %}
+
+                            <h3><a href="{{ path("rithis_becrussia_school_teachers", {slug: item.school.slug}) }}">{{ item.name }}</a></h3>
+
+                        {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\Vacancy' %}
+
+                            <h3><a href="{{ path("rithis_becrussia_vacancy_get", {slug: item.slug}) }}">{{ item.title }}</a></h3>
+
+                        {% endif %}
                     </header>
                 </article>
             {% else %}
