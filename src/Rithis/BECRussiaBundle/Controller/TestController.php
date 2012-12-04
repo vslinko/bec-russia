@@ -24,10 +24,10 @@ class TestController extends BaseController
         $tester = $this->get('session')->get('rithis.becrussia.tester');
         $form = $this->createForm(new TesterType(), $tester);
         
-        $form->bind($this->getRequest());
-        
-        if ($form->isValid()) {
-            if ('POST' === $this->getRequest()->getMethod()) {
+        if ('POST' === $this->getRequest()->getMethod()) {
+            $form->bind($this->getRequest());
+            
+            if ($form->isValid()) {
                 $this->get('session')->set('rithis.becrussia.tester', $form->getData());
 
                 return $this->redirect($this->generateUrl('rithis_becrussia_test_questions'));
@@ -81,15 +81,17 @@ class TestController extends BaseController
     {
         $tester = $this->get('session')->get('rithis.becrussia.tester');
         $form = $this->createForm(new TesterType(), $tester);
-
-        $form->bind($this->getRequest());
         
-        if ($form->isValid()) {
-            if ('POST' === $this->getRequest()->getMethod()) {
+        if ('POST' === $this->getRequest()->getMethod()) {
+            $form->bind($this->getRequest());
+
+            if ($form->isValid()) {
                 $em = $this->getDoctrine()->getManager();
                 
                 $em->persist($form->getData());
                 $em->flush();
+                
+                $this->sendEmail($form->getData());
                 
                 return $this->redirect($this->generateUrl('rithis_becrussia_test_questions'));
             }
@@ -98,5 +100,23 @@ class TestController extends BaseController
         return array(
             'form' => $form->createView(),
         );
+    }
+
+    public function sendEmail($tester)
+    {
+        $message = $this->get('mailer')->createMessage();
+        $message->setSubject('Результаты тестирования')
+            ->setFrom('tester@bec-russia.com')
+            ->setTo($this->container->getParameter('rithis.becrussia.test.send'))
+            ->setBody($this->get('templating')->render(
+                'RithisBECRussiaBundle:Test:email.html.twig',
+                array(
+                    'tester'  => $tester,
+                    'result'   => $this->loadLastTestResult(),
+                ),
+                'text/html'
+            ));
+        
+        $this->get('mailer')->send($message);
     }
 }

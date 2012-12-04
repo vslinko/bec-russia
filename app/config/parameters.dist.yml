@@ -9,6 +9,13 @@ parameters:
     database_password: ~
     database_path: ~
 
+    mailer_transport:  %mailer_transport%
+    mailer_host:       %mailer_host%
+    mailer_user:       %mailer_user%
+    mailer_password:   %mailer_password%
+    delivery_address: %delivery_address%
+
+    rithis.becrussia.test.send: ~
 
     vk_api_id: <vk_api_id>
     unisender_api_key: ~

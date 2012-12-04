@@ -40,6 +40,7 @@
         "unisender/unisender": "@stable",
         "exercise/elastica-bundle": "@dev",
         "sonata-project/doctrine-orm-admin-bundle": "@dev",
+        "symfony/swiftmailer-bundle": "2.1.x-dev",
         "rithis/bootstrap-bundle": "@dev",
         "rithis/image-placeholder-bundle": "@dev"
     },
