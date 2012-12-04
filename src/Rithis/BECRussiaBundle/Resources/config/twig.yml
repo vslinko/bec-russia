@@ -4,3 +4,8 @@ services:
        arguments: [@doctrine.orm.entity_manager]
        tags:
            - { name: twig.extension }
+
+   rithis.becrussia.twig.get_class_extension:
+       class: Rithis\BECRussiaBundle\Twig\GetClassExtension
+       tags:
+           - { name: twig.extension }

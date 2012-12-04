@@ -9,7 +9,7 @@ class EducationCourseTypeRepository extends EntityRepository
     public function findForEducationCourseTypesBlock()
     {
         return $this->createQueryBuilder('t')
-            ->orderBy('t.title')
+            ->orderBy('t.position')
             ->getQuery()
             ->getResult();
     }

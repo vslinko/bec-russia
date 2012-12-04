@@ -21,7 +21,7 @@ class LibraryController extends BaseController
      */
     public function libraryAction()
     {
-        $query = $this->getRepository('Media')
+        $query = $this->getRepository('Library')
             ->createQueryBuilder('m')
             ->where('m.context = :context')
             ->setParameter('context', 'library');

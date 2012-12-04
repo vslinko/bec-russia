@@ -17,6 +17,7 @@ class LoadEducationCourseTypeData extends AbstractFixture
 
     public function load(ObjectManager $manager)
     {
+        $position = 0;
         foreach (self::$types as $key => $texts) {
             list($title, $note, $age) = $texts;
 
@@ -26,8 +27,11 @@ class LoadEducationCourseTypeData extends AbstractFixture
             $type->setAge($age);
             $type->setDescription($this->getContent(sprintf('education-course-type-%s.txt', $key)));
             $type->setImage($this->getMedia(sprintf('education-course-type-%s.jpg', $key), 'ed_course_type'));
+            $type->setPosition($position);
             $this->setReference(sprintf('education-course-type-%s', $key), $type);
             $manager->persist($type);
+
+            $position++;
         }
 
         $manager->flush();

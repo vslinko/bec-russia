@@ -21,7 +21,7 @@ class SearchController extends BaseController
         if ($this->getRequest()->query->has('query')) {
             $query = $this->getRequest()->query->get('query');
 
-            $finder = $this->get('foq_elastica.finder.website.page');
+            $finder = $this->get('foq_elastica.finder.website');
             $paginator = $this->get('knp_paginator');
             $pagination = $paginator->paginate($finder->createPaginatorAdapter($query));
 

@@ -93,7 +93,7 @@ class School
     protected $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity="Gallery", mappedBy="school")
+     * @ORM\OneToMany(targetEntity="Gallery", mappedBy="school", cascade={"all"}, orphanRemoval=true)
      */
     protected $galleries;
 
@@ -271,11 +271,13 @@ class School
 
     public function addGalleries(Gallery $gallery)
     {
+        $gallery->setSchool($this);
         $this->galleries[] = $gallery;
     }
 
     public function addGallery(Gallery $gallery)
     {
+        $gallery->setSchool($this);
         $this->galleries[] = $gallery;
     }
 

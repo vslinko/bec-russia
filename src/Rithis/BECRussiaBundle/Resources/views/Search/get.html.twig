@@ -11,12 +11,40 @@
     {% if pagination is defined %}
         <div class="title">Результаты поиска<br><img src="{{ asset("bundles/rithisbecrussia/pict/1x1.gif") }}" alt="" border="0" width="10" height="10"><br></div><br>
 
-        {% for page in pagination %}
-            <a href="{{ path("rithis_becrussia_page_get", {uri: page.uri}) }}">{{ page.title }}</a><br><br>
-        {% else %}
-            <p>К сожалению ничего не найдено.</p>
-        {% endfor %}
-    {% endif %}
+            {% for item in pagination %}
+                {% if item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\Page' %}
+
+                    <a href="{{ path("rithis_becrussia_page_get", {uri: item.uri}) }}">{{ item.title }}</a><br><br>
+
+                {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\EducationCourse' %}
+
+                    <a href="{{ path("rithis_becrussia_educationcourse_get", {slug: item.slug}) }}">{{ item.title }}</a><br><br>
+
+                {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\EducationCourseType' %}
+
+                    <a href="{{ path("rithis_becrussia_educationcoursetype_get", {slug: item.slug}) }}">{{ item.title }}</a><br><br>
+
+                {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\News' %}
+
+                    <a href="{{ path("rithis_becrussia_news_get", {slug: item.slug}) }}">{{ item.title }}</a><br><br>
+
+                {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\School' %}
+
+                    <a href="{{ path("rithis_becrussia_school_get", {slug: item.slug}) }}">{{ item.title }}</a><br><br>
+
+                {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\Teacher' %}
+
+                    <a href="{{ path("rithis_becrussia_school_teachers", {slug: item.school.slug}) }}">{{ item.name }}</a><br><br>
+
+                {% elseif item|get_class == 'Rithis\\BECRussiaBundle\\Entity\\Vacancy' %}
+
+                    <a href="{{ path("rithis_becrussia_vacancy_get", {slug: item.slug}) }}">{{ item.title }}</a><br><br>
+
+                {% endif %}
+            {% else %}
+                <p>К сожалению ничего не найдено.</p>
+            {% endfor %}
+        {% endif %}
 
     {{ pagination.render("RithisBECRussiaBundle::pagination.html.twig")|raw }}
 {% endblock %}

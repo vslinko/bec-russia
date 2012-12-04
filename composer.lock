@@ -7,12 +7,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/desarrolla2/Cache.git",
-                "reference": "5605b8779b926a4f7e1c74e250e95239d6bf7de7"
+                "reference": "8b2cc1349e776df47de755981807735c9e668fef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/desarrolla2/Cache/archive/5605b8779b926a4f7e1c74e250e95239d6bf7de7.zip",
-                "reference": "5605b8779b926a4f7e1c74e250e95239d6bf7de7",
+                "url": "https://github.com/desarrolla2/Cache/archive/8b2cc1349e776df47de755981807735c9e668fef.zip",
+                "reference": "8b2cc1349e776df47de755981807735c9e668fef",
                 "shasum": ""
             },
             "require": {
@@ -21,7 +21,7 @@
             "require-dev": {
                 "desarrolla2/timer": "dev-master"
             },
-            "time": "2012-11-27 22:29:04",
+            "time": "2012-11-30 08:48:37",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -212,18 +212,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "a28b6bde290b0a908d32938e3393244086c2d89d"
+                "reference": "84cd1ca060e06bf5eb7066adb334adea4bf29fe7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/data-fixtures/archive/a28b6bde290b0a908d32938e3393244086c2d89d.zip",
-                "reference": "a28b6bde290b0a908d32938e3393244086c2d89d",
+                "url": "https://github.com/doctrine/data-fixtures/archive/84cd1ca060e06bf5eb7066adb334adea4bf29fe7.zip",
+                "reference": "84cd1ca060e06bf5eb7066adb334adea4bf29fe7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": ">=5.3.2",
+                "doctrine/common": ">=2.2,<2.5-dev"
             },
-            "time": "2012-11-22 04:04:25",
+            "require-dev": {
+                "doctrine/orm": ">=2.2,<2.5-dev"
+            },
+            "suggest": {
+                "doctrine/orm": "For loading ORM fixtures",
+                "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+                "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
+            },
+            "time": "2012-12-03 09:46:47",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -236,7 +245,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 }
@@ -249,23 +258,23 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal",
-                "reference": "2.3.0"
+                "reference": "2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/zipball/2.3.0",
-                "reference": "2.3.0",
+                "url": "https://github.com/doctrine/dbal/archive/2.3.1.zip",
+                "reference": "2.3.1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
-            "time": "2012-09-19 22:56:37",
+            "time": "2012-12-04 21:06:56",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -616,20 +625,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Exercise/FOQElasticaBundle",
-                "reference": "193ca3848b3849c0fb18251c05126b69bd102c9d"
+                "reference": "04ddfcce43965f877c3669906fee13103a8bd630"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Exercise/FOQElasticaBundle/archive/193ca3848b3849c0fb18251c05126b69bd102c9d.zip",
-                "reference": "193ca3848b3849c0fb18251c05126b69bd102c9d",
+                "url": "https://github.com/Exercise/FOQElasticaBundle/archive/04ddfcce43965f877c3669906fee13103a8bd630.zip",
+                "reference": "04ddfcce43965f877c3669906fee13103a8bd630",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "symfony/framework-bundle": "2.1.*",
-                "symfony/console": "2.1.*",
-                "symfony/form": "2.1.*",
-                "ruflin/elastica": "0.19.3"
+                "ruflin/elastica": "0.19.3",
+                "symfony/framework-bundle": ">=2.1.0,<2.3-dev",
+                "symfony/console": ">=2.1.0,<2.3-dev",
+                "symfony/form": ">=2.1.0,<2.3-dev"
             },
             "require-dev": {
                 "doctrine/orm": "2.2.*",
@@ -641,6 +650,7 @@
                 "propel/propel1": "1.6.*",
                 "doctrine/mongodb-odm": ">=3.0.0-beta2,<3.1-dev"
             },
+            "time": "2012-11-30 13:39:43",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -676,8 +686,7 @@
                 "doctrine2",
                 "elastica",
                 "elasticsearch"
-            ],
-            "time": "2012-11-05 06:24:28"
+            ]
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -726,12 +735,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "f3a7af78896f5b3947557635bd73fa8256a0beca"
+                "reference": "1384813b39df29465a5d30762fc5bc665aa94db0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/f3a7af78896f5b3947557635bd73fa8256a0beca.zip",
-                "reference": "f3a7af78896f5b3947557635bd73fa8256a0beca",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/1384813b39df29465a5d30762fc5bc665aa94db0.zip",
+                "reference": "1384813b39df29465a5d30762fc5bc665aa94db0",
                 "shasum": ""
             },
             "require": {
@@ -742,7 +751,7 @@
                 "doctrine/orm": ">=2.1",
                 "doctrine/mongodb-odm": "*"
             },
-            "time": "2012-11-25 17:31:56",
+            "time": "2012-12-03 06:13:24",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -787,17 +796,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/CaptchaBundle",
-                "reference": "78e1cee035154130f3b3b128038ffedd870e003f"
+                "reference": "11fe650bdea47d725d737df80f4c778991a1e359"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Gregwar/CaptchaBundle/archive/78e1cee035154130f3b3b128038ffedd870e003f.zip",
-                "reference": "78e1cee035154130f3b3b128038ffedd870e003f",
+                "url": "https://github.com/Gregwar/CaptchaBundle/archive/11fe650bdea47d725d737df80f4c778991a1e359.zip",
+                "reference": "11fe650bdea47d725d737df80f4c778991a1e359",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
+            "time": "2012-12-04 11:20:23",
             "type": "captcha-bundle",
             "installation-source": "source",
             "autoload": {
@@ -813,6 +823,9 @@
                     "name": "Grégoire Passault",
                     "email": "g.passault@gmail.com",
                     "homepage": "http://www.gregwar.com/"
+                },
+                {
+                    "name": "Jeremy Livingston"
                 }
             ],
             "description": "Captcha bundle",
@@ -825,8 +838,7 @@
                 "captcha",
                 "bot",
                 "visual"
-            ],
-            "time": "2012-10-27 14:15:05"
+            ]
         },
         {
             "name": "imagine/Imagine",
@@ -1070,18 +1082,19 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "029977dbbb25380bc4e95c4d6c96f40b0437441b"
+                "reference": "520d4d923c5a542f4aebeafe4b1301dddc8689c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenuBundle/archive/029977dbbb25380bc4e95c4d6c96f40b0437441b.zip",
-                "reference": "029977dbbb25380bc4e95c4d6c96f40b0437441b",
+                "url": "https://github.com/KnpLabs/KnpMenuBundle/archive/520d4d923c5a542f4aebeafe4b1301dddc8689c8.zip",
+                "reference": "520d4d923c5a542f4aebeafe4b1301dddc8689c8",
                 "shasum": ""
             },
             "require": {
                 "knplabs/knp-menu": "1.1.*",
                 "symfony/framework-bundle": ">=2.0,<2.3-dev"
             },
+            "time": "2012-11-28 20:05:09",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1109,8 +1122,7 @@
             "description": "This bundle provides an integration of the KnpMenu library",
             "keywords": [
                 "menu"
-            ],
-            "time": "2012-10-30 18:52:11"
+            ]
         },
         {
             "name": "knplabs/knp-paginator-bundle",
@@ -1282,12 +1294,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafo/scssphp",
-                "reference": "c843c25581a9fdf41a1a2b62c60c9a4383988583"
+                "reference": "ff8983e6bf942c742b4752432124925c960daa20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/leafo/scssphp/archive/c843c25581a9fdf41a1a2b62c60c9a4383988583.zip",
-                "reference": "c843c25581a9fdf41a1a2b62c60c9a4383988583",
+                "url": "https://github.com/leafo/scssphp/archive/ff8983e6bf942c742b4752432124925c960daa20.zip",
+                "reference": "ff8983e6bf942c742b4752432124925c960daa20",
                 "shasum": ""
             },
             "require": {
@@ -1296,6 +1308,7 @@
             "require-dev": {
                 "php": ">=5.3.0"
             },
+            "time": "2012-11-30 19:34:08",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1315,8 +1328,7 @@
                 }
             ],
             "description": "scssphp is a compiler for SCSS written in PHP.",
-            "homepage": "http://leafo.net/scssphp/",
-            "time": "2012-11-07 18:19:49"
+            "homepage": "http://leafo.net/scssphp/"
         },
         {
             "name": "leafo/scssphp-compass",
@@ -1564,17 +1576,17 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v2.1.3",
+            "version": "v2.1.4",
             "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioFrameworkExtraBundle",
-                "reference": "v2.1.3"
+                "reference": "v2.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/zipball/v2.1.3",
-                "reference": "v2.1.3",
+                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/archive/v2.1.4.zip",
+                "reference": "v2.1.4",
                 "shasum": ""
             },
             "require": {
@@ -1616,12 +1628,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "8f742e9c412aac261928954e9719552086ca7caf"
+                "reference": "c3b1e9f009f5b4fcc54abad4a6645bf02fbe1055"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataAdminBundle/archive/8f742e9c412aac261928954e9719552086ca7caf.zip",
-                "reference": "8f742e9c412aac261928954e9719552086ca7caf",
+                "url": "https://github.com/sonata-project/SonataAdminBundle/archive/c3b1e9f009f5b4fcc54abad4a6645bf02fbe1055.zip",
+                "reference": "c3b1e9f009f5b4fcc54abad4a6645bf02fbe1055",
                 "shasum": ""
             },
             "require": {
@@ -1646,7 +1658,7 @@
                 "sonata-project/doctrine-orm-admin-bundle": "dev-master",
                 "sonata-project/intl-bundle": "dev-master"
             },
-            "time": "2012-11-26 16:53:10",
+            "time": "2012-12-04 17:16:45",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1986,12 +1998,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataMediaBundle",
-                "reference": "904519ff849b7211deb66f436087d3c3f01ea748"
+                "reference": "8b698c95aaaabfc9a72a128ab19c8ea5900023a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataMediaBundle/archive/904519ff849b7211deb66f436087d3c3f01ea748.zip",
-                "reference": "904519ff849b7211deb66f436087d3c3f01ea748",
+                "url": "https://github.com/sonata-project/SonataMediaBundle/archive/8b698c95aaaabfc9a72a128ab19c8ea5900023a8.zip",
+                "reference": "8b698c95aaaabfc9a72a128ab19c8ea5900023a8",
                 "shasum": ""
             },
             "require": {
@@ -2013,7 +2025,7 @@
                 "liip/imagine-bundle": "dev-master",
                 "amazonwebservices/aws-sdk-for-php": "1.5.*"
             },
-            "time": "2012-11-27 15:20:39",
+            "time": "2012-11-30 12:01:04",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2341,16 +2353,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.1.3",
+            "version": "v2.1.4",
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "v2.1.3"
+                "reference": "v2.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/v2.1.3.zip",
-                "reference": "v2.1.3",
+                "url": "https://github.com/symfony/symfony/archive/v2.1.4.zip",
+                "reference": "v2.1.4",
                 "shasum": ""
             },
             "require": {
@@ -2399,7 +2411,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "2012-10-30 01:14:14",
+            "time": "2012-11-29 11:56:19",
             "type": "library",
             "extra": {
                 "branch-alias": {

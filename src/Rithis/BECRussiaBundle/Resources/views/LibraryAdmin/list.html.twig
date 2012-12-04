@@ -26,7 +26,7 @@ file that was distributed with this source code.
             {% endif %}
 
             {% for provider_name in providers %}
-                {% if persistent_parameters.provider == provider_name%}
+                {% if persistent_parameters.provider == provider_name %}
                     <li class="active"><a href="{{ admin.generateUrl('list', {'context': persistent_parameters.context, 'provider': provider_name}) }}">{{ provider_name|trans({}, 'rithis_bec_russia_library') }}</a></li>
                 {% else %}
                     <li><a href="{{ admin.generateUrl('list', {'context': persistent_parameters.context, 'provider': provider_name}) }}">{{ provider_name|trans({}, 'rithis_bec_russia_library') }}</a></li>

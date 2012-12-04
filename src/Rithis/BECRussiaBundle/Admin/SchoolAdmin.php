@@ -5,6 +5,7 @@ namespace Rithis\BECRussiaBundle\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper,
     Sonata\AdminBundle\Form\FormMapper,
     Sonata\AdminBundle\Admin\Admin,
+    Sonata\AdminBundle\Form\Type\CollectionType,
     Doctrine\ORM\EntityRepository;
 
 class SchoolAdmin extends Admin
@@ -43,17 +44,49 @@ class SchoolAdmin extends Admin
         $mapper->add('discounts', null, array('attr' => array('class' => 'tinymce')));
         
         $mapper->with('Galleries', array('collapsed' => true));
-        $mapper->add('galleries', 'sonata_type_model', array(
-            'query' => $this->getModelManager()
-                ->getEntityManager('RithisBECRussiaBundle:Gallery')
-                ->getRepository('RithisBECRussiaBundle:Gallery')
-                ->createQueryBuilder('g')
-                ->where('g.context = :context')
-                ->setParameter('context', 'school_gallery')
-                ->getQuery()
-            ,
-            'expanded' => true,
-            'multiple' => true,
+        $mapper->add('galleries', 'sonata_type_collection', array('by_reference' => false), array(
+            'edit' => 'inline',
+            'inline' => 'table',
         ));
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     */     
+    public function preUpdate($school)
+    {
+        $this->setGalleriesData($school);
+    }
+
+    public function prePersist($school)
+    {
+        $this->setGalleriesData($school);
+    }
+        
+    public function setGalleriesData($school)
+    {
+        foreach ($school->getGalleries() as $gallery) {
+            if (null === $gallery->getId()) {
+                $gallery->setContext($this->getDefaultContext());
+                $gallery->setProvider($this->getDefaultProvider());
+                $gallery->setDefaultFormat($this->getDefaultFormat());
+            }
+        }
+    }
+
+    public function getDefaultContext()
+    {
+        return 'school_gallery';
+    }
+
+    public function getDefaultProvider()
+    {
+        return 'sonata.media.provider.image';
+    }
+
+    public function getDefaultFormat()
+    {
+        return 'school_gallery_small';
     }
 }

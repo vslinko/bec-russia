@@ -10,33 +10,44 @@ use Sonata\MediaBundle\Provider\Pool;
 use Sonata\AdminBundle\Validator\ErrorElement;
 use Sonata\MediaBundle\Admin\GalleryAdmin;
 
-class SchoolGalleryAdmin extends GalleryAdmin
+class SchoolGalleryAdmin extends Admin
 {
+    protected $pool;
+
+    public function __construct($code, $class, $baseControllerName, Pool $pool, $translator)
+    {
+        parent::__construct($code, $class, $baseControllerName);
+
+        $this->pool = $pool;
+        $this->translator = $translator;
+    }
+
     /**
      * {@inheritdoc}
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formats = array();
-        foreach((array)$this->pool->getFormatNamesByContext($this->getContext()) as $name => $options) {
-            $formats[$name] = $name;
-        }
-        
         $formMapper
-            ->add('context', 'hidden', array('data' => $this->getContext()))
             ->add('enabled', null, array('required' => false))
             ->add('name')
             ->add('description')
-            ->add('defaultFormat', 'choice', array('choices' => $formats))
-            ->add('galleryHasMedias', 'sonata_type_collection', array(
-                'by_reference' => false
-            ), array(
-                'edit' => 'inline',
-                'inline' => 'table',
-                'sortable'  => 'position',
-                'link_parameters' => array('context' => $this->getContext(), 'provider' => $this->getPersistentParameter('provider'))
-            ))
         ;
+
+        if (!$this->getSubject() || !$this->getSubject()->getId()) {
+            $choices = array();
+            foreach ($this->pool->getProviderNamesByContext($this->getContext()) as $provider) {
+                $choices[$provider] = $this->translator->trans($provider, array(), 'rithis_bec_russia_library');
+            }
+        
+            $formMapper->add('provider', 'choice', array(
+                'choices' => $choices,
+            ));
+        }
+        
+        $formMapper->add('galleryHasMedias', 'sonata_type_collection', array('by_reference' => false), array(
+            'edit' => 'inline',
+            'inline' => 'table',
+        ));
     }
 
     /**
@@ -47,7 +58,18 @@ class SchoolGalleryAdmin extends GalleryAdmin
         $parameters = $this->getPersistentParameters();
 
         $gallery->setContext($parameters['context']);
-        $gallery->setProvider($parameters['provider']);
+
+        // fix weird bug with setter object not being call
+        $gallery->setGalleryHasMedias($gallery->getGalleryHasMedias());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function preUpdate($gallery)
+    {
+        // fix weird bug with setter object not being call
+        $gallery->setGalleryHasMedias($gallery->getGalleryHasMedias());
     }
 
     /**
@@ -59,6 +81,7 @@ class SchoolGalleryAdmin extends GalleryAdmin
             return array();
         }
 
+        $formats = array_keys($this->pool->getFormatNamesByContext($this->getContext()));
         $providers = $this->pool->getProvidersByContext($this->getContext());
         $provider  = $this->getRequest()->get('provider');
 
@@ -72,6 +95,7 @@ class SchoolGalleryAdmin extends GalleryAdmin
         return array(
             'provider' => $provider,
             'context'  => $this->getContext(),
+            'format' => count($formats) > 0 ? array_shift($formats) : 'default',
         );
     }
 
@@ -85,47 +109,25 @@ class SchoolGalleryAdmin extends GalleryAdmin
         if ($this->hasRequest()) {
             $gallery->setContext($this->getPersistentParameter('context'));
             $gallery->setProvider($this->getPersistentParameter('provider'));
+            $gallery->setDefaultFormat($this->getPersistentParameter('format'));
+
+            if ($this->getRequest()->get('school_id')) {
+                $school = $this->getModelManager()
+                    ->find(
+                        'Rithis\BECRussiaBundle\Entity\School',
+                        $this->getRequest()->get('school_id')
+                    );
+
+                $gallery->setSchool($school);
+            }
         }
 
         return $gallery;
     }
-
-    /**
-     * @param \Sonata\AdminBundle\Datagrid\DatagridMapper $datagridMapper
-     * @return void
-     */
-    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
-    {
-        $datagridMapper
-            ->add('name')
-            ->add('enabled')
-        ;
-
-        $providers = array();
-
-        $providerNames = (array)$this->pool->getProviderNamesByContext($this->getPersistentParameter('context', $this->getContext()));
-        foreach ($providerNames as $name) {
-            $providers[$name] = $name;
-        }
-
-        $datagridMapper->add('provider', 'doctrine_orm_choice', array(
-            'field_options'=> array(
-                'choices' => $providers,
-                'required' => false,
-                'multiple' => false,
-                'expanded' => false,
-            ),
-            'field_type'=> 'choice',
-        ));
-    }
-
+    
     public function getContext()
     {
         return 'school_gallery';
     }
 
-    public function getPool()
-    {
-        return $this->pool;
-    }
 }
