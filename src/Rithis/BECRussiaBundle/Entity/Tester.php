@@ -6,6 +6,7 @@ use Gedmo\Mapping\Annotation as Gedmo,
     Doctrine\ORM\Mapping as ORM;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity()
@@ -23,26 +24,35 @@ class Tester
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      */
     protected $age;
 
     /**
      * @ORM\Column(length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min = "3")
      */
     protected $firstname;
     
     /**
      * @ORM\Column(length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min = "3")
      */
     protected $lastname;
 
     /**
      * @ORM\Column(length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min = "5")
      */
     protected $phone;
     
     /**
      * @ORM\Column(length=254)
+     * @Assert\Email()
+     * @Assert\NotBlank()
      */
     protected $email;
 

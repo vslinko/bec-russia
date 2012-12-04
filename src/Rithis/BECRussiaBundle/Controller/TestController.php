@@ -29,7 +29,7 @@ class TestController extends BaseController
         if ($form->isValid()) {
             if ('POST' === $this->getRequest()->getMethod()) {
                 $this->get('session')->set('rithis.becrussia.tester', $form->getData());
-                
+
                 return $this->redirect($this->generateUrl('rithis_becrussia_test_questions'));
             }
         }
