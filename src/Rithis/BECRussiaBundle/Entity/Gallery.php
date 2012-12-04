@@ -38,7 +38,8 @@ class Gallery extends BaseGallery
     protected $description; 
      
     /**
-     * @ORM\ManyToOne(targetEntity="School", inversedBy="galleries")
+     * @ORM\ManyToOne(targetEntity="School", inversedBy="galleries", cascade={"all"})
+     * @ORM\JoinColumn(name="school_id", referencedColumnName="id")
      */
     protected $school;
 

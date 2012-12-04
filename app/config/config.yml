@@ -76,6 +76,13 @@ foq_elastica:
                         listener: ~
                         finder: ~
 
+sonata_doctrine_orm_admin:
+    entity_manager: ~
+
+    templates:
+        form:
+            - RithisBECRussiaBundle:Form:form_admin_fields.html.twig
+
 sonata_media:
     default_context: news
     db_driver: doctrine_orm
@@ -153,7 +160,7 @@ sonata_admin:
         groups:
             Towns: { items: [rithis.becrussia.admin.town] }
             Courses: { items: [rithis.becrussia.admin.education_course] }
-            Schools: { items: [rithis.becrussia.admin.school, rithis.becrussia.admin.teacher, rithis.becrussia.admin.school_gallery] }
+            Schools: { items: [rithis.becrussia.admin.school, rithis.becrussia.admin.teacher] }
             News: { items: [rithis.becrussia.admin.news] }
             Vacancies: { items: [rithis.becrussia.admin.vacancy] }
             Poll: { items: [rithis.becrussia.admin.poll] }

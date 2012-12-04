@@ -22,6 +22,8 @@ services:
       arguments: [null, Rithis\BECRussiaBundle\Entity\School, SonataAdminBundle:CRUD]
       tags:
         - { name: sonata.admin, manager_type: orm, group: Schools, label: School }
+      calls:
+          - [ addChild, [ @rithis.becrussia.admin.school_gallery ] ]
 
    rithis.becrussia.admin.school_comment:
       class: Rithis\BECRussiaBundle\Admin\SchoolCommentAdmin
@@ -31,11 +33,9 @@ services:
 
    rithis.becrussia.admin.school_gallery:
       class: Rithis\BECRussiaBundle\Admin\SchoolGalleryAdmin
-      arguments: [null, Rithis\BECRussiaBundle\Entity\Gallery, RithisBECRussiaBundle:SchoolGalleryAdmin, @sonata.media.pool]
+      arguments: [null, Rithis\BECRussiaBundle\Entity\Gallery, RithisBECRussiaBundle:SchoolGalleryAdmin, @sonata.media.pool, @translator]
       tags:
         - { name: sonata.admin, manager_type: orm, group: Schools, label: Gallery }
-      calls:
-        - [setTemplate, [list, RithisBECRussiaBundle:SchoolAdmin:gallery_list.html.twig]]
 
    rithis.becrussia.admin.phone:
       class: Rithis\BECRussiaBundle\Admin\PhoneAdmin
@@ -99,8 +99,7 @@ services:
 
    rithis.becrussia.admin.library:
       class: Rithis\BECRussiaBundle\Admin\LibraryAdmin
-      parent: sonata.media.admin.media
-      arguments: [null, Rithis\BECRussiaBundle\Entity\Media, RithisBECRussiaBundle:LibraryAdmin]
+      arguments: [null, Rithis\BECRussiaBundle\Entity\Library, SonataMediaBundle:MediaAdmin, @sonata.media.pool, @translator]
       tags:
         - { name: sonata.admin, manager_type: orm, group: Library, label: Library }
       calls:
