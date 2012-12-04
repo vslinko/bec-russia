@@ -9,11 +9,11 @@ parameters:
     database_password: ~
     database_path: ~
 
-    mailer_transport:  %mailer_transport%
-    mailer_host:       %mailer_host%
-    mailer_user:       %mailer_user%
-    mailer_password:   %mailer_password%
-    delivery_address: %delivery_address%
+    mailer_transport:  ~
+    mailer_host:       ~
+    mailer_user:       ~
+    mailer_password:   ~
+    delivery_address:  ~
 
     rithis.becrussia.test.send: ~
 
