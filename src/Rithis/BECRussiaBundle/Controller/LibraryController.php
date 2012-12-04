@@ -25,7 +25,7 @@ class LibraryController extends BaseController
             ->createQueryBuilder('m')
             ->where('m.context = :context')
             ->setParameter('context', 'library');
-        
+
         if ($this->getRequest()->query->has('provider') && 'all' !== $this->getRequest()->query->get('provider')) {
             $provider = $this->getRequest()->query->get('provider');
             $query->andWhere('m.providerName = :provider')
@@ -33,16 +33,17 @@ class LibraryController extends BaseController
         } else {
             $provider = 'all';
         }
-    
+
         $pagination = $this->get('knp_paginator')->paginate(
             $query,
             $this->getRequest()->query->get('page', 1),
-            10
+            10,
+            array('distinct' => false)
         );
 
         return array('pagination' => $pagination, 'provider' => $provider);
     }
-    
+
     /**
      * @Route("/{slug}")
      * @Template

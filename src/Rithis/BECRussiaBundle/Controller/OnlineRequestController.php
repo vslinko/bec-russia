@@ -24,8 +24,11 @@ class OnlineRequestController extends BaseController
         $onlineRequest = new OnlineRequest();
 
         $school = $this->loadLastSchool();
+        $town = $this->getSelectedTown();
         if ($school) {
             $onlineRequest->setSchool($school);
+        } else if ($town) {
+            $onlineRequest->setSchool($this->getSelectedTown()->getSchools()->first());
         }
 
         $type = $this->loadLastEducationCourseType();
