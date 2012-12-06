@@ -22,6 +22,15 @@ class LoadPageData extends AbstractFixture
             'franchising' => 'Франчайзинг',
             'press' => 'Пресса',
             'certificates' => 'Подарочные сертификаты',
+            'for-teachers' => 'Information for teachers',
+            'for-teachers/about' => 'About BEC',
+            'for-teachers/cities' => 'Cities of BEC',
+            'for-teachers/teachers' => 'Teachers',
+            'for-teachers/application' => 'Application Form',
+            'for-teachers/downloads' => 'Downloads',
+            'for-teachers/contract' => 'Contract',
+            'for-teachers/instructions' => 'Instructions',
+            'for-teachers/rules' => 'Rules of BEC',
         );
 
         foreach ($fake as $key => $title) {
@@ -29,7 +38,13 @@ class LoadPageData extends AbstractFixture
             $page->setSecretKey($key);
             $page->setUri($key);
             $page->setTitle($title);
-            $page->setContent($title);
+
+            if ($this->hasContent($key . '.html')) {
+                $page->setContent($this->getContent($key . '.html'));
+            } else {
+                $page->setContent($title);
+            }
+
             $manager->persist($page);
         }
 

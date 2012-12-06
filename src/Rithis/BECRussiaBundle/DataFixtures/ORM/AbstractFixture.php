@@ -54,6 +54,11 @@ abstract class AbstractFixture extends BaseAbstractFixture implements OrderedFix
         return $media;
     }
 
+    protected function hasContent($fileName)
+    {
+        return is_readable($this->getFilePath($fileName));
+    }
+
     protected function getContent($fileName)
     {
         return file_get_contents($this->getFilePath($fileName));
