@@ -18,6 +18,7 @@ class Builder extends ContainerAware
             'franchising',
             'press',
             'certificates',
+            'for-teachers',
         );
         $pages = $em->getRepository('RithisBECRussiaBundle:Page')->findBy(array('secretKey' => $keys));
         $addChild = function ($key) use ($menu, $pages) {
@@ -43,6 +44,7 @@ class Builder extends ContainerAware
         $menu->addChild('Библиотека', array('route' => 'rithis_becrussia_library_library'));
         $addChild('certificates');
         $menu->addChild('Вакансии', array('route' => 'rithis_becrussia_vacancy_all'));
+        $addChild('for-teachers');
 
         return $menu;
     }
