@@ -12,6 +12,18 @@
         </header>
 
         {{ result.result|raw }}
+
+        <p>
+            <b>
+                Отослать результаты нашим администраторам,
+                чтобы они с связались с Вами?
+            </b>
+        </p>
+
+        <form action="{{ path("rithis_becrussia_test_submit") }}" method="get">
+            <p><button type="submit" class="button">Отослать</button></p>
+        </form>
+
     </article>
 </section>
 {% endblock %}

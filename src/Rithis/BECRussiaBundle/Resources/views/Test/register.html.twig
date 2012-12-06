@@ -1,0 +1,15 @@
+{% extends "RithisBECRussiaBundle::base.html.twig" %}
+
+{% block content %}
+<section class="article">
+    <header>
+        <h1>Онлайн-тестирование</h1>
+    </header>
+
+    <form action="{{ path("rithis_becrussia_test_register") }}" method="post">
+        {{ form_widget(form) }}
+
+        <p><button type="submit" class="button">Пройти тест</button></p>
+    </form>
+</section>
+{% endblock %}
