@@ -1,5 +1,5 @@
 {
-    "hash": "19d5faadbab2b04f66a71a00ac1287b3",
+    "hash": "ba722edd5938bfc3b6ef8e0b4849adf7",
     "packages": [
         {
             "name": "desarrolla2/cache",
@@ -550,16 +550,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/doctrine2.git",
-                "reference": "2.3.0"
+                "reference": "2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/doctrine2/zipball/2.3.0",
-                "reference": "2.3.0",
+                "url": "https://github.com/doctrine/doctrine2/archive/2.3.1.zip",
+                "reference": "2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -571,7 +571,7 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "2012-09-19 23:03:34",
+            "time": "2012-12-04 22:04:25",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -625,20 +625,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Exercise/FOQElasticaBundle",
-                "reference": "04ddfcce43965f877c3669906fee13103a8bd630"
+                "reference": "973d67f0c11b2020e16df5a146ebeb1868956e68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Exercise/FOQElasticaBundle/archive/04ddfcce43965f877c3669906fee13103a8bd630.zip",
-                "reference": "04ddfcce43965f877c3669906fee13103a8bd630",
+                "url": "https://github.com/Exercise/FOQElasticaBundle/archive/973d67f0c11b2020e16df5a146ebeb1868956e68.zip",
+                "reference": "973d67f0c11b2020e16df5a146ebeb1868956e68",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "ruflin/elastica": "0.19.3",
                 "symfony/framework-bundle": ">=2.1.0,<2.3-dev",
                 "symfony/console": ">=2.1.0,<2.3-dev",
-                "symfony/form": ">=2.1.0,<2.3-dev"
+                "symfony/form": ">=2.1.0,<2.3-dev",
+                "ruflin/elastica": "0.19.8"
             },
             "require-dev": {
                 "doctrine/orm": "2.2.*",
@@ -650,7 +650,7 @@
                 "propel/propel1": "1.6.*",
                 "doctrine/mongodb-odm": ">=3.0.0-beta2,<3.1-dev"
             },
-            "time": "2012-11-30 13:39:43",
+            "time": "2012-12-05 17:50:24",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -735,12 +735,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "1384813b39df29465a5d30762fc5bc665aa94db0"
+                "reference": "935223ab4d30d34ddc0df3d0ab5753fe971e0847"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/1384813b39df29465a5d30762fc5bc665aa94db0.zip",
-                "reference": "1384813b39df29465a5d30762fc5bc665aa94db0",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/935223ab4d30d34ddc0df3d0ab5753fe971e0847.zip",
+                "reference": "935223ab4d30d34ddc0df3d0ab5753fe971e0847",
                 "shasum": ""
             },
             "require": {
@@ -751,7 +751,7 @@
                 "doctrine/orm": ">=2.1",
                 "doctrine/mongodb-odm": "*"
             },
-            "time": "2012-12-03 06:13:24",
+            "time": "2012-12-08 16:34:20",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -796,18 +796,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/CaptchaBundle",
-                "reference": "11fe650bdea47d725d737df80f4c778991a1e359"
+                "reference": "8d6a628dda8dd01c42e7df942bbb084f15d2bdf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Gregwar/CaptchaBundle/archive/11fe650bdea47d725d737df80f4c778991a1e359.zip",
-                "reference": "11fe650bdea47d725d737df80f4c778991a1e359",
+                "url": "https://github.com/Gregwar/CaptchaBundle/archive/8d6a628dda8dd01c42e7df942bbb084f15d2bdf5.zip",
+                "reference": "8d6a628dda8dd01c42e7df942bbb084f15d2bdf5",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-12-04 11:20:23",
+            "time": "2012-12-07 23:10:04",
             "type": "captcha-bundle",
             "installation-source": "source",
             "autoload": {
@@ -825,11 +825,12 @@
                     "homepage": "http://www.gregwar.com/"
                 },
                 {
-                    "name": "Jeremy Livingston"
+                    "name": "Jeremy Livingston",
+                    "email": "jeremy.j.livingston@gmail.com"
                 }
             ],
             "description": "Captcha bundle",
-            "homepage": "https://github.com/Gregwar/ImageBundle",
+            "homepage": "https://github.com/Gregwar/CaptchaBundle",
             "keywords": [
                 "Symfony2",
                 "security",
@@ -893,12 +894,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/Gaufrette",
-                "reference": "ab1219bf6f431e224c935d7242a6444fe46ff248"
+                "reference": "1c613b7514132bc780e67d23e59bcc514567fe01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/Gaufrette/archive/ab1219bf6f431e224c935d7242a6444fe46ff248.zip",
-                "reference": "ab1219bf6f431e224c935d7242a6444fe46ff248",
+                "url": "https://github.com/KnpLabs/Gaufrette/archive/1c613b7514132bc780e67d23e59bcc514567fe01.zip",
+                "reference": "1c613b7514132bc780e67d23e59bcc514567fe01",
                 "shasum": ""
             },
             "require": {
@@ -923,7 +924,7 @@
                 "ext-zip": "to use the Zip adapter",
                 "ext-apc": "to use the APC adapter"
             },
-            "time": "2012-11-26 11:56:16",
+            "time": "2012-12-07 12:24:57",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -964,18 +965,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/knp-components",
-                "reference": "1.1.2"
+                "reference": "163308ed3442e7e9ec4a45ff912664e366954c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/knp-components/archive/1.1.2.zip",
-                "reference": "1.1.2",
+                "url": "https://github.com/KnpLabs/knp-components/archive/163308ed3442e7e9ec4a45ff912664e366954c82.zip",
+                "reference": "163308ed3442e7e9ec4a45ff912664e366954c82",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2012-11-16 09:22:14",
+            "time": "2012-12-11 07:38:57",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1535,22 +1536,22 @@
         },
         {
             "name": "ruflin/Elastica",
-            "version": "v0.19.3.0",
+            "version": "v0.19.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruflin/Elastica",
-                "reference": "v0.19.3.0"
+                "reference": "v0.19.8.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ruflin/Elastica/zipball/v0.19.3.0",
-                "reference": "v0.19.3.0",
+                "url": "https://github.com/ruflin/Elastica/zipball/v0.19.8.0",
+                "reference": "v0.19.8.0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-05-01 06:20:25",
+            "time": "2012-08-12 09:51:36",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1628,12 +1629,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "c3b1e9f009f5b4fcc54abad4a6645bf02fbe1055"
+                "reference": "91c5e7c04557695430b45ac8bfd4ea25a48b1b82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataAdminBundle/archive/c3b1e9f009f5b4fcc54abad4a6645bf02fbe1055.zip",
-                "reference": "c3b1e9f009f5b4fcc54abad4a6645bf02fbe1055",
+                "url": "https://github.com/sonata-project/SonataAdminBundle/archive/91c5e7c04557695430b45ac8bfd4ea25a48b1b82.zip",
+                "reference": "91c5e7c04557695430b45ac8bfd4ea25a48b1b82",
                 "shasum": ""
             },
             "require": {
@@ -1658,7 +1659,7 @@
                 "sonata-project/doctrine-orm-admin-bundle": "dev-master",
                 "sonata-project/intl-bundle": "dev-master"
             },
-            "time": "2012-12-04 17:16:45",
+            "time": "2012-12-10 09:49:22",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1696,12 +1697,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle",
-                "reference": "b482e9181d406f1c1c9a0e96fd0fdb868b6fdbbe"
+                "reference": "60b12fd035b8f2e68f1ead4800dd4e6253800028"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataBlockBundle/archive/b482e9181d406f1c1c9a0e96fd0fdb868b6fdbbe.zip",
-                "reference": "b482e9181d406f1c1c9a0e96fd0fdb868b6fdbbe",
+                "url": "https://github.com/sonata-project/SonataBlockBundle/archive/60b12fd035b8f2e68f1ead4800dd4e6253800028.zip",
+                "reference": "60b12fd035b8f2e68f1ead4800dd4e6253800028",
                 "shasum": ""
             },
             "require": {
@@ -1716,6 +1717,7 @@
                 "sonata-project/admin-bundle": "dev-master",
                 "sonata-project/cache-bundle": "dev-master"
             },
+            "time": "2012-12-05 10:46:30",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1742,8 +1744,7 @@
             "keywords": [
                 "sonata",
                 "block"
-            ],
-            "time": "2012-11-14 23:54:27"
+            ]
         },
         {
             "name": "sonata-project/doctrine-extensions",
@@ -1998,12 +1999,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataMediaBundle",
-                "reference": "8b698c95aaaabfc9a72a128ab19c8ea5900023a8"
+                "reference": "637e7e6491b68a17a3ae49836f4e3b4b2add2b06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataMediaBundle/archive/8b698c95aaaabfc9a72a128ab19c8ea5900023a8.zip",
-                "reference": "8b698c95aaaabfc9a72a128ab19c8ea5900023a8",
+                "url": "https://github.com/sonata-project/SonataMediaBundle/archive/637e7e6491b68a17a3ae49836f4e3b4b2add2b06.zip",
+                "reference": "637e7e6491b68a17a3ae49836f4e3b4b2add2b06",
                 "shasum": ""
             },
             "require": {
@@ -2025,7 +2026,7 @@
                 "liip/imagine-bundle": "dev-master",
                 "amazonwebservices/aws-sdk-for-php": "1.5.*"
             },
-            "time": "2012-11-30 12:01:04",
+            "time": "2012-12-07 19:17:43",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2125,19 +2126,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stfalcon/TinymceBundle",
-                "reference": "9bffbd91aa6ee397cb26bb0a5826caca2a2263fb"
+                "reference": "915a9029238ea5b201f9505e6d4d7c52362de1eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/stfalcon/TinymceBundle/archive/9bffbd91aa6ee397cb26bb0a5826caca2a2263fb.zip",
-                "reference": "9bffbd91aa6ee397cb26bb0a5826caca2a2263fb",
+                "url": "https://github.com/stfalcon/TinymceBundle/archive/915a9029238ea5b201f9505e6d4d7c52362de1eb.zip",
+                "reference": "915a9029238ea5b201f9505e6d4d7c52362de1eb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
                 "symfony/symfony": ">=2.1"
             },
-            "time": "2012-11-21 11:02:53",
+            "time": "2012-12-10 12:48:01",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2232,6 +2233,55 @@
                 "timestampable"
             ],
             "time": "2012-11-01 14:01:27"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v4.2.2",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/swiftmailer/swiftmailer.git",
+                "reference": "v4.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/swiftmailer/swiftmailer/zipball/v4.2.2",
+                "reference": "v4.2.2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "time": "2012-10-25 01:30:40",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Chris Corbyn"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "http://swiftmailer.org",
+            "keywords": [
+                "mail",
+                "mailer"
+            ]
         },
         {
             "name": "symfony/assetic-bundle",
@@ -2349,6 +2399,61 @@
                 }
             ],
             "description": "Symfony MonologBundle",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "symfony/swiftmailer-bundle",
+            "version": "dev-master",
+            "target-dir": "Symfony/Bundle/SwiftmailerBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/SwiftmailerBundle",
+                "reference": "2393ba6d4f1b544349123e24a16bbc749bef9e55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/SwiftmailerBundle/archive/2393ba6d4f1b544349123e24a16bbc749bef9e55.zip",
+                "reference": "2393ba6d4f1b544349123e24a16bbc749bef9e55",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "swiftmailer/swiftmailer": ">=4.2.0,<4.3-dev",
+                "symfony/swiftmailer-bridge": ">=2.1.0,<2.3-dev"
+            },
+            "require-dev": {
+                "symfony/dependency-injection": ">=2.1.0,<2.3-dev",
+                "symfony/http-kernel": ">=2.1.0,<2.3-dev",
+                "symfony/config": ">=2.1.0,<2.3-dev",
+                "symfony/yaml": ">=2.1.0,<2.3-dev"
+            },
+            "time": "2012-10-17 04:18:11",
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Bundle\\SwiftmailerBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com"
         },
         {
@@ -2540,6 +2645,7 @@
         "unisender/unisender": 0,
         "exercise/elastica-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20,
+        "symfony/swiftmailer-bundle": 20,
         "rithis/bootstrap-bundle": 20,
         "rithis/image-placeholder-bundle": 20
     }

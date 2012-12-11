@@ -17,3 +17,6 @@ monolog:
         firephp:
             type:  firephp
             level: info
+
+swiftmailer:
+    delivery_address: %delivery_address%

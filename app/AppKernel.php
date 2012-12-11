@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Desarrolla2\Bundle\RSSClientBundle\RSSClientBundle(),
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
             new FOQ\ElasticaBundle\FOQElasticaBundle(),
+            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
