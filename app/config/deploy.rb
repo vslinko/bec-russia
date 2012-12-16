@@ -43,6 +43,16 @@ namespace :composer do
   end
 end
 
+namespace :symfony do
+  namespace :foq do
+    namespace :elastica do
+      task :populate do
+        run "#{try_sudo} sh -c 'cd #{latest_release} && #{php_bin} #{symfony_console} foq:elastica:populate --env=#{symfony_env_prod}'"
+      end
+    end
+  end
+end
+
 namespace :rithis do
   task :init do
     require 'securerandom'
