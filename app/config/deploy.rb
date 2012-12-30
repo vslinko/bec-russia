@@ -32,6 +32,7 @@ end
 
 before 'symfony:composer:install', 'composer:copy_vendors'
 before 'symfony:composer:update', 'composer:copy_vendors'
+after 'symfony:composer:dump_autoload', 'symfony:foq:elastica:populate'
 after 'deploy', 'deploy:cleanup'
 
 namespace :composer do
@@ -47,7 +48,10 @@ namespace :symfony do
   namespace :foq do
     namespace :elastica do
       task :populate do
+        capifony_pretty_print "--> Populating search index"
+
         run "#{try_sudo} sh -c 'cd #{latest_release} && #{php_bin} #{symfony_console} foq:elastica:populate --env=#{symfony_env_prod}'"
+        capifony_puts_ok
       end
     end
   end
