@@ -16,7 +16,7 @@ class TestQuestion
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\SequenceGenerator(sequenceName="test_questions_id_seq")
      */
     protected $id;

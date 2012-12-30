@@ -15,7 +15,7 @@ class SchoolComment
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\SequenceGenerator(sequenceName="schools_comments_id_seq")
      */
     protected $id;
