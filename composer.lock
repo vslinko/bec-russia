@@ -1462,12 +1462,12 @@
             "target-dir": "Rithis/BootstrapBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/rithis/BootstrapBundle",
+                "url": "https://github.com/rithis-archive/BootstrapBundle",
                 "reference": "ec402e18d14de94bb21c8d67677478a893cb7610"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/rithis/BootstrapBundle/archive/ec402e18d14de94bb21c8d67677478a893cb7610.zip",
+                "url": "https://github.com/rithis-archive/BootstrapBundle/archive/ec402e18d14de94bb21c8d67677478a893cb7610.zip",
                 "reference": "ec402e18d14de94bb21c8d67677478a893cb7610",
                 "shasum": ""
             },
@@ -1500,12 +1500,12 @@
             "target-dir": "Rithis/ImagePlaceholderBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/rithis/ImagePlaceholderBundle",
+                "url": "https://github.com/rithis-archive/ImagePlaceholderBundle",
                 "reference": "6a0503d0ddd26fb8679c9156642b94fc61d89d34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/rithis/ImagePlaceholderBundle/archive/6a0503d0ddd26fb8679c9156642b94fc61d89d34.zip",
+                "url": "https://github.com/rithis-archive/ImagePlaceholderBundle/archive/6a0503d0ddd26fb8679c9156642b94fc61d89d34.zip",
                 "reference": "6a0503d0ddd26fb8679c9156642b94fc61d89d34",
                 "shasum": ""
             },
